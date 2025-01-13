@@ -151,12 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Dice.cpp" />
+    <ClCompile Include="src\interface\IDiceFactory.hpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\class\DiceNumeric.hpp" />
-    <ClInclude Include="src\interface\IDice.hpp" />
+    <ClInclude Include="src\interface\IDiceComposition.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

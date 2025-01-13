@@ -18,15 +18,12 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Dice.cpp">
+    <ClCompile Include="src\interface\IDiceFactory.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\interface\IDice.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\class\DiceNumeric.hpp">
+    <ClInclude Include="src\interface\IDiceComposition.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
