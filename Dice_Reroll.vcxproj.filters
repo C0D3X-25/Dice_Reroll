@@ -24,9 +24,39 @@
     <ClCompile Include="src\interface\IObject.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\interface\Dice.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\IPlayerCharacter.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\IEnemyCharacter.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\ICapacity.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\struct\CapacityStats.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\class\CapacityDefend.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\class\CapacityHeal.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\class\CapacityAttack.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\class\PlayerEntityWarrior.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\interface\IDiceComposition.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\interface\IEntity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

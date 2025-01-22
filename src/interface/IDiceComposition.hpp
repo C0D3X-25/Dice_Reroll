@@ -46,29 +46,29 @@ namespace dice {
 		}
 
 		uint16_t rollAdvantage(void) override {
-			uint16_t first_roll = CompDiceLogic::roll(m_side);
-			uint16_t second_roll = CompDiceLogic::roll(m_side);
+			uint16_t roll_1 = CompDiceLogic::roll(m_side);
+			uint16_t roll_2 = CompDiceLogic::roll(m_side);
 
-			std::cout << "Advantage    -> First Roll (" << first_roll
-				<< ") Second Roll (" << second_roll << ")\n";
+			std::cout << "Advantage    -> First Roll (" << roll_1
+				<< ") Second Roll (" << roll_2 << ")\n";
 
-			if (first_roll > second_roll) {
-				return first_roll;
+			if (roll_1 > roll_2) {
+				return roll_1;
 			}
-			return second_roll;
+			return roll_2;
 		}
 
 		uint16_t rollDisadvantage(void) override {
-			uint16_t first_roll = CompDiceLogic::roll(m_side);
-			uint16_t second_roll = CompDiceLogic::roll(m_side);
+			uint16_t roll_1 = CompDiceLogic::roll(m_side);
+			uint16_t roll_2 = CompDiceLogic::roll(m_side);
 
-			std::cout << "Disadvantage -> First Roll (" << first_roll
-				<< ") Second Roll (" << second_roll << ")\n";
+			std::cout << "Disadvantage -> First Roll (" << roll_1
+				<< ") Second Roll (" << roll_2 << ")\n";
 
-			if (first_roll < second_roll) {
-				return first_roll;
+			if (roll_1 < roll_2) {
+				return roll_1;
 			}
-			return second_roll;
+			return roll_2;
 		}
 
 	private:
@@ -87,7 +87,7 @@ namespace dice {
 		const Object& roll(void) {
 
 			Object res = m_objects[CompDiceLogic::roll(m_objects.size()) - 1];
-			std::cout << "Name: " << res.name << " | Value: " << res.value << '\n';
+			std::cout << "Name: " << res.m_name << " | Value: " << res.m_value << '\n';
 
 			return m_objects[CompDiceLogic::roll(m_objects.size()) - 1];;
 		}

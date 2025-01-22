@@ -10,7 +10,6 @@ namespace dice {
 
 	struct Object;
 
-
 	class DiceNumeric {
 	public:
 		DiceNumeric(const uint16_t side)
@@ -68,7 +67,7 @@ namespace dice {
 			//return dice_obj.getObject(rollLogic(dice_obj.getNbrSide()) - 1);
 
 			Object res = dice_obj.getObject(rollLogic(dice_obj.getNbrSide()) - 1);
-			std::cout << "Name: " << res.name << " | Value: " << res.value << '\n';
+			std::cout << "Name: " << res.m_name << " | Value: " << res.m_value << '\n';
 			return res;
 		}
 

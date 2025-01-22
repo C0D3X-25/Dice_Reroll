@@ -151,11 +151,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\class\CapacityAttack.hpp" />
+    <ClCompile Include="src\class\CapacityDefend.hpp" />
+    <ClCompile Include="src\class\CapacityHeal.hpp" />
+    <ClCompile Include="src\class\PlayerEntityWarrior.hpp" />
+    <ClCompile Include="src\interface\ICapacity.hpp" />
+    <ClCompile Include="src\interface\IEnemyCharacter.hpp" />
+    <ClCompile Include="src\interface\IPlayerCharacter.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
+    <ClCompile Include="src\interface\Dice.hpp" />
     <ClCompile Include="src\interface\IObject.hpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\struct\CapacityStats.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\interface\IEntity.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
