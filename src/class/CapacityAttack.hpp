@@ -1,11 +1,13 @@
 #pragma once 
 
 #include "tool_lib.hpp"
-#include "../struct/CapacityStats.hpp"
+#include "../struct/CapacityAttributs.hpp"
 #include "../interface/ICapacity.hpp"
+#include "../interface/ICapacityApplication.hpp"
 
 #include <iostream>
 #include <string>
+#include <queue>
 
 
 namespace capacity {
@@ -13,30 +15,40 @@ namespace capacity {
 	public:
 		CapacityAttack(void) {
 			m_name = "Attack";
-			m_stats.m_modify_life = -10;
+			m_stats.m_life = -10;
 		}
 		~CapacityAttack(void) = default;
 
-		void printDebugCapacity(void) override {
-			std::cout << "Capacity " << m_name << '\n';
-			std::cout << "Modify Life: " << m_stats.m_modify_life << '\n';
-			std::cout << "Modify Armor: " << m_stats.m_modify_armor << '\n';
-		}
+		virtual void printDebugCapacity(void) = 0;
+		virtual void printCapacity(void) = 0;
 
-		void printCapacity(void) override {
-			std::cout << "Capacity " << m_name << '\n';
-		}
+		virtual void executeCapacity(void) = 0;
 
-		std::string getName(void) const override {
-			return m_name;
-		}
+		virtual std::string getName(void) const = 0;
 
-		CapacityStats getStats(void) const override {
+		SCapacityModifiers getStats(void) const override {
 			return m_stats;
 		}
 
+		void pushCapacityAttributs(const SCapacityModifiers& cap) override {
+			m_order_capacity.push(cap);
+		}
+
+		SCapacityModifiers& getNextCapacityAttributs(void) const override {
+
+		}
+
+		// Return false if there is 1 element or less
+		bool isNextCapacityAttribut(void) const override{
+			if (m_order_capacity.size() <= 1) {
+				return false;
+			}
+			return true;
+		}
+
 	private:
-		CapacityStats m_stats;
 		std::string m_name{ "N/A" };
+		SCapacityModifiers m_stats; // TODO: remove when queue is implement
+		std::queue<SCapacityModifiers> m_order_capacity;
 	};
 } // namespace capacity

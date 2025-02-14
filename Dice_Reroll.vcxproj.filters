@@ -27,22 +27,10 @@
     <ClCompile Include="src\interface\Dice.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\interface\IPlayerCharacter.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\interface\IEnemyCharacter.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\interface\ICapacity.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\struct\CapacityStats.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\class\CapacityDefend.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\class\CapacityHeal.hpp">
+    <ClCompile Include="include\struct\SCapacityModifiers.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\class\CapacityAttack.hpp">
@@ -51,12 +39,33 @@
     <ClCompile Include="src\class\PlayerEntityWarrior.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\interface\ICapacityApplication.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\enum\EStatus.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\abs\AEntity.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\abs\ACapacity.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\interface\ICapacityAction.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\capacity\CapacityActionBaseAttack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\interface\IDiceComposition.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\interface\IEntity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\class\CapacityActionBaseAttack.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

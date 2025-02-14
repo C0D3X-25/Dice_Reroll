@@ -38,8 +38,6 @@ int main() {
 
 
 
-
-
 	//Object nothing = { "Empty", 0 };
 	//Object weapon = { "Sword", 10 };
 	//Object shield = { "Shield", 5 };

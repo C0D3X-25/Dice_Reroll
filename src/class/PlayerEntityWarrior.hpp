@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "tool_lib.hpp"
-#include "../struct/CapacityStats.hpp"
+#include "../struct/CapacityAttributs.hpp"
 #include "../interface/ICapacity.hpp"
 #include "../interface/IEntity.hpp"
 
@@ -11,7 +11,7 @@
 namespace entity {
 
 	using capacity::ICapacity;
-	using capacity::CapacityStats;
+	using capacity::SCapacityModifiers;
 
 	class PlayerEntityWarrior : public IEntity {
 	public:
@@ -36,7 +36,7 @@ namespace entity {
 			target.takeCapacity(capacity.getStats(), *this);
 		}
 
-		void takeCapacity(const CapacityStats& capacity, const IEntity& src) override {
+		void takeCapacity(const SCapacityModifiers& capacity, const IEntity& src) override {
 
 			// TODO: Apply Status
 
@@ -47,22 +47,22 @@ namespace entity {
 			int16_t remain_dmg{ 0 };
 
 			// Reverse the modify_life and modify_armor if they are negative
-			if (capacity.m_modify_life < 0) {
+			if (capacity.m_life < 0) {
 
-				dmg_life = capacity.m_modify_life * -1;
+				dmg_life = capacity.m_life * -1;
 
 				std::cout << m_name << " took (" << dmg_life << ") damage from "
 					<< src.getName() << '\n';
 			}
 			else {
-				heal_life = capacity.m_modify_life;
+				heal_life = capacity.m_life;
 			}
 			
-			if (capacity.m_modify_armor < 0) {
-				remove_armor = capacity.m_modify_armor * -1;
+			if (capacity.m_armor < 0) {
+				remove_armor = capacity.m_armor * -1;
 			}
 			else {
-				add_armor = capacity.m_modify_armor;
+				add_armor = capacity.m_armor;
 			}
 
 			// Damage apply to armor
