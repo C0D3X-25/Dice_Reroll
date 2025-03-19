@@ -3,7 +3,7 @@
 #include "tool_lib.hpp"
 #include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
 #include "../../include/capacity/ICapacity.hpp"
-#include "../interface/ICapacityApplication.hpp"
+#include "../../include/capacity_affectation/ICapacityAffectation.hpp"
 
 #include <iostream>
 #include <string>

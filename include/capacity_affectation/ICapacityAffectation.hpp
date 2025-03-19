@@ -5,9 +5,9 @@
 #include "tool_lib.hpp"
 
 namespace capacity {
-	class ICapacityApplication {
+	class ICapacityAffectation {
 	public:
-		virtual ~ICapacityApplication(void) = default;
+		virtual ~ICapacityAffectation(void) = default;
 
 		virtual void create() = 0;
 	};

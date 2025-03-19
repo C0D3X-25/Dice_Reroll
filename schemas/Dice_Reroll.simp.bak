@@ -19,6 +19,10 @@
         <item-type stereotype="interface" type-id="uml-interface-classifier" type="Interface" />
         <value>1</value>
       </counter>
+      <counter>
+        <item-type stereotype="enumeration" type-id="enumeration" type="Enumeration" />
+        <value>1</value>
+      </counter>
     </entity-names>
     <entity-ids>
       <counter>
@@ -27,6 +31,10 @@
       </counter>
       <counter>
         <item-type type-id="uml-interface-classifier" type="Interface" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="enumeration" type="Enumeration" />
         <value>2</value>
       </counter>
     </entity-ids>
@@ -122,7 +130,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-class" id="p9be0b6d0b5e84ca9a9127dd00c4ce3cd_285373313" name="Classes" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="526,-4">
+      <diagram type="uml-class" id="p9be0b6d0b5e84ca9a9127dd00c4ce3cd_285373313" name="Classes" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-19,-411" zoom="0.8">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -134,11 +142,21 @@
           </authors>
           <description />
           <creation-date>03/19/2025 10:25:54</creation-date>
-          <change-date>03/19/2025 17:58:23</change-date>
+          <change-date>03/19/2025 17:59:12</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
+          <item id="a6103afb25cb4d83ad38ff3b72085611" cid="E001" type="enumeration" name="EStatus" style-class="Flat Light Green" creation-date="03/19/2025 17:59:12">
+            <stereotypes>
+              <stereotype name="enumeration" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="a6103afb25cb4d83ad38ff3b72085611_enumeration_c" type="enumeration" creation-date="03/19/2025 17:59:12" ref="" />
+            </stereotype-instances>
+            <style class="Flat Light Green" />
+            <enumeration-items />
+          </item>
           <item id="ff23bc3dc1434da1a3ea37e0fcd4df13" cid="I001" type="uml-interface-classifier" name="ICapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39">
             <stereotypes>
               <stereotype name="interface" />
@@ -194,6 +212,9 @@
             <layout ax="864" ay="267" awidth="220" aheight="160" x="864" y="267" width="220" height="160" />
             <classifier />
             <class />
+          </item>
+          <item id="a6103afb25cb4d83ad38ff3b72085611" iid="2b61cba12ea943eabb860904388170cc" creation-date="03/19/2025 17:59:12" order-index="5" type="entity">
+            <layout ax="864" ay="-380" awidth="220" aheight="160" x="864" y="-380" width="220" height="160" />
           </item>
         </layer>
       </diagram>

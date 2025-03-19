@@ -156,10 +156,10 @@
     <ClCompile Include="include\status\EStatus.hpp" />
     <ClCompile Include="include\capacity_action\ICapacityAction.hpp" />
     <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp" />
-    <ClCompile Include="src\capacity\CapacityAttack.hpp" />
-    <ClCompile Include="src\entity\PlayerEntityWarrior.hpp" />
+    <ClCompile Include="include\capacity\CapacityAttack.hpp" />
+    <ClCompile Include="include\entity\PlayerEntityWarrior.hpp" />
     <ClCompile Include="include\capacity\ICapacity.hpp" />
-    <ClCompile Include="src\interface\ICapacityApplication.hpp" />
+    <ClCompile Include="include\capacity_affectation\ICapacityAffectation.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
     <ClCompile Include="src\interface\Dice.hpp" />
     <ClCompile Include="src\interface\IObject.hpp" />

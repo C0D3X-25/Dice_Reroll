@@ -12,8 +12,9 @@
 //#include "interface/Dice.hpp"
 #include "interface/IObject.hpp"
 
-#include "class/PlayerEntityWarrior.hpp"
-#include "class/CapacityAttack.hpp"
+#include "../include/entity/PlayerEntityWarrior.hpp"
+#include "../include/capacity/CapacityAttack.hpp"
+
 
 #include <iostream>
 #include <array>
@@ -23,10 +24,11 @@ using namespace entity;
 using namespace capacity;
 
 int main() {
-
+	
 	PlayerEntityWarrior 
 		entity_1("Entity 1", 20, 5),
 		entity_2("Entity 2", 30, 10);
+
 	entity_1.printEntity();
 	entity_2.printEntity();
 
