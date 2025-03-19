@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "tool_lib.hpp"
-#include "../struct/CapacityAttributs.hpp"
+#include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
 
 namespace capacity {
 	struct SCapacityModifiers;

@@ -30,11 +30,11 @@ int main() {
 	entity_1.printEntity();
 	entity_2.printEntity();
 
-	CapacityAttack attack;
+	//CapacityAttack attack;
 
-	entity_1.useCapacity(attack, entity_2);
-	entity_1.useCapacity(attack, entity_2);
-	entity_1.useCapacity(attack, entity_2);
+	//entity_1.useCapacity(attack, entity_2);
+	//entity_1.useCapacity(attack, entity_2);
+	//entity_1.useCapacity(attack, entity_2);
 
 
 

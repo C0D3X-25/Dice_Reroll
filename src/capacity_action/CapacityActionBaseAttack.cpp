@@ -1,4 +1,4 @@
-#include "../../include/class/CapacityActionBaseAttack.hpp"
+#include "../../include/capacity_action/CapacityActionBaseAttack.hpp"
 
 using namespace capacity;
 

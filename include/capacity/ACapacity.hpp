@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../struct/SCapacityModifiers.hpp"
-#include "../interface/ICapacityAction.hpp"
+#include "../capacity_modifiers/SCapacityModifiers.hpp"
+#include "../capacity_action/ICapacityAction.hpp"
 
 #include <queue>
 
