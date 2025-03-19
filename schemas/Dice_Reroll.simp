@@ -6,8 +6,38 @@
     <description />
   </meta>
   <counters models="1">
-    <entity-names />
-    <entity-ids />
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type stereotype="struct" type-id="class" type="Class" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type stereotype="interface" type-id="uml-interface-classifier" type="Interface" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type stereotype="enumeration" type-id="enumeration" type="Enumeration" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="uml-interface-classifier" type="Interface" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="enumeration" type="Enumeration" />
+        <value>2</value>
+      </counter>
+    </entity-ids>
     <diagrams>
       <counter>
         <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
@@ -18,6 +48,7 @@
   </counters>
   <alias-groups />
   <management uid="md-3bf0a26c77354fc2afbb51d21c853aa0" name="" task-id-sequence="0">
+    <working-schedule uid="ws-28cc2fec697c4081a2ae2d72bac6540d" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
     <persons>
       <person id="">
         <first-name />
@@ -27,6 +58,7 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-c3321af207c942d48cfc11240d0dc7af" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
       </person>
     </persons>
     <teams />
@@ -46,9 +78,46 @@
       <types />
     </custom-types>
   </types>
-  <items />
+  <items>
+    <item id="43c5c7d479ee49df99ed138394347cba" cid="I001" type="uml-interface-classifier" name="ACapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
+      <stereotypes>
+        <stereotype name="abstract" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d350b085c72a459bb9710daf6fb6e381" type="abstract" creation-date="03/19/2025 17:57:09" ref="" />
+      </stereotype-instances>
+      <style class="Flat Yellow" />
+    </item>
+    <item id="15ac2de30c9543bc8224f638c19eec46" cid="I001" type="uml-interface-classifier" name="AEntity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
+      <stereotypes>
+        <stereotype name="abstract" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d350b085c72a459bb9710daf6fb6e381" type="abstract" creation-date="03/19/2025 17:57:09" ref="" />
+      </stereotype-instances>
+      <style class="Flat Yellow" />
+    </item>
+    <item id="ebb674d52f604b5e8e4c62015869c10f" cid="I001" type="uml-interface-classifier" name="IEntity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
+      <stereotypes>
+        <stereotype name="interface" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ff23bc3dc1434da1a3ea37e0fcd4df13_interface_c" type="interface" creation-date="03/19/2025 17:56:39" ref="" />
+      </stereotype-instances>
+      <style class="Flat Yellow" />
+    </item>
+    <item id="d67b6533f426441e86063b87714c1687" cid="I001" type="uml-interface-classifier" name="ICapacityAction" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
+      <stereotypes>
+        <stereotype name="interface" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ff23bc3dc1434da1a3ea37e0fcd4df13_interface_c" type="interface" creation-date="03/19/2025 17:56:39" ref="" />
+      </stereotype-instances>
+      <style class="Flat Yellow" />
+    </item>
+  </items>
   <models>
-    <model id="p9703865808a649b3ad565c8cd20d5b8c_533018812" name="Model1" namespace="" order-index="1">
+    <model id="p9703865808a649b3ad565c8cd20d5b8c_533018812" name="Dice_Reroll" namespace="" order-index="1">
       <meta>
         <authors>
           <author> </author>
@@ -61,7 +130,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-class" id="p9be0b6d0b5e84ca9a9127dd00c4ce3cd_285373313" name="Classes" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+      <diagram type="uml-class" id="p9be0b6d0b5e84ca9a9127dd00c4ce3cd_285373313" name="Classes" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-19,-411" zoom="0.8">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -73,12 +142,81 @@
           </authors>
           <description />
           <creation-date>03/19/2025 10:25:54</creation-date>
-          <change-date>03/19/2025 10:25:54</change-date>
+          <change-date>03/19/2025 17:59:12</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
-        <abstract-items />
-        <layer id="9a7bd2dd3ae8401f88ee02dfd0516cb2" name="Default" visible="true" enabled="true" locked="false" />
+        <abstract-items>
+          <item id="a6103afb25cb4d83ad38ff3b72085611" cid="E001" type="enumeration" name="EStatus" style-class="Flat Light Green" creation-date="03/19/2025 17:59:12">
+            <stereotypes>
+              <stereotype name="enumeration" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="a6103afb25cb4d83ad38ff3b72085611_enumeration_c" type="enumeration" creation-date="03/19/2025 17:59:12" ref="" />
+            </stereotype-instances>
+            <style class="Flat Light Green" />
+            <enumeration-items />
+          </item>
+          <item id="ff23bc3dc1434da1a3ea37e0fcd4df13" cid="I001" type="uml-interface-classifier" name="ICapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39">
+            <stereotypes>
+              <stereotype name="interface" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="ff23bc3dc1434da1a3ea37e0fcd4df13_interface_c" type="interface" creation-date="03/19/2025 17:56:39" ref="" />
+            </stereotype-instances>
+            <style class="Flat Yellow" />
+          </item>
+          <item id="309fc9cbf2c9465cb25cd7772295dfd0" cid="C003" type="class" name="CapacityActionBaseAttack" creation-date="03/19/2025 17:56:06" />
+          <item id="37bb2ec6a8e743d2a0ea2c19d993268d" cid="C004" type="class" name="SCapacityModifiers" style-class="Flat Light Cyan" creation-date="03/19/2025 17:56:31">
+            <stereotypes>
+              <stereotype name="struct" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="37bb2ec6a8e743d2a0ea2c19d993268d_struct_c" type="struct" creation-date="03/19/2025 17:56:31" ref="" />
+            </stereotype-instances>
+            <style class="Flat Light Cyan" />
+          </item>
+        </abstract-items>
+        <layer id="9a7bd2dd3ae8401f88ee02dfd0516cb2" name="Default" visible="true" enabled="true" locked="false">
+          <item id="309fc9cbf2c9465cb25cd7772295dfd0" iid="ae39b34b2e084640b70e9ea2da76c64d" show-fields="true" creation-date="03/19/2025 17:56:06" order-index="2" type="entity">
+            <layout ax="1697" ay="546" awidth="220" aheight="160" x="1697" y="546" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="37bb2ec6a8e743d2a0ea2c19d993268d" iid="9ac89ee8369947fabc0f509e05b3266e" show-fields="true" creation-date="03/19/2025 17:56:31" order-index="3" type="entity">
+            <layout ax="864" ay="-177" awidth="220" aheight="160" x="864" y="-177" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="ff23bc3dc1434da1a3ea37e0fcd4df13" iid="7c9cafb981d8458d92a4acc87ec3ada4" creation-date="03/19/2025 17:56:39" order-index="4" type="entity">
+            <layout ax="1295" ay="61" awidth="220" aheight="160" x="1295" y="61" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="43c5c7d479ee49df99ed138394347cba" iid="8896b9ed0d6642a4ad6c74d555461769" creation-date="03/19/2025 17:56:39" order-index="0" type="entity">
+            <layout ax="1295" ay="267" awidth="220" aheight="160" x="1295" y="267" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="d67b6533f426441e86063b87714c1687" iid="95204e7cc1bd4e72986d152673bf369a" creation-date="03/19/2025 17:56:39" order-index="0" type="entity">
+            <layout ax="1295" ay="546" awidth="220" aheight="160" x="1295" y="546" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="ebb674d52f604b5e8e4c62015869c10f" iid="1bdc5be96084497e9aed578cad80ff28" creation-date="03/19/2025 17:56:39" order-index="0" type="entity">
+            <layout ax="864" ay="61" awidth="220" aheight="160" x="864" y="61" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="15ac2de30c9543bc8224f638c19eec46" iid="372e43d508e84011b04128fed417fc4f" creation-date="03/19/2025 17:56:39" order-index="0" type="entity">
+            <layout ax="864" ay="267" awidth="220" aheight="160" x="864" y="267" width="220" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="a6103afb25cb4d83ad38ff3b72085611" iid="2b61cba12ea943eabb860904388170cc" creation-date="03/19/2025 17:59:12" order-index="5" type="entity">
+            <layout ax="864" ay="-380" awidth="220" aheight="160" x="864" y="-380" width="220" height="160" />
+          </item>
+        </layer>
       </diagram>
     </model>
   </models>
