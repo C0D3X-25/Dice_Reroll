@@ -79,12 +79,22 @@
     </custom-types>
   </types>
   <items>
+    <item id="b061b9d737264c27b516284af0a34127" cid="C003" type="class" name="CapacityAttack" creation-date="03/19/2025 17:56:06" visibility="undefined" />
     <item id="43c5c7d479ee49df99ed138394347cba" cid="I001" type="uml-interface-classifier" name="ACapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
       <stereotypes>
         <stereotype name="abstract" />
       </stereotypes>
       <stereotype-instances>
         <stereotype id="d350b085c72a459bb9710daf6fb6e381" type="abstract" creation-date="03/19/2025 17:57:09" ref="" />
+      </stereotype-instances>
+      <style class="Flat Yellow" />
+    </item>
+    <item id="b438299d1d004f989a8472bc252f4410" cid="I001" type="uml-interface-classifier" name="ICapacityAffectation" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
+      <stereotypes>
+        <stereotype name="interface" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ff23bc3dc1434da1a3ea37e0fcd4df13_interface_c" type="interface" creation-date="03/19/2025 17:56:39" ref="" />
       </stereotype-instances>
       <style class="Flat Yellow" />
     </item>
@@ -142,12 +152,12 @@
           </authors>
           <description />
           <creation-date>03/19/2025 10:25:54</creation-date>
-          <change-date>03/19/2025 17:59:12</change-date>
+          <change-date>03/19/2025 19:19:12</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="a6103afb25cb4d83ad38ff3b72085611" cid="E001" type="enumeration" name="EStatus" style-class="Flat Light Green" creation-date="03/19/2025 17:59:12">
+          <item id="a6103afb25cb4d83ad38ff3b72085611" cid="E001" type="enumeration" name="EStatus" style-class="Flat Light Green" creation-date="03/19/2025 17:59:12" visibility="undefined">
             <stereotypes>
               <stereotype name="enumeration" />
             </stereotypes>
@@ -157,7 +167,7 @@
             <style class="Flat Light Green" />
             <enumeration-items />
           </item>
-          <item id="ff23bc3dc1434da1a3ea37e0fcd4df13" cid="I001" type="uml-interface-classifier" name="ICapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39">
+          <item id="ff23bc3dc1434da1a3ea37e0fcd4df13" cid="I001" type="uml-interface-classifier" name="ICapacity" style-class="Flat Yellow" creation-date="03/19/2025 17:56:39" visibility="undefined">
             <stereotypes>
               <stereotype name="interface" />
             </stereotypes>
@@ -166,8 +176,8 @@
             </stereotype-instances>
             <style class="Flat Yellow" />
           </item>
-          <item id="309fc9cbf2c9465cb25cd7772295dfd0" cid="C003" type="class" name="CapacityActionBaseAttack" creation-date="03/19/2025 17:56:06" />
-          <item id="37bb2ec6a8e743d2a0ea2c19d993268d" cid="C004" type="class" name="SCapacityModifiers" style-class="Flat Light Cyan" creation-date="03/19/2025 17:56:31">
+          <item id="309fc9cbf2c9465cb25cd7772295dfd0" cid="C003" type="class" name="CapacityActionBaseAttack" creation-date="03/19/2025 17:56:06" visibility="undefined" />
+          <item id="37bb2ec6a8e743d2a0ea2c19d993268d" cid="C004" type="class" name="SCapacityModifiers" style-class="Flat Light Cyan" creation-date="03/19/2025 17:56:31" visibility="undefined">
             <stereotypes>
               <stereotype name="struct" />
             </stereotypes>
@@ -215,6 +225,16 @@
           </item>
           <item id="a6103afb25cb4d83ad38ff3b72085611" iid="2b61cba12ea943eabb860904388170cc" creation-date="03/19/2025 17:59:12" order-index="5" type="entity">
             <layout ax="864" ay="-380" awidth="220" aheight="160" x="864" y="-380" width="220" height="160" />
+          </item>
+          <item id="b061b9d737264c27b516284af0a34127" iid="fe5e0979cef140afb37f749816daf417" show-fields="true" creation-date="03/19/2025 17:56:06" order-index="0" type="entity">
+            <layout ax="1697" ay="61" awidth="220" aheight="160" x="1697" y="61" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="b438299d1d004f989a8472bc252f4410" iid="b82941d99c4b4ce4b4badb26affdd742" creation-date="03/19/2025 17:56:39" order-index="0" type="entity">
+            <layout ax="433" ay="61" awidth="220" aheight="160" x="433" y="61" width="220" height="160" />
+            <classifier />
+            <class />
           </item>
         </layer>
       </diagram>

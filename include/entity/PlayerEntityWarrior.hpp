@@ -10,9 +10,6 @@
 
 namespace entity {
 
-	using capacity::ICapacity;
-	using capacity::SCapacityModifiers;
-
 	class PlayerEntityWarrior : public IEntity {
 	public:
 		PlayerEntityWarrior(void) = default;
