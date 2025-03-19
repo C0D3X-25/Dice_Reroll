@@ -1,8 +1,8 @@
 #pragma once 
 
 #include "tool_lib.hpp"
-#include "../struct/CapacityAttributs.hpp"
-#include "../interface/ICapacity.hpp"
+#include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
+#include "../../include/capacity/ICapacity.hpp"
 #include "../interface/ICapacityApplication.hpp"
 
 #include <iostream>

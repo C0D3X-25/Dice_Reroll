@@ -1,7 +1,7 @@
 // Interface to represent what a Capacity Action must implement
 #pragma once
 
-#include "..\struct\SCapacityModifiers.hpp"
+#include "../capacity_modifiers/SCapacityModifiers.hpp"
 
 namespace capacity {
 	class ICapacityAction {

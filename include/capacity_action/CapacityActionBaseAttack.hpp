@@ -1,7 +1,7 @@
 // Action who do damage
 #pragma once
 
-#include "..\interface\ICapacityAction.hpp"
+#include ".\ICapacityAction.hpp"
 
 namespace capacity {
 	class CapacityActionBaseAttack : public ICapacityAction {

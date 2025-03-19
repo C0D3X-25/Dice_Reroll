@@ -1,9 +1,9 @@
 #pragma once 
 
 #include "tool_lib.hpp"
-#include "../struct/CapacityAttributs.hpp"
-#include "../interface/ICapacity.hpp"
-#include "../interface/IEntity.hpp"
+#include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
+#include "../../include/capacity/ICapacity.hpp"
+#include "../../include/entity/IEntity.hpp"
 
 #include <iostream>
 #include <string>
