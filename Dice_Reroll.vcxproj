@@ -158,7 +158,6 @@
     <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp" />
     <ClCompile Include="include\capacity\CapacityAttack.hpp" />
     <ClCompile Include="include\entity\PlayerEntityWarrior.hpp" />
-    <ClCompile Include="include\capacity\ICapacity.hpp" />
     <ClCompile Include="include\capacity_affectation\ICapacityAffectation.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
     <ClCompile Include="src\interface\Dice.hpp" />
