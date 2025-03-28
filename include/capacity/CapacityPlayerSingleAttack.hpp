@@ -13,7 +13,5 @@ namespace capacity {
 			pushCapacityModifier(attack.doAction());
 		}
 		~CapacityPlayerSingleAttack(void) = default;
-
-		virtual void executeCapacity(void) = 0;
 	};
 } // namespace capacity

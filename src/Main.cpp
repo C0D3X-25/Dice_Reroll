@@ -13,7 +13,7 @@
 #include "interface/IObject.hpp"
 
 #include "../include/entity/PlayerEntityWarrior.hpp"
-#include "../include/capacity/CapacityAttack.hpp"
+#include "../include/capacity/CapacityPlayerSingleAttack.hpp"
 
 
 #include <iostream>

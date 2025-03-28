@@ -9,6 +9,6 @@ namespace capacity {
 	public:
 		virtual ~ICapacityAffectation(void) = default;
 
-		virtual void create() = 0;
+		virtual void receiveCapacity() = 0;
 	};
 } // namespace capacity

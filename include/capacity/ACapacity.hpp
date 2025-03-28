@@ -12,7 +12,9 @@ namespace capacity {
 		virtual ~ACapacity(void) = default;
 
 
-		virtual void executeCapacity(void) = 0;
+		std::queue<SCapacityModifiers> sendCapacity(void) {
+			return m_capacities_mod;
+		}
 
 
 		void pushCapacityModifier(const SCapacityModifiers& capacity_mod) {

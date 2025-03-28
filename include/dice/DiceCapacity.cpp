@@ -7,10 +7,12 @@ DiceCapacity::DiceCapacity(const ACapacity& capacity) {
 
 }
 
+
 void DiceCapacity::setCapacity(const ACapacity& capacity) {
 }
 
-ACapacity dice::DiceCapacity::getCapacity(const uint8_t index) const {
+
+ACapacity DiceCapacity::getCapacity(const uint8_t index) const {
     return m_sides[0];
 }
 
