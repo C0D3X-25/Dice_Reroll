@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\capacity\ACapacity.hpp" />
+    <ClCompile Include="include\dice\DiceCapacity.cpp" />
     <ClCompile Include="include\entity\AEntity.hpp" />
     <ClCompile Include="include\status\EStatus.hpp" />
     <ClCompile Include="include\capacity_action\ICapacityAction.hpp" />
@@ -167,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\capacity_action\CapacityActionBaseAttack.hpp" />
+    <ClInclude Include="include\dice\ADice.hpp" />
+    <ClInclude Include="include\dice\DiceCapacity.hpp" />
+    <ClInclude Include="include\dice\IRollAdvantageDisadvantage.hpp" />
     <ClInclude Include="include\entity\IEntity.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
   </ItemGroup>

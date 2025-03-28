@@ -54,6 +54,9 @@
     <ClCompile Include="include\capacity_modifiers\SCapacityModifiers.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="include\dice\DiceCapacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\interface\IDiceComposition.hpp">
@@ -63,6 +66,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\entity\IEntity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dice\DiceCapacity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dice\ADice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dice\IRollAdvantageDisadvantage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

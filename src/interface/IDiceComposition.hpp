@@ -42,7 +42,7 @@ namespace dice {
 
 			uint16_t res = CompDiceLogic::roll(m_side);
 			std::cout << "Roll: " << res << '\n';
-			return CompDiceLogic::roll(m_side);
+			return res;
 		}
 
 		uint16_t rollAdvantage(void) override {

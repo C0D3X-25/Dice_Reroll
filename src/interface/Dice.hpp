@@ -8,9 +8,6 @@
 
 
 namespace dice {
-
-	struct Object;
-
 	class RollDice {
 	public:
 		uint16_t roll(uint16_t nbr_side) {
