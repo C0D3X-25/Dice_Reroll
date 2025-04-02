@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../capacity/ACapacity.hpp"
+#include "../capacity/BaseCapacity.hpp"
 #include "../capacity_action/CapacityActionBaseAttack.hpp"
 #include "../entity/IEntity.hpp"
 #include <iostream>
@@ -25,7 +25,7 @@ namespace entity {
 		}
 
 
-		void useCapacity(ACapacity& capacity, IEntity& target) override {
+		void useCapacity(BaseCapacity& capacity, IEntity& target) override {
 			std::cout
 				<< m_name
 				<< " use capacity " << capacity.getName()

@@ -7,9 +7,10 @@
 #include <string>
 
 namespace capacity {
-	class ACapacity {
+	class BaseCapacity {
 	public:
-		virtual ~ACapacity(void) = default;
+		BaseCapacity(void) = default;
+		virtual ~BaseCapacity(void) = default;
 
 
 		std::queue<SCapacityModifiers> sendCapacity(void) {
@@ -17,7 +18,7 @@ namespace capacity {
 		}
 
 
-		void pushCapacityModifier(const SCapacityModifiers& capacity_mod) {
+		void queueCapacityModifier(const SCapacityModifiers& capacity_mod) {
 			m_capacities_mod.push(capacity_mod);
 		}
 

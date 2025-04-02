@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="include\capacity\ACapacity.hpp" />
+    <ClCompile Include="include\capacity\BaseCapacity.hpp" />
     <ClCompile Include="src\capacity\CapacityNothing.cpp" />
     <ClCompile Include="include\dice\DiceCapacity.cpp" />
     <ClCompile Include="include\entity\AEntity.hpp" />

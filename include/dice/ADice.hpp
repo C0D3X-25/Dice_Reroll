@@ -8,7 +8,6 @@ namespace dice{
 	public:
 		virtual ~ADice(void) = default;
 
-
 		virtual void roll(void) = 0;
 		virtual void printDice(void) = 0;
 

@@ -3,17 +3,22 @@
 
 using namespace dice;
 
-DiceCapacity::DiceCapacity(const ACapacity& capacity) {
+dice::DiceCapacity::DiceCapacity(void) {
+    std::fill(m_sides.begin(), m_sides.end(), m_empty);
+}
+
+DiceCapacity::DiceCapacity(const BaseCapacity& capacity) {
 
 }
 
 
-void DiceCapacity::setCapacity(const ACapacity& capacity) {
+void DiceCapacity::setCapacity(const BaseCapacity& capacity) {
+
 }
 
 
-ACapacity DiceCapacity::getCapacity(const uint8_t index) const {
-    return m_sides[0];
+const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t index) const {
+    return m_sides.at(index);
 }
 
 
