@@ -12,7 +12,7 @@ namespace dice {
 	public:
 		uint16_t roll(uint16_t nbr_side) {
 
-			uint16_t res = random(nbr_side);
+			uint16_t res = getRandomInteger(nbr_side);
 			std::cout << "Roll: " << res << '\n';
 
 			return res;
@@ -20,8 +20,8 @@ namespace dice {
 
 		uint16_t rollAdvantage(uint16_t nbr_side) {
 
-			uint16_t roll_1 = random(nbr_side);
-			uint16_t roll_2 = random(nbr_side);
+			uint16_t roll_1 = getRandomInteger(nbr_side);
+			uint16_t roll_2 = getRandomInteger(nbr_side);
 
 			std::cout << "Advantage -> First Roll (" << roll_1
 				<< ") Second Roll (" << roll_2<< ")\n";
@@ -34,8 +34,8 @@ namespace dice {
 
 		uint16_t rollDisadvantage(uint16_t nbr_side) {
 
-			uint16_t roll_1 = random(nbr_side);
-			uint16_t roll_2 = random(nbr_side);
+			uint16_t roll_1 = getRandomInteger(nbr_side);
+			uint16_t roll_2 = getRandomInteger(nbr_side);
 
 			std::cout << "Disadvantage -> First Roll (" << roll_1
 				<< ") Second Roll (" << roll_2<< ")\n";
@@ -49,7 +49,7 @@ namespace dice {
 		//template<std::size_t N>
 		//const IObject& roll(const std::array<IObject, N>& obj_array) {
 
-		//	IObject& obj = obj_array[random(obj_array.size()) - 1];
+		//	IObject& obj = obj_array[getRandomInteger(obj_array.size()) - 1];
 		//	obj.printObject();
 
 		//	return obj;
@@ -58,14 +58,14 @@ namespace dice {
 		template<std::size_t N>
 		const std::shared_ptr<IObject>& roll(const std::array<std::shared_ptr<IObject>, N>& obj_array) {
 
-			std::shared_ptr<IObject>& obj = obj_array[random(obj_array.size()) - 1];
+			std::shared_ptr<IObject>& obj = obj_array[getRandomInteger(obj_array.size()) - 1];
 			obj->printObject();
 
 			return obj;
 		}
 
 	private:
-		uint16_t random(const uint16_t max_value) {
+		uint16_t getRandomInteger(const uint16_t max_value) {
 
 			std::random_device rd;
 			std::mt19937 gen(rd());

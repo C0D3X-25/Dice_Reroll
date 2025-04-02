@@ -99,7 +99,7 @@ namespace dice {
 		}
 
 	private:
-		// Return a random number
+		// Return a getRandomInteger number
 		uint16_t rollLogic(const uint16_t side) const {
 
 			std::random_device rd;

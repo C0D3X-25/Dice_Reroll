@@ -2,9 +2,10 @@
 #include <cstdint>
 
 namespace dice {
+	template <typename T>
 	class IRollAdvantageDisadvantage {
 	public:
-		virtual uint16_t rollAdvantage(void) = 0;
-		virtual uint16_t rollDisadvantage(void) = 0;
+		virtual const T rollAdvantage(void) = 0;
+		virtual const T rollDisadvantage(void) = 0;
 	};
 }

@@ -4,42 +4,42 @@
 using namespace dice;
 
 dice::DiceCapacity::DiceCapacity(void) {
-    std::fill(m_sides.begin(), m_sides.end(), m_empty);
-}
-
-DiceCapacity::DiceCapacity(const BaseCapacity& capacity) {
-
-}
-
-
-void DiceCapacity::setCapacity(const BaseCapacity& capacity) {
-
+    for (uint8_t i = 1; i <= m_SIDES_COUNT; ++i) {
+        m_sides[i] = std::make_shared<CapacityNothing>();
+    }
 }
 
 
-const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t index) const {
-    return m_sides.at(index);
+void DiceCapacity::setCapacity(const std::shared_ptr<BaseCapacity> capacity, const uint8_t side) {
+    m_sides.find(side)->second = capacity;
 }
 
 
-void DiceCapacity::roll(void) {
+const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side) const {
+	return m_sides.find(side)->second;
+}
 
+
+const std::shared_ptr<BaseCapacity> DiceCapacity::roll(void) {
+    return m_sides.find(getRandomInteger(m_SIDES_COUNT))->second;
 }
 
 
 void DiceCapacity::printDice(void) {
-
+    for (const auto& [side, capacity] : m_sides) {
+        std::cout << "Side: " << static_cast<int>(side) << " => " << capacity->getName() << std::endl;
+    }
 }
 
 
-uint16_t DiceCapacity::rollAdvantage(void) {
-
+const std::shared_ptr<BaseCapacity> DiceCapacity::rollAdvantage(void) {
+	// TODO: Return the capacity with the highest rarity
     return 0;
 }
 
 
-uint16_t DiceCapacity::rollDisadvantage(void) {
-
+const std::shared_ptr<BaseCapacity> DiceCapacity::rollDisadvantage(void) {
+	// TODO: Return the capacity with the highest rarity
     return 0;
 }
 

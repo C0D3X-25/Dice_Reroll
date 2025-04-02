@@ -6,7 +6,6 @@
  * @date   January 2025
  *********************************************************************/
 #pragma once
-#include "tool_lib.hpp"
 #include "interface/IDiceFactory.hpp"
 #include "interface/IDiceComposition.hpp"
 //#include "interface/Dice.hpp"
@@ -14,6 +13,7 @@
 
 #include "../include/entity/PlayerEntityWarrior.hpp"
 #include "../include/capacity/CapacityPlayerSingleAttack.hpp"
+#include "../include/dice/DiceCapacity.hpp"
 
 
 #include <iostream>
@@ -31,10 +31,15 @@ int main() {
 
 	entity_1.printEntity();
 	entity_2.printEntity();
+	std::cout << "----------------------\n\n";
 
-	//entity_1.useCapacity(attack, entity_2);
-	//entity_1.useCapacity(attack, entity_2);
-	//entity_1.useCapacity(attack, entity_2);
+	DiceCapacity dice_capacity;
+	dice_capacity.printDice();
+
+	std::cout << "----------------------\n\n";
+	CapacityPlayerSingleAttack capacity_attack;
+	dice_capacity.setCapacity(std::make_shared<CapacityPlayerSingleAttack>(), 3);
+	dice_capacity.printDice();
 
 
 
