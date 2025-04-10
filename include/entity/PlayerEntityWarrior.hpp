@@ -1,24 +1,18 @@
 #pragma once 
 
-//#include "tool_lib.hpp"
-#include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
-#include "../../include/entity/AEntity.hpp"
+#include "../../include/entity/BasePlayerEntity.hpp"
+
 
 #include <iostream>
 #include <string>
+#include <memory>
+
 
 namespace entity {
-	class PlayerEntityWarrior : public AEntity {
+
+	class PlayerEntityWarrior : public BasePlayerEntity {
 	public:
-		PlayerEntityWarrior(const std::string& name, const int16_t life, const int16_t armor)
-			: AEntity::AEntity(name, life, armor) {}
+		PlayerEntityWarrior(const std::string& name, const int16_t life, const int16_t armor);
 		~PlayerEntityWarrior(void) = default;
-
-
-
-
-
-
-
 	};
 } // namespace entity

@@ -27,6 +27,7 @@ namespace dice {
         virtual void printDice(void) = 0;
 
     protected:
+
         /// @brief Helper method to generate random numbers within a range
         /// @param max_value Maximum value (inclusive) for random number generation
         /// @param min_value Minimum value (inclusive) for random number generation, defaults to 1

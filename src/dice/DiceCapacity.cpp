@@ -10,8 +10,8 @@ dice::DiceCapacity::DiceCapacity(void) {
 }
 
 
-void DiceCapacity::setCapacity(const std::shared_ptr<BaseCapacity> capacity, const uint8_t side) {
-    m_sides.find(side)->second = capacity;
+void DiceCapacity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
+    m_sides.find(side)->second = sp_capacity;
 }
 
 

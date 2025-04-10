@@ -30,7 +30,7 @@
     <ClCompile Include="include\capacity\BaseCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\entity\AEntity.hpp">
+    <ClCompile Include="include\entity\BasePlayerEntity.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="include\status\EStatus.hpp">
@@ -59,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="include\capacity\CapacityPlayerSingleAttack.hpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\PlayerEntityWarrior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\BasePlayerEntity.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

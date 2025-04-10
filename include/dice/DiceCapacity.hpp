@@ -29,7 +29,7 @@ namespace dice {
      * for advantage/disadvantage roll mechanics.
      */
     class DiceCapacity: 
-        ADice<std::shared_ptr<BaseCapacity>>, 
+        public ADice<std::shared_ptr<BaseCapacity>>, 
         IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>> {
 
     public:
@@ -45,7 +45,7 @@ namespace dice {
          * @param capacity The capacity to assign
          * @param side The side number to assign the capacity to (1-10)
          */
-        void setCapacity(const std::shared_ptr<BaseCapacity> capacity, const uint8_t side);
+        void setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side);
         
         /**
          * @brief Retrieves the capacity assigned to a specific side

@@ -152,9 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\capacity\BaseCapacity.hpp" />
+    <ClCompile Include="src\entity\BasePlayerEntity.cpp" />
+    <ClCompile Include="src\entity\PlayerEntityWarrior.cpp" />
     <ClCompile Include="src\capacity\CapacityNothing.cpp" />
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
-    <ClCompile Include="include\entity\AEntity.hpp" />
+    <ClCompile Include="include\entity\BasePlayerEntity.hpp" />
     <ClCompile Include="include\status\EStatus.hpp" />
     <ClCompile Include="include\capacity_action\ICapacityAction.hpp" />
     <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp" />
