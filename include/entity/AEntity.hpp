@@ -1,17 +1,23 @@
 #pragma once
 
-#include "../capacity/BaseCapacity.hpp"
-#include "../capacity_action/CapacityActionBaseAttack.hpp"
 #include "../entity/IEntity.hpp"
+#include "../capacity/BaseCapacity.hpp"
+#include "../dice/DiceCapacity.hpp"
+#include "../capacity_action/CapacityActionBaseAttack.hpp"
+
 #include <iostream>
 
 
-
 namespace entity {
+
+	using namespace dice;
+
 	class AEntity : public IEntity {
 	public:
 		AEntity(const std::string& name, const int16_t life, const int16_t armor)
 			: m_name(name), m_life(life), m_armor(armor) {
+
+			m_dice_capacity = new DiceCapacity();
 		}
 		virtual ~AEntity(void) = default;
 
@@ -22,6 +28,8 @@ namespace entity {
 				<< " | Life: " << m_life
 				<< " | Armor: " << m_armor
 				<< '\n';
+
+			m_dice_capacity->printDice();
 		}
 
 
@@ -115,6 +123,6 @@ namespace entity {
 		int16_t m_life{ 0 };
 		int16_t m_armor{ 0 };
 		//TODO: Status m_status;
-		//TODO: Dice m_dice_capacity;
+		DiceCapacity* m_dice_capacity;
 	};
 } // namespace entity

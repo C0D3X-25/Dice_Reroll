@@ -51,7 +51,7 @@
     <ClCompile Include="include\capacity_modifiers\SCapacityModifiers.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\dice\DiceCapacity.cpp">
+    <ClCompile Include="src\dice\DiceCapacity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\capacity\CapacityNothing.cpp">

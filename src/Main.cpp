@@ -19,27 +19,29 @@
 #include <iostream>
 #include <array>
 
-using namespace dice;
-using namespace entity;
-using namespace capacity;
 
 int main() {
+
+	using namespace dice;
+	using namespace entity;
+	using namespace capacity;
 	
 	PlayerEntityWarrior 
 		entity_1("Entity 1", 20, 5),
 		entity_2("Entity 2", 30, 10);
 
 	entity_1.printEntity();
+	std::cout << '\n';
 	entity_2.printEntity();
 	std::cout << "----------------------\n\n";
 
-	DiceCapacity dice_capacity;
-	dice_capacity.printDice();
+	//DiceCapacity dice_capacity;
+	//dice_capacity.printDice();
 
-	std::cout << "----------------------\n\n";
-	CapacityPlayerSingleAttack capacity_attack;
-	dice_capacity.setCapacity(std::make_shared<CapacityPlayerSingleAttack>(), 3);
-	dice_capacity.printDice();
+	//std::cout << "----------------------\n\n";
+	//CapacityPlayerSingleAttack capacity_attack;
+	//dice_capacity.setCapacity(std::make_shared<CapacityPlayerSingleAttack>(), 3);
+	//dice_capacity.printDice();
 
 
 

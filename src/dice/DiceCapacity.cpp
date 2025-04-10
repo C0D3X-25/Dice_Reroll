@@ -1,4 +1,4 @@
-#include "DiceCapacity.hpp"
+#include "../../include/dice/DiceCapacity.hpp"
 
 
 using namespace dice;
@@ -20,9 +20,12 @@ const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side
 }
 
 
+#pragma warning(push)
+#pragma warning(disable: 4244) // Disable warning about possible data loss
 const std::shared_ptr<BaseCapacity> DiceCapacity::roll(void) {
-    return m_sides.find(getRandomInteger(m_SIDES_COUNT))->second;
+    return m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
 }
+#pragma warning(pop)  // Restore warning settings
 
 
 void DiceCapacity::printDice(void) {
