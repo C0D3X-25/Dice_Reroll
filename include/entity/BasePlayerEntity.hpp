@@ -23,14 +23,13 @@ namespace entity {
 		* @param capacity The capacity to assign
 		* @param side The side number to assign the capacity to (1-10)
 		*/
-		void setCapacity(const std::shared_ptr<BaseCapacity> capacity, const uint8_t side) {
-			m_up_dice_capacity->setCapacity(capacity, side);
-		}
+		void setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side);
 
-		// Inherited via IEntity
+		const BaseCapacity& rollDiceCapacity(void) const;
+		
 		void printEntity(void) override;
-		//void useCapacity(BaseCapacity& capacity, IEntity& target) override;
-		//void takeCapacity(const SCapacityModifiers& capacity, const IEntity& src) override;
+		void useCapacity(const BaseCapacity& capacity, IEntity& target) override;
+		void resolveCapacity(const SCapacityModifiers& capacity, const IEntity& src) override;
 		std::string getName(void) const override;
 
 	private:
@@ -38,8 +37,6 @@ namespace entity {
 		int16_t m_life{ 0 };
 		int16_t m_armor{ 0 };
 		//TODO: Status m_status;
-		std::unique_ptr<DiceCapacity> m_up_dice_capacity;
-
-
+		std::unique_ptr<DiceCapacity> m_up_dice_capacity = std::make_unique<DiceCapacity>();
 	};
 } // namespace entity

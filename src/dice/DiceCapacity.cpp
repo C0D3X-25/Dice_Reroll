@@ -20,12 +20,12 @@ const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side
 }
 
 
-#pragma warning(push)
-#pragma warning(disable: 4244) // Disable warning about possible data loss
-const std::shared_ptr<BaseCapacity> DiceCapacity::roll(void) {
-    return m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
-}
-#pragma warning(pop)  // Restore warning settings
+//#pragma warning(push)
+//#pragma warning(disable: 4244) // Disable warning about possible data loss
+//const BaseCapacity& DiceCapacity::roll(void) {
+//    return m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
+//}
+//#pragma warning(pop)  // Restore warning settings
 
 
 void DiceCapacity::printDice(void) {
@@ -34,15 +34,22 @@ void DiceCapacity::printDice(void) {
     }
 }
 
-
-const std::shared_ptr<BaseCapacity> DiceCapacity::rollAdvantage(void) {
-	// TODO: Return the capacity with the highest rarity
-    return 0;
+#pragma warning(push)
+#pragma warning(disable: 4244) // Disable warning about possible data loss
+const std::shared_ptr<BaseCapacity> DiceCapacity::roll(void) {
+    return m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
 }
+#pragma warning(pop)  // Restore warning settings
 
 
-const std::shared_ptr<BaseCapacity> DiceCapacity::rollDisadvantage(void) {
-	// TODO: Return the capacity with the highest rarity
-    return 0;
-}
+//const BaseCapacity& DiceCapacity::rollAdvantage(void) {
+//    // TODO: Return the capacity with the highest rarity
+//    return ;
+//}
+//
+//
+//const BaseCapacity& DiceCapacity::rollDisadvantage(void) {
+//	// TODO: Return the capacity with the highest rarity
+//    return ;
+//}
 

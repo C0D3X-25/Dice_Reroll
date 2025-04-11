@@ -6,6 +6,7 @@
  * @date   January 2025
  *********************************************************************/
 #pragma once
+
 #include "interface/IDiceFactory.hpp"
 #include "interface/IDiceComposition.hpp"
 //#include "interface/Dice.hpp"

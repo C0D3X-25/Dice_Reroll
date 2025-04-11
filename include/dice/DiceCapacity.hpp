@@ -29,8 +29,8 @@ namespace dice {
      * for advantage/disadvantage roll mechanics.
      */
     class DiceCapacity: 
-        public ADice<std::shared_ptr<BaseCapacity>>, 
-        IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>> {
+        public ADice<std::shared_ptr<BaseCapacity>>/*,
+        IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>>*/ {
 
     public:
         /**
@@ -58,13 +58,13 @@ namespace dice {
          * @brief Performs an advantage roll (rolls twice and takes the better result)
          * @return The capacity from the higher roll
          */
-        const std::shared_ptr<BaseCapacity> rollAdvantage(void) override;
-        
+        //const std::shared_ptr<BaseCapacity> rollAdvantage(void) override;
+
         /**
          * @brief Performs a disadvantage roll (rolls twice and takes the worse result)
          * @return The capacity from the lower roll
          */
-        const std::shared_ptr<BaseCapacity> rollDisadvantage(void) override;
+        //const std::shared_ptr<BaseCapacity> rollDisadvantage(void) override;
 
         /**
          * @brief Performs a single roll of the dice
@@ -77,7 +77,6 @@ namespace dice {
          */
         void printDice(void) override;
 
-        /** @brief Number of sides on the dice */
         static constexpr uint8_t m_SIDES_COUNT = 10;
 
     private:

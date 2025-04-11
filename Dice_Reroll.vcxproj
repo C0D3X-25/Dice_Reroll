@@ -156,12 +156,10 @@
     <ClCompile Include="src\entity\PlayerEntityWarrior.cpp" />
     <ClCompile Include="src\capacity\CapacityNothing.cpp" />
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
-    <ClCompile Include="include\entity\BasePlayerEntity.hpp" />
     <ClCompile Include="include\status\EStatus.hpp" />
     <ClCompile Include="include\capacity_action\ICapacityAction.hpp" />
     <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp" />
     <ClCompile Include="include\capacity\CapacityPlayerSingleAttack.hpp" />
-    <ClCompile Include="include\entity\PlayerEntityWarrior.hpp" />
     <ClCompile Include="include\capacity_affectation\ICapacityAffectation.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
     <ClCompile Include="src\interface\Dice.hpp" />
@@ -176,6 +174,8 @@
     <ClInclude Include="include\dice\DiceCapacity.hpp" />
     <ClInclude Include="include\dice\IRollAdvantageDisadvantage.hpp" />
     <ClInclude Include="include\entity\IEntity.hpp" />
+    <ClInclude Include="include\entity\BasePlayerEntity.hpp" />
+    <ClInclude Include="include\entity\PlayerEntityWarrior.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
   </ItemGroup>
   <ItemGroup>

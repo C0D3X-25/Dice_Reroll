@@ -14,5 +14,6 @@ namespace entity {
 	public:
 		PlayerEntityWarrior(const std::string& name, const int16_t life, const int16_t armor);
 		~PlayerEntityWarrior(void) = default;
+
 	};
 } // namespace entity

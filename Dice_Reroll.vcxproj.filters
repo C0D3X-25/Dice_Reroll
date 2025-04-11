@@ -30,9 +30,6 @@
     <ClCompile Include="include\capacity\BaseCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\entity\BasePlayerEntity.hpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="include\status\EStatus.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -41,9 +38,6 @@
     </ClCompile>
     <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="include\entity\PlayerEntityWarrior.hpp">
-      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="include\capacity_affectation\ICapacityAffectation.hpp">
       <Filter>Header Files</Filter>
@@ -77,6 +71,15 @@
     <ClInclude Include="include\entity\IEntity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\capacity\CapacityNothing.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entity\PlayerEntityWarrior.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entity\BasePlayerEntity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\dice\DiceCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,9 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\dice\IRollAdvantageDisadvantage.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\capacity\CapacityNothing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
