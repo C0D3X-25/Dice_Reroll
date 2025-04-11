@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "tool_lib.hpp"
 
 namespace capacity {
 	class ICapacityAffectation {

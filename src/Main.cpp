@@ -7,10 +7,10 @@
  *********************************************************************/
 #pragma once
 
-#include "interface/IDiceFactory.hpp"
-#include "interface/IDiceComposition.hpp"
+//#include "interface/IDiceFactory.hpp"
+//#include "interface/IDiceComposition.hpp"
 //#include "interface/Dice.hpp"
-#include "interface/IObject.hpp"
+//#include "interface/IObject.hpp"
 
 #include "../include/entity/PlayerEntityWarrior.hpp"
 #include "../include/capacity/CapacityPlayerSingleAttack.hpp"
@@ -35,6 +35,11 @@ int main() {
 	std::cout << '\n';
 	entity_2.printEntity();
 	std::cout << "----------------------\n\n";
+
+
+	for (size_t i = 0; i < 20; i++) {
+		std::cout << entity_1.rollDiceCapacity().getName() << '\n';
+	}
 
 	//DiceCapacity dice_capacity;
 	//dice_capacity.printDice();

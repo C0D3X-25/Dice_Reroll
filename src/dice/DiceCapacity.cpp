@@ -36,8 +36,8 @@ void DiceCapacity::printDice(void) {
 
 #pragma warning(push)
 #pragma warning(disable: 4244) // Disable warning about possible data loss
-const std::shared_ptr<BaseCapacity> DiceCapacity::roll(void) {
-    return m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
+const BaseCapacity& DiceCapacity::roll(void) {
+    return *m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
 }
 #pragma warning(pop)  // Restore warning settings
 
