@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\capacity\BaseCapacity.hpp" />
+    <ClCompile Include="include\capacity_action\CapacityActionHeal.hpp" />
     <ClCompile Include="src\entity\BasePlayerEntity.cpp" />
     <ClCompile Include="src\entity\PlayerEntityWarrior.cpp" />
     <ClCompile Include="src\capacity\CapacityNothing.cpp" />
@@ -173,7 +174,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\capacity\CapacityNothing.hpp" />
-    <ClInclude Include="include\capacity_action\CapacityActionBaseAttack.hpp" />
+    <ClInclude Include="include\capacity_action\CapacityActionAttack.hpp" />
+    <ClInclude Include="include\capacity_action\CapacityActionDefense.hpp" />
     <ClInclude Include="include\dice\ADice.hpp" />
     <ClInclude Include="include\dice\DiceCapacity.hpp" />
     <ClInclude Include="include\dice\IRollAdvantageDisadvantage.hpp" />

@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "BaseCapacity.hpp"
-#include "../capacity_action/CapacityActionBaseAttack.hpp"
+#include "../capacity_action/CapacityActionAttack.hpp"
 
 
 namespace capacity {
@@ -9,7 +9,7 @@ namespace capacity {
 	public:
 		CapacityPlayerSingleAttack(void) {
 			m_name = "Attack";
-			CapacityActionBaseAttack attack(5);
+			CapacityActionAttack attack(5);
 			queueCapacityModifier(attack.doAction());
 		}
 		~CapacityPlayerSingleAttack(void) = default;

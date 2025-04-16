@@ -1,14 +1,14 @@
-#include "../../include/capacity_action/CapacityActionBaseAttack.hpp"
+#include "../../include/capacity_action/CapacityActionAttack.hpp"
 
 using namespace capacity;
 
-CapacityActionBaseAttack::CapacityActionBaseAttack(uint8_t dmg)
-	: m_dmg(dmg)
+CapacityActionAttack::CapacityActionAttack(uint8_t damage)
+	: m_damage(damage)
 {}
 
 
-SCapacityModifiers CapacityActionBaseAttack::doAction(void) {
+SCapacityModifiers CapacityActionAttack::doAction(void) {
 	SCapacityModifiers mod;
-	mod.m_life = -m_dmg;
+	mod.m_life = -m_damage;
 	return mod;
 }

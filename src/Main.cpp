@@ -13,7 +13,6 @@
 //#include "interface/IObject.hpp"
 
 #include "../include/entity/PlayerEntityWarrior.hpp"
-#include "../include/capacity/CapacityPlayerSingleAttack.hpp"
 #include "../include/dice/DiceCapacity.hpp"
 
 
@@ -38,7 +37,8 @@ int main() {
 
 
 	for (size_t i = 0; i < 20; i++) {
-		std::cout << entity_1.rollDiceCapacity().getName() << '\n';
+		BaseCapacity cap = entity_1.rollDiceCapacity();
+		std::cout << "Roll No " << i + 1 << ": "  << cap.getName() << '\n';
 	}
 
 	//DiceCapacity dice_capacity;
