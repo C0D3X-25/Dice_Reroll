@@ -1,5 +1,4 @@
 #pragma once
-#include "tool_lib.hpp"
 #include <iostream>
 
 namespace dice {

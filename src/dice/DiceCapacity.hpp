@@ -29,7 +29,7 @@ namespace dice {
      * for advantage/disadvantage roll mechanics.
      */
     class DiceCapacity: 
-        public ADice<std::shared_ptr<BaseCapacity>>/*,
+        public ADice<BaseCapacity>/*,
         IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>>*/ {
 
     public:
@@ -70,7 +70,7 @@ namespace dice {
          * @brief Performs a single roll of the dice
          * @return The capacity from the rolled side
          */
-        const std::shared_ptr<BaseCapacity> roll(void) override;
+        const BaseCapacity& roll(void) override;
         
         /**
          * @brief Prints the current state of the dice

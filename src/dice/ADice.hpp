@@ -21,7 +21,7 @@ namespace dice {
 
         /// @brief Pure virtual method to roll the dice
         /// @return Result of the dice roll as type T
-        virtual const T roll(void) = 0;
+        virtual const T& roll(void) = 0;
 
         /// @brief Pure virtual method to display dice information
         virtual void printDice(void) = 0;

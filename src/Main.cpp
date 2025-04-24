@@ -7,10 +7,10 @@
  *********************************************************************/
 #pragma once
 
-#include "interface/IDiceFactory.hpp"
-#include "interface/IDiceComposition.hpp"
+//#include "interface/IDiceFactory.hpp"
+//#include "interface/IDiceComposition.hpp"
 //#include "interface/Dice.hpp"
-#include "interface/IObject.hpp"
+//#include "interface/IObject.hpp"
 
 #include "entity/PlayerEntityWarrior.hpp"
 #include "capacity/CapacityPlayerSingleAttack.hpp"
@@ -35,6 +35,12 @@ int main() {
 	std::cout << '\n';
 	entity_2.printEntity();
 	std::cout << "----------------------\n\n";
+
+
+	for (size_t i = 0; i < 20; i++) {
+		BaseCapacity cap = entity_1.rollDiceCapacity();
+		std::cout << "Roll No " << i + 1 << ": "  << cap.getName() << '\n';
+	}
 
 	//DiceCapacity dice_capacity;
 	//dice_capacity.printDice();

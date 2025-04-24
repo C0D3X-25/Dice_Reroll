@@ -13,9 +13,9 @@ void entity::BasePlayerEntity::setCapacity(const std::shared_ptr<BaseCapacity> s
 }
 
 
-//const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
-//    return *m_up_dice_capacity->roll();
-//}
+const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
+    return m_up_dice_capacity->roll();
+}
 
 
 void entity::BasePlayerEntity::printEntity(void) {

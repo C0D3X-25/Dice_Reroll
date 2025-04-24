@@ -13,7 +13,7 @@ namespace capacity {
 		virtual ~BaseCapacity(void) = default;
 
 
-		std::queue<SCapacityModifiers> sendCapacity(void) {
+		std::queue<SCapacityModifiers> getAllCapacityModifiers(void) {
 			return m_capacities_mod;
 		}
 
