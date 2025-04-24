@@ -1,4 +1,4 @@
-#include "../../include/dice/DiceCapacity.hpp"
+#include "DiceCapacity.hpp"
 
 
 using namespace dice;

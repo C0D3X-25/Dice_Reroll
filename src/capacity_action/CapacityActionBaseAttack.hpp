@@ -1,7 +1,7 @@
 // Action who do damage
 #pragma once
 
-#include ".\ICapacityAction.hpp"
+#include "ICapacityAction.hpp"
 #include "..\capacity_modifiers\SCapacityModifiers.hpp"
 
 namespace capacity {

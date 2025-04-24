@@ -1,7 +1,6 @@
 #pragma once 
 
-//#include "../../include/capacity_modifiers/SCapacityModifiers.hpp"
-#include "../../include/capacity/BaseCapacity.hpp"
+#include "../capacity/BaseCapacity.hpp"
 
 
 using capacity::BaseCapacity;

@@ -12,9 +12,9 @@
 //#include "interface/Dice.hpp"
 #include "interface/IObject.hpp"
 
-#include "../include/entity/PlayerEntityWarrior.hpp"
-#include "../include/capacity/CapacityPlayerSingleAttack.hpp"
-#include "../include/dice/DiceCapacity.hpp"
+#include "entity/PlayerEntityWarrior.hpp"
+#include "capacity/CapacityPlayerSingleAttack.hpp"
+#include "dice/DiceCapacity.hpp"
 
 
 #include <iostream>

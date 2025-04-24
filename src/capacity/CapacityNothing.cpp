@@ -1,4 +1,4 @@
-#include "../../include/capacity/CapacityNothing.hpp"
+#include "CapacityNothing.hpp"
 
 using namespace capacity;
 

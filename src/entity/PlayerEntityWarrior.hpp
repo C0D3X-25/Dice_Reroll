@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../../include/entity/BasePlayerEntity.hpp"
+#include "BasePlayerEntity.hpp"
 
 
 #include <iostream>

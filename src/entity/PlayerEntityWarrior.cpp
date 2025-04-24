@@ -1,5 +1,5 @@
-#include "../../include/entity/PlayerEntityWarrior.hpp"  
-#include "../../include/capacity/CapacityPlayerSingleAttack.hpp"  
+#include "PlayerEntityWarrior.hpp"  
+#include "../capacity/CapacityPlayerSingleAttack.hpp"  
 
 using namespace capacity;  
 

@@ -1,4 +1,4 @@
-#include "../../include/entity/BasePlayerEntity.hpp"
+#include "BasePlayerEntity.hpp"
 
 
 entity::BasePlayerEntity::BasePlayerEntity(const std::string& name, const int16_t life, const int16_t armor)

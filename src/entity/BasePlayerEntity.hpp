@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../entity/IEntity.hpp"
+#include "IEntity.hpp"
 #include "../capacity/BaseCapacity.hpp"
 #include "../dice/DiceCapacity.hpp"
 
