@@ -185,6 +185,7 @@
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="schemas\Dice_Reroll.simp" />
     <None Include="schemas\Dice_Reroll.simp.bak" />
   </ItemGroup>

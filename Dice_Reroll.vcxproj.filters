@@ -36,9 +36,6 @@
     <ClCompile Include="src\capacity_action\ICapacityAction.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -60,12 +57,12 @@
     <ClCompile Include="src\entity\BasePlayerEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\interface\IDiceComposition.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\capacity_action\CapacityActionBaseAttack.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\IEntity.hpp">
@@ -89,9 +86,19 @@
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\capacity_action\CapacityActionAttack.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_action\CapacityActionDefense.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="schemas\Dice_Reroll.simp" />
     <None Include="schemas\Dice_Reroll.simp.bak" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
