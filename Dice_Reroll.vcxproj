@@ -162,7 +162,7 @@
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
     <ClCompile Include="src\status\EStatus.hpp" />
     <ClCompile Include="src\capacity_action\ICapacityAction.hpp" />
-    <ClCompile Include="src\capacity_action\CapacityActionBaseAttack.cpp" />
+    <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp" />
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp" />
     <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
@@ -173,7 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\capacity\CapacityNothing.hpp" />
-    <ClInclude Include="src\capacity_action\CapacityActionBaseAttack.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionAttack.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionDefense.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp" />
     <ClInclude Include="src\dice\ADice.hpp" />
     <ClInclude Include="src\dice\DiceCapacity.hpp" />
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp" />

@@ -1,9 +1,9 @@
-#include "CapacityActionBaseAttack.hpp"
+#include "CapacityActionAttack.hpp"
 
 using namespace capacity;
 
 CapacityActionAttack::CapacityActionAttack(uint8_t damage)
-	: m_damage(damage)
+	: m_damage(damage)<
 {}
 
 
