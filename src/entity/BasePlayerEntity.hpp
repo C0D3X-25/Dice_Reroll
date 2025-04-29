@@ -1,8 +1,9 @@
 #pragma once
 
-#include "IEntity.hpp"
+#include "BaseEntity.hpp"
 #include "../capacity/BaseCapacity.hpp"
 #include "../dice/DiceCapacity.hpp"
+#include "../capacity/IUseAndResolveCapacity.hpp"
 
 #include <iostream>
 #include <string>
@@ -12,11 +13,16 @@
 namespace entity {
 
 	using namespace dice;
+	using namespace capacity;
 
-	class BasePlayerEntity : public IEntity {
+	class BasePlayerEntity : public BaseEntity, 
+		public IUseAndResolveCapacity {
+	
 	public:
 		BasePlayerEntity(const std::string& name, const int16_t life, const int16_t armor);
 		virtual ~BasePlayerEntity(void) = default;
+		BasePlayerEntity(const BasePlayerEntity& other);
+		BasePlayerEntity& operator=(const BasePlayerEntity& other);
 
 		/**
 		* @brief Assigns a capacity to a specific side of the dice capacity
@@ -27,16 +33,13 @@ namespace entity {
 
 		const BaseCapacity& rollDiceCapacity(void) const;
 		
-		void printEntity(void) override;
-		void useCapacity(const BaseCapacity& capacity, IEntity& target) override;
-		void resolveCapacity(const SCapacityModifiers& capacity, const IEntity& src) override;
-		std::string getName(void) const override;
+		void useCapacity(const BaseCapacity& capacity, BaseEntity& target) override;
+		void resolveCapacity(const CapacityModifiersStruct& capacity, const BaseEntity& source) override;
+
+		void printEntity(void);
 
 	private:
-		std::string m_name{ "N/A" };
-		int16_t m_life{ 0 };
-		int16_t m_armor{ 0 };
-		//TODO: Status m_status;
+
 		std::unique_ptr<DiceCapacity> m_up_dice_capacity = std::make_unique<DiceCapacity>();
 	};
 } // namespace entity

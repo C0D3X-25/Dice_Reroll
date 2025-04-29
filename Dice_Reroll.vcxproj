@@ -156,11 +156,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\capacity\BaseCapacity.hpp" />
+    <ClCompile Include="src\entity\BaseEntity.cpp" />
     <ClCompile Include="src\entity\BasePlayerEntity.cpp" />
     <ClCompile Include="src\entity\PlayerEntityWarrior.cpp" />
     <ClCompile Include="src\capacity\CapacityNothing.cpp" />
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
-    <ClCompile Include="src\status\EStatus.hpp" />
+    <ClCompile Include="src\status\StatusEnum.hpp" />
     <ClCompile Include="src\capacity_action\ICapacityAction.hpp" />
     <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp" />
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp" />
@@ -169,20 +170,22 @@
     <ClCompile Include="src\interface\Dice.hpp" />
     <ClCompile Include="src\interface\IObject.hpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\capacity_modifiers\SCapacityModifiers.hpp" />
+    <ClCompile Include="src\capacity_modifiers\CapacityModifiersStruct.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\capacity\CapacityNothing.hpp" />
+    <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionAttack.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionDefense.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp" />
     <ClInclude Include="src\dice\ADice.hpp" />
     <ClInclude Include="src\dice\DiceCapacity.hpp" />
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp" />
-    <ClInclude Include="src\entity\IEntity.hpp" />
+    <ClInclude Include="src\entity\BaseEntity.hpp" />
     <ClInclude Include="src\entity\BasePlayerEntity.hpp" />
     <ClInclude Include="src\entity\PlayerEntityWarrior.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
+    <ClInclude Include="src\entity\Attributes.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

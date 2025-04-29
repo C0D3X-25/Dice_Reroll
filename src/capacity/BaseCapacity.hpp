@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../capacity_modifiers/SCapacityModifiers.hpp"
+#include "../capacity_modifiers/CapacityModifiersStruct.hpp"
 #include "../capacity_action/ICapacityAction.hpp"
 
 #include <queue>
@@ -13,17 +13,17 @@ namespace capacity {
 		virtual ~BaseCapacity(void) = default;
 
 
-		std::queue<SCapacityModifiers> getAllCapacityModifiers(void) {
+		std::queue<CapacityModifiersStruct> getAllCapacityModifiers(void) {
 			return m_capacities_mod;
 		}
 
 
-		void queueCapacityModifier(const SCapacityModifiers& capacity_mod) {
+		void queueCapacityModifier(const CapacityModifiersStruct& capacity_mod) {
 			m_capacities_mod.push(capacity_mod);
 		}
 
 
-		SCapacityModifiers getNextCapacityModifier(void) {
+		CapacityModifiersStruct getNextCapacityModifier(void) {
 			m_current_mod = m_capacities_mod.front();
 			m_capacities_mod.pop();
 			return m_current_mod;
@@ -38,15 +38,13 @@ namespace capacity {
 		}
 
 
-		std::string getName(void) const {
-			return m_name;
-		}
+		std::string_view getName(void) const { return m_name; }
 
 	protected:
 		std::string m_name{ "N/A" };
-		std::queue<SCapacityModifiers> m_capacities_mod;
+		std::queue<CapacityModifiersStruct> m_capacities_mod;
 
 	private:
-		SCapacityModifiers m_current_mod;
+		CapacityModifiersStruct m_current_mod;
 	};
 }

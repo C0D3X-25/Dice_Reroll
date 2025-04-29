@@ -30,7 +30,7 @@
     <ClCompile Include="src\capacity\BaseCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\status\EStatus.hpp">
+    <ClCompile Include="src\status\StatusEnum.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\capacity_action\ICapacityAction.hpp">
@@ -39,7 +39,7 @@
     <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_modifiers\SCapacityModifiers.hpp">
+    <ClCompile Include="src\capacity_modifiers\CapacityModifiersStruct.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\dice\DiceCapacity.cpp">
@@ -60,12 +60,15 @@
     <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\entity\BaseEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\interface\IDiceComposition.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entity\IEntity.hpp">
+    <ClInclude Include="src\entity\BaseEntity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\capacity\CapacityNothing.hpp">
@@ -93,6 +96,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\Attributes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

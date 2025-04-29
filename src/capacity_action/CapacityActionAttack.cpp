@@ -1,4 +1,5 @@
 #include "CapacityActionAttack.hpp"
+#include <cstdint>
 
 using namespace capacity;
 
@@ -7,8 +8,8 @@ CapacityActionAttack::CapacityActionAttack(uint8_t damage)
 {}
 
 
-SCapacityModifiers CapacityActionAttack::doAction(void) {
-	SCapacityModifiers mod;
-	mod.m_life = -m_damage;
+CapacityModifiersStruct CapacityActionAttack::doAction(void) {
+	CapacityModifiersStruct mod;
+	mod.m_damage = m_damage;
 	return mod;
 }

@@ -1,4 +1,4 @@
-// How a capacity is apply to a targetted IEntity
+// How a capacity is apply to a targetted BaseEntity
 
 #pragma once
 

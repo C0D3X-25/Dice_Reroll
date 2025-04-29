@@ -5,6 +5,7 @@ This game is set in a Medieval Fantasy Universe and is inspired by:
 - **Slice and Dice** (Most of the ideas are based on it)
 - **The Rules of DnD 5e** (For stats, capacities, and dice mechanics)
 - **Slay the Spire** (For the game layout, events, and some combat mechanics)
+- **Battle Brotters** (For some combat mechanics and character creation/management)
 
 ## Game Loop
 This dice game revolves around managing a group of characters (group size is not fixed but likely ranges from 1 to 5-6) in turn-based combat against a group of enemies.  
@@ -58,8 +59,8 @@ Characters also have feats, which can be beneficial or detrimental.
 
 ### Stats
 Stats are the core of the game and are used to determine the effectiveness of capacities and the eligibility to equip items.  
-They range from 1 to 20, with 1 being the worst and 20 being the best. The average is around 10-12.  
-Stats cannot go below 1, and values above 20 are only possible with items.
+They range from -10 to 20, with -10 being the worst and 20 being the best. The average is around 0.  
+Stats cannot go below -10, and values above 20 are only possible with items.
 
 ### Feats
 Feats are abilities that provide bonuses or effects to characters in combat.  
