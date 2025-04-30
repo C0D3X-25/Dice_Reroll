@@ -4,10 +4,12 @@
 #include "ICapacityAction.hpp"
 #include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
 
+#include <cstdint>
+
 namespace capacity {
-	class CapacityActionAttack : public ICapacityAction {
+	class CapacityActionDamage : public ICapacityAction {
 	public:
-		CapacityActionAttack(uint8_t damage);
+		CapacityActionDamage(uint8_t damage);
 
 		CapacityModifiersStruct doAction(void) override;
 

@@ -57,10 +57,19 @@
     <ClCompile Include="src\entity\BasePlayerEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp">
+    <ClCompile Include="src\capacity_action\CapacityActionDamage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\entity\BaseEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\capacity_action\CapacityActionAddArmor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\capacity_action\CapacityActionHeal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\capacity_action\CapacityActionRemoveArmor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,10 +98,10 @@
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity_action\CapacityActionAttack.hpp">
+    <ClInclude Include="src\capacity_action\CapacityActionDamage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity_action\CapacityActionDefense.hpp">
+    <ClInclude Include="src\capacity_action\CapacityActionAddArmor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp">
@@ -101,7 +110,19 @@
     <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entity\Attributes.hpp">
+    <ClInclude Include="src\attribute\Attribute.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_action\CapacityActionRemoveArmor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity\CapacityTypeEnum.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\helper\SRandom.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\attribute\AttributeEnum.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

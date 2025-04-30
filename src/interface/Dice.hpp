@@ -48,7 +48,7 @@ namespace dice {
 		//template<std::size_t N>
 		//const IObject& roll(const std::array<IObject, N>& obj_array) {
 
-		//	IObject& obj = obj_array[getRandomValue(obj_array.size()) - 1];
+		//	IObject& obj = obj_array[generateRandomValue(obj_array.size()) - 1];
 		//	obj.printObject();
 
 		//	return obj;

@@ -6,14 +6,12 @@
 #include <cstdint>
 
 namespace capacity {
-
-	class CapacityActionHeal : public ICapacityAction {
+	class CapacityActionAddArmor : public ICapacityAction {
 	public:
-		CapacityActionHeal(uint8_t heal);
-
+		CapacityActionAddArmor(uint8_t armor);
 		CapacityModifiersStruct doAction(void) override;
 
 	private:
-		uint8_t m_heal{ 0 };
+		uint8_t m_armor{ 0 };
 	};
 }

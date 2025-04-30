@@ -25,11 +25,11 @@ namespace dice {
      * a specific capacity effect (derived from BaseCapacity). When rolled,
      * it returns the capacity effect of the rolled side.
      * 
-     * Inherits from ADice for basic dice functionality and IRollAdvantageDisadvantage
+     * Inherits from ABaseDice for basic dice functionality and IRollAdvantageDisadvantage
      * for advantage/disadvantage roll mechanics.
      */
     class DiceCapacity: 
-        public ADice<BaseCapacity>/*,
+        public ABaseDice<BaseCapacity>/*,
         IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>>*/ {
 
     public:

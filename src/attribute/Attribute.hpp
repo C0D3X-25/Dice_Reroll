@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <iostream>
 
-namespace entity {
+namespace attribute {
 
 	constexpr int8_t MIN_STAT_VALUE{ -10 };
 
@@ -11,7 +11,7 @@ namespace entity {
 	/// Struct to hold the stats of an entity.
 	/// Minimum value is 1.
 	/// </summary>
-	struct Attributes {
+	struct Attribute {
 
 		void printAllStats(void) const {
 			std::cout

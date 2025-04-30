@@ -156,6 +156,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\capacity\BaseCapacity.hpp" />
+    <ClCompile Include="src\capacity_action\CapacityActionAddArmor.cpp" />
+    <ClCompile Include="src\capacity_action\CapacityActionHeal.cpp" />
+    <ClCompile Include="src\capacity_action\CapacityActionRemoveArmor.cpp" />
     <ClCompile Include="src\entity\BaseEntity.cpp" />
     <ClCompile Include="src\entity\BasePlayerEntity.cpp" />
     <ClCompile Include="src\entity\PlayerEntityWarrior.cpp" />
@@ -163,7 +166,7 @@
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
     <ClCompile Include="src\status\StatusEnum.hpp" />
     <ClCompile Include="src\capacity_action\ICapacityAction.hpp" />
-    <ClCompile Include="src\capacity_action\CapacityActionAttack.cpp" />
+    <ClCompile Include="src\capacity_action\CapacityActionDamage.cpp" />
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp" />
     <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp" />
     <ClCompile Include="src\interface\IDiceFactory.hpp" />
@@ -173,19 +176,23 @@
     <ClCompile Include="src\capacity_modifiers\CapacityModifiersStruct.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\attribute\AttributeEnum.hpp" />
     <ClInclude Include="src\capacity\CapacityNothing.hpp" />
+    <ClInclude Include="src\capacity\CapacityTypeEnum.hpp" />
     <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp" />
-    <ClInclude Include="src\capacity_action\CapacityActionAttack.hpp" />
-    <ClInclude Include="src\capacity_action\CapacityActionDefense.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionDamage.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionAddArmor.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp" />
+    <ClInclude Include="src\capacity_action\CapacityActionRemoveArmor.hpp" />
     <ClInclude Include="src\dice\ADice.hpp" />
     <ClInclude Include="src\dice\DiceCapacity.hpp" />
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp" />
     <ClInclude Include="src\entity\BaseEntity.hpp" />
     <ClInclude Include="src\entity\BasePlayerEntity.hpp" />
     <ClInclude Include="src\entity\PlayerEntityWarrior.hpp" />
+    <ClInclude Include="src\helper\SRandom.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
-    <ClInclude Include="src\entity\Attributes.hpp" />
+    <ClInclude Include="src\attribute\Attribute.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

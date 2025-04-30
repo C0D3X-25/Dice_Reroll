@@ -27,7 +27,7 @@ void entity::BasePlayerEntity::printEntity(void) {
 		<< '\n';
 
 	m_up_dice_capacity->printDice();
-	m_up_stats->printAllStats();
+	m_up_attributes->printAllStats();
 }
 
 

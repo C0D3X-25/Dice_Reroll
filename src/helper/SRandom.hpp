@@ -1,0 +1,25 @@
+#include <random>
+#include <cstdint>
+
+namespace helper {
+
+    #pragma warning(push)
+    #pragma warning(disable: 4091) // Disable warning about static class been used but no static variable declared
+    static class SRandom {
+    #pragma warning(pop)  // Restore warning settings
+
+    public:
+
+        /// @brief Helper method to generate random numbers within a range
+        /// @param max_value Maximum value (inclusive) for random number generation
+        /// @param min_value Minimum value (inclusive) for random number generation, defaults to 1
+        /// @return Random number between min_value and max_value
+        static uint16_t generateRandomValue(const uint16_t max_value, const uint16_t min_value = 1) {
+            std::random_device random_device;
+            std::mt19937 generate(random_device());
+            std::uniform_int_distribution<> distribution(min_value, max_value);
+
+            return distribution(generate);
+        }
+    };
+}

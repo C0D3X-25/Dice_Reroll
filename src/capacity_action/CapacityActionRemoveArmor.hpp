@@ -1,19 +1,19 @@
 #pragma once
 
-#include ".\ICapacityAction.hpp"
+#include "ICapacityAction.hpp"
 #include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
 
 #include <cstdint>
 
 namespace capacity {
 
-	class CapacityActionHeal : public ICapacityAction {
+	class CapacityActionRemoveArmor : public ICapacityAction {
 	public:
-		CapacityActionHeal(uint8_t heal);
+		CapacityActionRemoveArmor(uint8_t armor);
 
 		CapacityModifiersStruct doAction(void) override;
 
 	private:
-		uint8_t m_heal{ 0 };
+		uint8_t m_armor{ 0 };
 	};
 }

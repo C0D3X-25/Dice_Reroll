@@ -41,5 +41,7 @@ namespace entity {
 	private:
 
 		std::unique_ptr<DiceCapacity> m_up_dice_capacity = std::make_unique<DiceCapacity>();
+		//TODO: Equipment m_inventory;
+
 	};
 } // namespace entity
