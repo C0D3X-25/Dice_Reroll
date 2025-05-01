@@ -3,5 +3,5 @@
 using namespace capacity;
 
 CapacityNothing::CapacityNothing(void) {
-	m_name = "Nothing";
+	setCapacityName("Nothing");
 }

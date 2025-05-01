@@ -2,13 +2,7 @@
 #include <cstdint>
 
 namespace helper {
-
-    #pragma warning(push)
-    #pragma warning(disable: 4091) // Disable warning about static class been used but no static variable declared
-    static class SRandom {
-    #pragma warning(pop)  // Restore warning settings
-
-    public:
+    namespace random {
 
         /// @brief Helper method to generate random numbers within a range
         /// @param max_value Maximum value (inclusive) for random number generation
@@ -21,5 +15,5 @@ namespace helper {
 
             return distribution(generate);
         }
-    };
+    }
 }

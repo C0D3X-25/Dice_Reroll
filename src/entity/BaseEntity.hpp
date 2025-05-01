@@ -16,7 +16,7 @@ namespace entity {
 		BaseEntity(const std::string& name, const int16_t life, const int16_t armor);
 		virtual ~BaseEntity(void) = default;
 
-		virtual void setName(const std::string& name)		{ m_name = name; }
+		virtual void setCapacityName(const std::string& name)		{ m_name = name; }
 		virtual void setLife(int16_t life)					{ m_life = life; }
 		virtual void setArmor(int16_t armor)				{ m_armor = armor; }
 		virtual void setStrength(uint8_t strength)			{ m_up_attributes->setStrength(strength); }
@@ -26,7 +26,7 @@ namespace entity {
 		virtual void setWisdom(uint8_t wisdom)				{ m_up_attributes->setWisdom(wisdom); }
 		virtual void setCharisma(uint8_t charisma)			{ m_up_attributes->setCharisma(charisma); }
 
-		virtual std::string_view getName(void) const	{ return m_name; }
+		virtual std::string_view getCapacityName(void) const	{ return m_name; }
 		virtual int16_t getLife(void) const				{ return m_life; }
 		virtual int16_t getArmor(void) const			{ return m_armor; }
 		virtual uint8_t getStrength(void) const			{ return m_up_attributes->getStrength(); }

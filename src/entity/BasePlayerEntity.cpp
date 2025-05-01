@@ -3,10 +3,7 @@
 using namespace entity;
 
 entity::BasePlayerEntity::BasePlayerEntity(const std::string& name, const int16_t life, const int16_t armor)
-	: BaseEntity(name, life, armor)
-{
-
-}
+	: BaseEntity(name, life, armor) {}
 
 
 void entity::BasePlayerEntity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
@@ -20,22 +17,24 @@ const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
 
 
 void entity::BasePlayerEntity::printEntity(void) {
-	std::cout
-		<< "Name: " << m_name
-		<< " | Life: " << m_life
-		<< " | Armor: " << m_armor
-		<< '\n';
+    std::cout
+        << "Name: " << m_name
+        << " | Life: " << m_life
+		<< " | Armor: " << m_armor << '\n';
 
-	m_up_dice_capacity->printDice();
-	m_up_attributes->printAllStats();
+    std::cout << "\n---------- Dice Capacity ----------\n";
+    m_up_dice_capacity->printDiceSides();
+
+    std::cout << "\n---------- Attributes ----------\n";
+	m_up_attributes->printAllAttributes();
 }
 
 
 void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEntity& target) {
 	std::cout
 		<< m_name
-		<< " use capacity " << capacity.getName()
-		<< " on " << target.getName()
+		<< " use capacity " << capacity.getCapacityName()
+		<< " on " << target.getCapacityName()
 		<< '\n';
 
 	//target.resolveCapacity(capacity.getStats(), *this);
@@ -51,7 +50,7 @@ void entity::BasePlayerEntity::resolveCapacity(const CapacityModifiersStruct& ca
 
     //if (dmg_life > 0) {
     //    std::cout << m_name << " took (" << dmg_life << ") damage from "
-    //        << source.getName() << '\n';
+    //        << source.getCapacityName() << '\n';
     //}
 
     //// First apply armor modifications
@@ -89,7 +88,7 @@ void entity::BasePlayerEntity::resolveCapacity(const CapacityModifiersStruct& ca
 
     //// Check for death
     //if (m_life <= 0) {
-    //    std::cout << m_name << " has been killed by " << source.getName() << '\n';
+    //    std::cout << m_name << " has been killed by " << source.getCapacityName() << '\n';
     //}
 
     //printEntity();

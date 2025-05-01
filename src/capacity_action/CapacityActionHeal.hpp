@@ -1,13 +1,13 @@
 #pragma once
 
-#include ".\ICapacityAction.hpp"
+#include ".\BaseCapacityAction.hpp"
 #include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
 
 #include <cstdint>
 
 namespace capacity {
 
-	class CapacityActionHeal : public ICapacityAction {
+	class CapacityActionHeal : public BaseCapacityAction {
 	public:
 		CapacityActionHeal(uint8_t heal);
 

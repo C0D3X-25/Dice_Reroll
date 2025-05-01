@@ -4,19 +4,29 @@
 using namespace dice;
 
 dice::DiceCapacity::DiceCapacity(void) {
+	// Initialize the sides of the dice with a nothing capacity
+	std::shared_ptr<BaseCapacity> nothing_capacity = std::make_shared<CapacityNothing>();
+
     for (uint8_t i = 1; i <= m_SIDES_COUNT; ++i) {
-        m_sides[i] = std::make_shared<CapacityNothing>();
+        m_sides[i] = nothing_capacity;
     }
 }
 
 
 void DiceCapacity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
-    m_sides.find(side)->second = sp_capacity;
+    auto it = m_sides.find(side);
+    if (it != m_sides.end()) {
+        it->second = sp_capacity;
+    }
 }
 
 
 const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side) const {
-	return m_sides.find(side)->second;
+    auto it = m_sides.find(side);
+    if (it != m_sides.end()) {
+        return it->second;
+    }
+    return nullptr;
 }
 
 
@@ -28,16 +38,24 @@ const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side
 //#pragma warning(pop)  // Restore warning settings
 
 
-void DiceCapacity::printDice(void) {
+void DiceCapacity::printDiceSides(void) {
     for (const auto& [side, capacity] : m_sides) {
-        std::cout << "Side: " << static_cast<int>(side) << " => " << capacity->getName() << std::endl;
+        std::cout << "Side: " << static_cast<int>(side) << '\n';
+        if (capacity) {
+            capacity->printCapacity();
+        }
     }
 }
 
 #pragma warning(push)
 #pragma warning(disable: 4244) // Disable warning about possible data loss
 const BaseCapacity& DiceCapacity::roll(void) {
-    return *m_sides.find(getRandomValue(m_SIDES_COUNT))->second;
+    auto it = m_sides.find(getRandomValue(m_SIDES_COUNT));
+    if (it != m_sides.end() && it->second) {
+        return *it->second;
+    }
+    static CapacityNothing default_capacity;
+    return default_capacity;
 }
 #pragma warning(pop)  // Restore warning settings
 

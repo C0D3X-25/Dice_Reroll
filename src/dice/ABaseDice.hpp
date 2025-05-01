@@ -17,12 +17,12 @@ namespace dice {
         virtual const T& roll(void) = 0;
 
         /// @brief Pure virtual method to display dice information
-        virtual void printDice(void) = 0;
+        virtual void printDiceSides(void) = 0;
 
     protected:
 
         uint16_t getRandomValue(const uint16_t max_value, const uint16_t min_value = 1) {
-			return helper::SRandom::generateRandomValue(max_value, min_value);
+			return helper::random::generateRandomValue(max_value, min_value);
         }
     };
 }

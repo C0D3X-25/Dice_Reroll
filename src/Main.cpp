@@ -32,23 +32,23 @@ int main() {
 		entity_2("Entity 2", 30, 10);
 
 	entity_1.printEntity();
-	std::cout << '\n';
+	std::cout << "========================================================\n\n";
 	entity_2.printEntity();
-	std::cout << "----------------------\n\n";
+	std::cout << "========================================================\n\n";
 
 
 	for (size_t i = 0; i < 20; i++) {
 		BaseCapacity cap = entity_1.rollDiceCapacity();
-		std::cout << "Roll No " << i + 1 << ": "  << cap.getName() << '\n';
+		std::cout << "Roll No " << i + 1 << ": "  << cap.getCapacityName() << '\n';
 	}
 
 	//DiceCapacity dice_capacity;
-	//dice_capacity.printDice();
+	//dice_capacity.printDiceSides();
 
 	//std::cout << "----------------------\n\n";
 	//CapacityPlayerSingleAttack capacity_attack;
 	//dice_capacity.setCapacity(std::make_shared<CapacityPlayerSingleAttack>(), 3);
-	//dice_capacity.printDice();
+	//dice_capacity.printDiceSides();
 
 
 

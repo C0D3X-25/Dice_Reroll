@@ -33,7 +33,7 @@
     <ClCompile Include="src\status\StatusEnum.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_action\ICapacityAction.hpp">
+    <ClCompile Include="src\capacity_action\BaseCapacityAction.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp">
@@ -92,7 +92,7 @@
     <ClInclude Include="src\dice\DiceCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\dice\ADice.hpp">
+    <ClInclude Include="src\dice\ABaseDice.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp">
@@ -116,13 +116,22 @@
     <ClInclude Include="src\capacity_action\CapacityActionRemoveArmor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity\CapacityTypeEnum.hpp">
+    <ClInclude Include="src\capacity\CapacityEnum.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\helper\SRandom.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\attribute\AttributeEnum.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\combat\CapacityTargetsManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\combat\BattleField.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\team\BaseTeam.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

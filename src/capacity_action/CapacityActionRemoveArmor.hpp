@@ -1,13 +1,13 @@
 #pragma once
 
-#include "ICapacityAction.hpp"
+#include "BaseCapacityAction.hpp"
 #include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
 
 #include <cstdint>
 
 namespace capacity {
 
-	class CapacityActionRemoveArmor : public ICapacityAction {
+	class CapacityActionRemoveArmor : public BaseCapacityAction {
 	public:
 		CapacityActionRemoveArmor(uint8_t armor);
 

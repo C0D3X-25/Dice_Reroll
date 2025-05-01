@@ -1,5 +1,5 @@
 #pragma once
-#include "ADice.hpp"
+#include "ABaseDice.hpp"
 #include "IRollAdvantageDisadvantage.hpp"
 #include "../capacity/BaseCapacity.hpp"
 #include "../capacity/CapacityNothing.hpp"
@@ -75,7 +75,7 @@ namespace dice {
         /**
          * @brief Prints the current state of the dice
          */
-        void printDice(void) override;
+        void printDiceSides(void) override;
 
         static constexpr uint8_t m_SIDES_COUNT = 10;
 

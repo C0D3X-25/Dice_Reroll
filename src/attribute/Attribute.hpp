@@ -13,7 +13,7 @@ namespace attribute {
 	/// </summary>
 	struct Attribute {
 
-		void printAllStats(void) const {
+		void printAllAttributes(void) const {
 			std::cout
 				<< "STR: " << static_cast<int>(m_strength) << '\n'
 				<< "DEX: " << static_cast<int>(m_dexterity) << '\n'

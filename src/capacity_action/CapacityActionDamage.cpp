@@ -1,16 +1,13 @@
 #include "CapacityActionDamage.hpp"
 
-#include <cstdint>
-
 using namespace capacity;
 
-CapacityActionDamage::CapacityActionDamage(uint8_t damage)
-	: m_damage(damage)
-{}
+CapacityActionDamage::CapacityActionDamage(const uint8_t damage, const std::vector<CapacityTargetEnum>& targets)
+	: m_damage(damage), BaseCapacityAction(targets) {}
 
 
-CapacityModifiersStruct CapacityActionDamage::doAction(void) {
-	CapacityModifiersStruct mod;
-	mod.m_damage = m_damage;
-	return mod;
+CapacityModifiersStruct capacity::CapacityActionDamage::doAction(void) {
+	m_modifier = BaseCapacityAction::doAction();
+	m_modifier.m_damage = m_damage;
+	return m_modifier;
 }
