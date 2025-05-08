@@ -63,7 +63,7 @@ namespace capacity {
 		}
 
 
-		void setCapacityName(const std::string& name)								{ m_name = name; }
+		void setEntityName(const std::string& name)								{ m_name = name; }
 		void setCapacityPurposes(const std::vector<CapacityPurposeEnum>& purpose)	{ m_capacity_purpose = purpose; }
 		void setCapacityTriggers(const std::vector<CapacityTriggerEnum>& trigger)	{ m_capacity_trigger = trigger; }
 		

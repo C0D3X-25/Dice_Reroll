@@ -2,8 +2,8 @@
 
 using namespace entity;
 
-entity::BasePlayerEntity::BasePlayerEntity(const std::string& name, const int16_t life, const int16_t armor)
-	: BaseEntity(name, life, armor) {}
+entity::BasePlayerEntity::BasePlayerEntity(const std::string& name)
+	: BaseEntity(name) {}
 
 
 void entity::BasePlayerEntity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
@@ -16,17 +16,17 @@ const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
 }
 
 
-void entity::BasePlayerEntity::printEntity(void) {
+void entity::BasePlayerEntity::printEntity(void) const {
     std::cout
         << "Name: " << m_name
-        << " | Life: " << m_life
-		<< " | Armor: " << m_armor << '\n';
-
-    std::cout << "\n---------- Dice Capacity ----------\n";
-    m_up_dice_capacity->printDiceSides();
+        << " | Life: " << m_max_life
+		<< " | Armor: " << m_max_armor << '\n';
 
     std::cout << "\n---------- Attributes ----------\n";
 	m_up_attributes->printAllAttributes();
+
+    std::cout << "\n---------- Dice Capacity ----------\n";
+    m_up_dice_capacity->printDiceSides();
 }
 
 
@@ -34,7 +34,7 @@ void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEnt
 	std::cout
 		<< m_name
 		<< " use capacity " << capacity.getCapacityName()
-		<< " on " << target.getCapacityName()
+		<< " on " << target.getEntityName()
 		<< '\n';
 
 	//target.resolveCapacity(capacity.getStats(), *this);
@@ -43,52 +43,52 @@ void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEnt
 
 void entity::BasePlayerEntity::resolveCapacity(const CapacityModifiersStruct& capacity, const BaseEntity& source) {
     //// Initialize modifiers
-    //int16_t dmg_life = capacity.m_life < 0 ? -capacity.m_life : 0;
-    //int16_t heal_life = capacity.m_life > 0 ? capacity.m_life : 0;
-    //int16_t remove_armor = capacity.m_armor < 0 ? -capacity.m_armor : 0;
-    //int16_t add_armor = capacity.m_armor > 0 ? capacity.m_armor : 0;
+    //int16_t dmg_life = capacity.m_max_life < 0 ? -capacity.m_max_life : 0;
+    //int16_t heal_life = capacity.m_max_life > 0 ? capacity.m_max_life : 0;
+    //int16_t remove_armor = capacity.m_max_armor < 0 ? -capacity.m_max_armor : 0;
+    //int16_t add_armor = capacity.m_max_armor > 0 ? capacity.m_max_armor : 0;
 
     //if (dmg_life > 0) {
     //    std::cout << m_name << " took (" << dmg_life << ") damage from "
-    //        << source.getCapacityName() << '\n';
+    //        << source.getEntityName() << '\n';
     //}
 
     //// First apply armor modifications
     //if (remove_armor > 0) {
-    //    m_armor = std::max(0, m_armor - remove_armor);
+    //    m_max_armor = std::max(0, m_max_armor - remove_armor);
     //}
     //if (add_armor > 0) {
-    //    m_armor += add_armor;
+    //    m_max_armor += add_armor;
     //}
 
     //// Then handle damage
     //if (dmg_life > 0) {
     //    // Damage is first absorbed by armor
-    //    if (m_armor > 0) {
-    //        if (m_armor >= dmg_life) {
-    //            m_armor -= dmg_life;
+    //    if (m_max_armor > 0) {
+    //        if (m_max_armor >= dmg_life) {
+    //            m_max_armor -= dmg_life;
     //            dmg_life = 0;
     //        }
     //        else {
-    //            dmg_life -= m_armor;
-    //            m_armor = 0;
+    //            dmg_life -= m_max_armor;
+    //            m_max_armor = 0;
     //        }
     //    }
 
     //    // Remaining damage goes to life
     //    if (dmg_life > 0) {
-    //        m_life -= dmg_life;
+    //        m_max_life -= dmg_life;
     //    }
     //}
 
     //// Apply healing
     //if (heal_life > 0) {
-    //    m_life += heal_life;
+    //    m_max_life += heal_life;
     //}
 
     //// Check for death
-    //if (m_life <= 0) {
-    //    std::cout << m_name << " has been killed by " << source.getCapacityName() << '\n';
+    //if (m_max_life <= 0) {
+    //    std::cout << m_name << " has been killed by " << source.getEntityName() << '\n';
     //}
 
     //printEntity();

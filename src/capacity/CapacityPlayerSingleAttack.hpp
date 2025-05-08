@@ -17,7 +17,7 @@ namespace capacity {
 
 		CapacityPlayerSingleAttack(const BaseEntity& user) {
 
-				setCapacityName("Attack");
+				setEntityName("Attack");
 				setCapacityPurposes({ ATTACK_PHYSICAL });
 				setCapacityTriggers({ USED_WHEN_TURN_END });
 

@@ -131,7 +131,13 @@
     <ClInclude Include="src\combat\BattleField.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\team\BaseTeam.hpp">
+    <ClInclude Include="src\group\BaseGroup.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\group\Team.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\GeneratePlayerEntity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

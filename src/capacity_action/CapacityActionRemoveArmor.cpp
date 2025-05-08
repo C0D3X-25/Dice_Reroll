@@ -3,7 +3,7 @@
 using namespace capacity;
 
 //capacity::CapacityActionRemoveArmor::CapacityActionRemoveArmor(uint8_t armor)
-//	: m_armor(armor) {
+//	: m_max_armor(armor) {
 //}
 
 capacity::CapacityModifiersStruct CapacityActionRemoveArmor::doAction(void) {

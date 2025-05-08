@@ -5,7 +5,7 @@
 
 namespace attribute {
 
-	constexpr int8_t MIN_STAT_VALUE{ -10 };
+	inline constexpr int8_t ATTRIBUTE_MIN_VALUE{ -10 };
 
 	/// <summary>
 	/// Struct to hold the stats of an entity.
@@ -23,12 +23,12 @@ namespace attribute {
 				<< "CHA: " << static_cast<int>(m_charisma) << '\n';
 		}
 
-		void setStrength(int8_t value) { value > MIN_STAT_VALUE ? m_strength = value : MIN_STAT_VALUE; }
-		void setDexterity(int8_t value) { value > MIN_STAT_VALUE ? m_dexterity = value : MIN_STAT_VALUE; }
-		void setConstitution(int8_t value) { value > MIN_STAT_VALUE ? m_constitution = value : MIN_STAT_VALUE; }
-		void setIntelligence(int8_t value) { value > MIN_STAT_VALUE ? m_intelligence = value : MIN_STAT_VALUE; }
-		void setWisdom(int8_t value) { value > MIN_STAT_VALUE ? m_wisdom = value : MIN_STAT_VALUE; }
-		void setCharisma(int8_t value) { value > MIN_STAT_VALUE ? m_charisma = value : MIN_STAT_VALUE; }
+		void setStrength(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_strength = value : ATTRIBUTE_MIN_VALUE; }
+		void setDexterity(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_dexterity = value : ATTRIBUTE_MIN_VALUE; }
+		void setConstitution(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_constitution = value : ATTRIBUTE_MIN_VALUE; }
+		void setIntelligence(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_intelligence = value : ATTRIBUTE_MIN_VALUE; }
+		void setWisdom(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_wisdom = value : ATTRIBUTE_MIN_VALUE; }
+		void setCharisma(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_charisma = value : ATTRIBUTE_MIN_VALUE; }
 
 		int8_t getStrength(void) const { return m_strength; }
 		int8_t getDexterity(void) const { return m_dexterity; }
@@ -38,11 +38,11 @@ namespace attribute {
 		int8_t getCharisma(void) const { return m_charisma; }
 
 	private:
-		int8_t m_strength{ MIN_STAT_VALUE };
-		int8_t m_dexterity{ MIN_STAT_VALUE };
-		int8_t m_constitution{ MIN_STAT_VALUE };
-		int8_t m_intelligence{ MIN_STAT_VALUE };
-		int8_t m_wisdom{ MIN_STAT_VALUE };
-		int8_t m_charisma{ MIN_STAT_VALUE };
+		int8_t m_strength{ 0 };
+		int8_t m_dexterity{ 0 };
+		int8_t m_constitution{ 0 };
+		int8_t m_intelligence{ 0 };
+		int8_t m_wisdom{ 0 };
+		int8_t m_charisma{ 0 };
 	};
-} // namespace stat
+}

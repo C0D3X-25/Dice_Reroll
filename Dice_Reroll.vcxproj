@@ -191,11 +191,13 @@
     <ClInclude Include="src\dice\IRollAdvantageDisadvantage.hpp" />
     <ClInclude Include="src\entity\BaseEntity.hpp" />
     <ClInclude Include="src\entity\BasePlayerEntity.hpp" />
+    <ClInclude Include="src\entity\GeneratePlayerEntity.hpp" />
     <ClInclude Include="src\entity\PlayerEntityWarrior.hpp" />
+    <ClInclude Include="src\group\Team.hpp" />
     <ClInclude Include="src\helper\SRandom.hpp" />
     <ClInclude Include="src\interface\IDiceComposition.hpp" />
     <ClInclude Include="src\attribute\Attribute.hpp" />
-    <ClInclude Include="src\team\BaseTeam.hpp" />
+    <ClInclude Include="src\group\BaseGroup.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

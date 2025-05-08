@@ -3,5 +3,5 @@
 using namespace capacity;
 
 CapacityNothing::CapacityNothing(void) {
-	setCapacityName("Nothing");
+	setEntityName("Nothing");
 }

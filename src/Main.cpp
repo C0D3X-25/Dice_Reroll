@@ -12,13 +12,15 @@
 //#include "interface/Dice.hpp"
 //#include "interface/IObject.hpp"
 
-#include "entity/PlayerEntityWarrior.hpp"
+//#include "entity/PlayerEntityWarrior.hpp"
 #include "capacity/CapacityPlayerSingleAttack.hpp"
 #include "dice/DiceCapacity.hpp"
 
+#include "entity/GeneratePlayerEntity.hpp"
 
 #include <iostream>
 #include <array>
+#include <memory>
 
 
 int main() {
@@ -27,28 +29,34 @@ int main() {
 	using namespace entity;
 	using namespace capacity;
 	
-	PlayerEntityWarrior 
-		entity_1("Entity 1", 20, 5),
-		entity_2("Entity 2", 30, 10);
+	
+	GeneratePlayerEntity entity_generator;
+	std::unique_ptr<BasePlayerEntity> entity_1 = entity_generator.generateNewPlayerEntity();
+	std::unique_ptr<BasePlayerEntity> entity_2 = entity_generator.generateNewPlayerEntity();
 
-	entity_1.printEntity();
+	entity_1->printEntity();
 	std::cout << "========================================================\n\n";
-	entity_2.printEntity();
+	entity_2->printEntity();
 	std::cout << "========================================================\n\n";
 
 
-	for (size_t i = 0; i < 20; i++) {
-		BaseCapacity cap = entity_1.rollDiceCapacity();
-		std::cout << "Roll No " << i + 1 << ": "  << cap.getCapacityName() << '\n';
-	}
 
-	//DiceCapacity dice_capacity;
-	//dice_capacity.printDiceSides();
+	//PlayerEntityWarrior 
+	//	entity_1("Entity 1", 20, 5),
+	//	entity_2("Entity 2", 30, 10);
 
-	//std::cout << "----------------------\n\n";
-	//CapacityPlayerSingleAttack capacity_attack;
-	//dice_capacity.setCapacity(std::make_shared<CapacityPlayerSingleAttack>(), 3);
-	//dice_capacity.printDiceSides();
+	//entity_1.printEntity();
+	//std::cout << "========================================================\n\n";
+	//entity_2.printEntity();
+	//std::cout << "========================================================\n\n";
+
+
+	//for (size_t i = 0; i < 20; i++) {
+	//	BaseCapacity cap = entity_1.rollDiceCapacity();
+	//	std::cout << "Roll No " << i + 1 << ": "  << cap.getCapacityName() << '\n';
+	//}
+
+	
 
 
 

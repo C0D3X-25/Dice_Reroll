@@ -13,35 +13,47 @@ namespace entity {
 
 	class BaseEntity {
 	public:
-		BaseEntity(const std::string& name, const int16_t life, const int16_t armor);
+		BaseEntity(const std::string& name);
+		BaseEntity(const std::string& name, const int16_t max_life, const int16_t max_armor);
 		virtual ~BaseEntity(void) = default;
 
-		virtual void setCapacityName(const std::string& name)		{ m_name = name; }
-		virtual void setLife(int16_t life)					{ m_life = life; }
-		virtual void setArmor(int16_t armor)				{ m_armor = armor; }
-		virtual void setStrength(uint8_t strength)			{ m_up_attributes->setStrength(strength); }
-		virtual void setDexterity(uint8_t dexterity)		{ m_up_attributes->setDexterity(dexterity); }
-		virtual void setConstitution(uint8_t constitution)	{ m_up_attributes->setConstitution(constitution); }
-		virtual void setIntelligence(uint8_t intelligence)	{ m_up_attributes->setIntelligence(intelligence); }
-		virtual void setWisdom(uint8_t wisdom)				{ m_up_attributes->setWisdom(wisdom); }
-		virtual void setCharisma(uint8_t charisma)			{ m_up_attributes->setCharisma(charisma); }
+		virtual void printEntity(void) const;
 
-		virtual std::string_view getCapacityName(void) const	{ return m_name; }
-		virtual int16_t getLife(void) const				{ return m_life; }
-		virtual int16_t getArmor(void) const			{ return m_armor; }
-		virtual uint8_t getStrength(void) const			{ return m_up_attributes->getStrength(); }
-		virtual uint8_t getDexterity(void) const		{ return m_up_attributes->getDexterity(); }
-		virtual uint8_t getConstitution(void) const		{ return m_up_attributes->getConstitution(); }
-		virtual uint8_t getIntelligence(void) const		{ return m_up_attributes->getIntelligence(); }
-		virtual uint8_t getWisdom(void) const			{ return m_up_attributes->getWisdom(); }
-		virtual uint8_t getCharisma(void) const			{ return m_up_attributes->getCharisma(); }
+		virtual void setAttributes(const Attribute& new_attributes);
+		virtual void updateAttributes(const Attribute& update_attributes);
+
+		virtual void setEntityName(const std::string& name)		{ m_name = name; }
+		virtual void setMaxLife(int16_t life)					{ m_max_life = life; }
+		virtual void setCurrentLife(int16_t life)				{ m_current_life = life; }
+		virtual void setMaxArmor(int16_t armor)					{ m_max_armor = armor; }
+		virtual void setCurrentArmor(int16_t armor)				{ m_current_armor = armor; }
+
+		virtual std::string_view getEntityName(void) const		{ return m_name; }
+		virtual int16_t getMaxLife(void) const					{ return m_max_life; }
+		virtual int16_t getCurrentLife(void) const				{ return m_current_life; }
+		virtual int16_t getMaxArmor(void) const					{ return m_max_armor; }
+		virtual int16_t getCurrentArmor(void) const				{ return m_current_armor; }
+		virtual int8_t getStrength(void) const					{ return m_up_attributes->getStrength(); }
+		virtual int8_t getDexterity(void) const					{ return m_up_attributes->getDexterity(); }
+		virtual int8_t getConstitution(void) const				{ return m_up_attributes->getConstitution(); }
+		virtual int8_t getIntelligence(void) const				{ return m_up_attributes->getIntelligence(); }
+		virtual int8_t getWisdom(void) const					{ return m_up_attributes->getWisdom(); }
+		virtual int8_t getCharisma(void) const					{ return m_up_attributes->getCharisma(); }
 
 	protected:
+
+		virtual void updateEntity(void);
+
+	protected:
+
 		std::string m_name{ "N/A" };
 		std::unique_ptr<Attribute> m_up_attributes;
-		int16_t m_life{ 0 };
-		int16_t m_armor{ 0 };
-		//TODO: Status m_status;
+		int16_t m_max_life{ 0 };
+		int16_t m_current_life{ 0 };
+		int16_t m_max_armor{ 0 };
+		int16_t m_current_armor{ 0 };
+		// TODO: Status m_status;
+		// TODO: Passive m_passive;
 
 	};
 } // namespace entity
