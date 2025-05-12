@@ -2,7 +2,7 @@
 
 namespace attribute {
 
-	enum AttributeEnum {
+	enum EAttribute {
 		STRENGTH,
 		DEXTERITY,
 		CONSTITUTION,

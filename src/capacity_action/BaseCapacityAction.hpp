@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../capacity_modifiers/CapacityModifiersStruct.hpp"
-#include "../capacity/CapacityEnum.hpp"
+#include "../capacity/ECapacity.hpp"
 
 #include <vector>
 #include <string>
@@ -10,7 +10,7 @@ namespace capacity {
 
 	class BaseCapacityAction {
 	public:
-		BaseCapacityAction(const std::vector<CapacityTargetEnum>& targets) 
+		BaseCapacityAction(const std::vector<ECapacityTarget>& targets) 
 			: m_targets(targets) {}
 		virtual ~BaseCapacityAction(void) = default;
 
@@ -19,10 +19,10 @@ namespace capacity {
 			return m_modifier;
 		}
 
-		virtual std::vector<CapacityTargetEnum> getTargets(void) const { return m_targets; }
+		virtual std::vector<ECapacityTarget> getTargets(void) const { return m_targets; }
 
 	private:
 		CapacityModifiersStruct m_modifier;
-		std::vector<CapacityTargetEnum> m_targets;
+		std::vector<ECapacityTarget> m_targets;
 	};
 }

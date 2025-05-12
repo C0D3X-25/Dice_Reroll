@@ -2,7 +2,7 @@
 
 using namespace capacity;
 
-//CapacityActionAddArmor::CapacityActionAddArmor(uint8_t armor, CapacityTargetEnum target)
+//CapacityActionAddArmor::CapacityActionAddArmor(uint8_t armor, ECapacityTarget target)
 //	: m_max_armor(armor), m_target(target) {
 //}
 

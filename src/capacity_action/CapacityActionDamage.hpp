@@ -10,7 +10,7 @@ namespace capacity {
 
 	class CapacityActionDamage : public BaseCapacityAction {
 	public:
-		CapacityActionDamage(const uint8_t damage, const std::vector<CapacityTargetEnum>& target);
+		CapacityActionDamage(const uint8_t damage, const std::vector<ECapacityTarget>& target);
 
 		CapacityModifiersStruct doAction(void) override;
 

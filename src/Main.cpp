@@ -7,16 +7,11 @@
  *********************************************************************/
 #pragma once
 
-//#include "interface/IDiceFactory.hpp"
-//#include "interface/IDiceComposition.hpp"
-//#include "interface/Dice.hpp"
-//#include "interface/IObject.hpp"
-
-//#include "entity/PlayerEntityWarrior.hpp"
 #include "capacity/CapacityPlayerSingleAttack.hpp"
 #include "dice/DiceCapacity.hpp"
 
 #include "entity/GeneratePlayerEntity.hpp"
+#include "group/Team.hpp"
 
 #include <iostream>
 #include <array>
@@ -28,111 +23,32 @@ int main() {
 	using namespace dice;
 	using namespace entity;
 	using namespace capacity;
+	using namespace group;
 	
 	
 	GeneratePlayerEntity entity_generator;
 	std::unique_ptr<BasePlayerEntity> entity_1 = entity_generator.generateNewPlayerEntity();
 	std::unique_ptr<BasePlayerEntity> entity_2 = entity_generator.generateNewPlayerEntity();
 
-	entity_1->printEntity();
-	std::cout << "========================================================\n\n";
-	entity_2->printEntity();
-	std::cout << "========================================================\n\n";
+	Team team_1;
+    team_1.addEntity(std::unique_ptr<BaseEntity>(std::move(entity_1)), 0);
+	team_1.addEntity(std::move(entity_2), 0);
 
+	std::cout << team_1.getGroupSize() << '\n';
 
+	team_1.printTeam();
 
-	//PlayerEntityWarrior 
-	//	entity_1("Entity 1", 20, 5),
-	//	entity_2("Entity 2", 30, 10);
-
-	//entity_1.printEntity();
+	//entity_1->printEntity();
 	//std::cout << "========================================================\n\n";
-	//entity_2.printEntity();
+	//entity_2->printEntity();
 	//std::cout << "========================================================\n\n";
+
+
 
 
 	//for (size_t i = 0; i < 20; i++) {
 	//	BaseCapacity cap = entity_1.rollDiceCapacity();
 	//	std::cout << "Roll No " << i + 1 << ": "  << cap.getCapacityName() << '\n';
 	//}
-
-	
-
-
-
-	//Object nothing = { "Empty", 0 };
-	//Object weapon = { "Sword", 10 };
-	//Object shield = { "Shield", 5 };
-	//Object potion = { "Potion", 15 };
-
-	//std::array<Object, 10> obj_array;
-	//obj_array.fill(nothing);
-	//obj_array = {
-	//	weapon,
-	//	shield,
-	//	potion
-	//};
-
-	//ObjectA nothing_c = { "Empty", 0 };
-	//ObjectA weapon_c = { "Sword", 10 };
-	//ObjectA shield_c = { "Shield", 5 };
-	//ObjectA potion_c = { "Potion", 15 };
-
-	//ObjectB nothing_b = { "Empty", "N/A" };
-	//ObjectB weapon_b = { "Sword", "A sword is a bladed melee weapon." };
-	//ObjectB shield_b = { "Shield", "A shield is a piece of personal armour." };
-	//ObjectB potion_b = { "Potion", "A potion is a magic liquid." };
-
-	//std::array<std::shared_ptr<IObject>, 10> c_obj_array;
-	//c_obj_array.fill(std::make_shared<ObjectA>(nothing_c));
-	//c_obj_array = {
-	//	std::make_shared<ObjectA>(weapon_c),
-	//	std::make_shared<ObjectA>(shield_c),
-	//	std::make_shared<ObjectA>(potion_c)
-	//};
-	//std::cout << "----------------------\n\n";
-
-
-
-	//DiceObject dice_obj(obj_array);
-	//DiceNumeric dice_num(10);
-
-	//RollDiceFactory factory;
-	//for (int i = 0; i < 10; i++) {
-	//	factory.roll(dice_obj);
-	//	factory.roll(dice_num);
-	//	factory.rollAdvantage(dice_num);
-	//	factory.rollDisadvantage(dice_num);
-	//}
-	//std::cout << "----------------------\n\n";
-
-	//RollDiceFactory* p_factory = new RollDiceFactory();
-	//for (int i = 0; i < 10; i++) {
-	//	p_factory->roll(dice_obj);
-	//	p_factory->roll(dice_num);
-	//	p_factory->rollAdvantage(dice_num);
-	//	p_factory->rollDisadvantage(dice_num);
-	//}
-	//delete p_factory;
-	//std::cout << "======================\n\n";
-
-
-	//CompDiceObject comp_dice_obj(obj_array);
-	//CompDiceNumeric comp_dice_num(10);
-	//for (int i = 0; i < 10; i++) {
-	//	comp_dice_obj.roll();
-	//	comp_dice_num.roll();
-	//	comp_dice_num.rollAdvantage();
-	//	comp_dice_num.rollDisadvantage();
-	//}
-	//std::cout << "======================\n\n";
-
-	//RollDice roll_dice;
-	//for (int i = 0; i < 10; i++) {
-	//	roll_dice.roll(10);
-	//	roll_dice.roll(c_obj_array);
-	//}
-
-    //tool::drawLibraryFunctionsHelper();
 }
 

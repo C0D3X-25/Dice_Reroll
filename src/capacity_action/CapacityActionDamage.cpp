@@ -2,7 +2,7 @@
 
 using namespace capacity;
 
-CapacityActionDamage::CapacityActionDamage(const uint8_t damage, const std::vector<CapacityTargetEnum>& targets)
+CapacityActionDamage::CapacityActionDamage(const uint8_t damage, const std::vector<ECapacityTarget>& targets)
 	: m_damage(damage), BaseCapacityAction(targets) {}
 
 

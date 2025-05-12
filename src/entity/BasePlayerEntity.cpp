@@ -19,8 +19,9 @@ const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
 void entity::BasePlayerEntity::printEntity(void) const {
     std::cout
         << "Name: " << m_name
-        << " | Life: " << m_max_life
-		<< " | Armor: " << m_max_armor << '\n';
+        << " " << m_current_life << "/" << m_max_life << " Life "
+		<< " | " << m_current_armor << "/" << m_max_armor << " Armor "
+		<< '\n';
 
     std::cout << "\n---------- Attributes ----------\n";
 	m_up_attributes->printAllAttributes();

@@ -22,6 +22,9 @@ namespace entity {
 
 			generateAttributes(*new_entity);
 
+
+			new_entity->resetToDefaultValues();
+
 			return new_entity;
 		}
 

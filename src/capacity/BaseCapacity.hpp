@@ -2,7 +2,7 @@
 
 #include "../capacity_modifiers/CapacityModifiersStruct.hpp"
 #include "../capacity_action/BaseCapacityAction.hpp"
-#include "../capacity/CapacityEnum.hpp"
+#include "../capacity/ECapacity.hpp"
 
 #include <queue>
 #include <string>
@@ -64,21 +64,21 @@ namespace capacity {
 
 
 		void setEntityName(const std::string& name)								{ m_name = name; }
-		void setCapacityPurposes(const std::vector<CapacityPurposeEnum>& purpose)	{ m_capacity_purpose = purpose; }
-		void setCapacityTriggers(const std::vector<CapacityTriggerEnum>& trigger)	{ m_capacity_trigger = trigger; }
+		void setCapacityPurposes(const std::vector<ECapacityPurpose>& purpose)	{ m_capacity_purpose = purpose; }
+		void setCapacityTriggers(const std::vector<ECapacityTrigger>& trigger)	{ m_capacity_trigger = trigger; }
 		
 		std::string getCapacityName(void) const								{ return m_name; }
-		std::vector<CapacityPurposeEnum> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
-		std::vector<CapacityTargetEnum> getCapacityTargets(void) const		{ return m_capacity_target; }
-		std::vector<CapacityTriggerEnum> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
+		std::vector<ECapacityPurpose> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
+		std::vector<ECapacityTarget> getCapacityTargets(void) const		{ return m_capacity_target; }
+		std::vector<ECapacityTrigger> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
 
 	private:
 		std::string m_name{ "N/A" };
 		std::queue<CapacityModifiersStruct> m_capacity_modifiers;
 		CapacityModifiersStruct m_current_modifier;
-		std::vector<CapacityPurposeEnum> m_capacity_purpose;
-		std::vector<CapacityTargetEnum> m_capacity_target;
-		std::vector<CapacityTriggerEnum> m_capacity_trigger;
+		std::vector<ECapacityPurpose> m_capacity_purpose;
+		std::vector<ECapacityTarget> m_capacity_target;
+		std::vector<ECapacityTrigger> m_capacity_trigger;
 
 	private:
 

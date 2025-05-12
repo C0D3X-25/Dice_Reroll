@@ -8,11 +8,11 @@
 namespace capacity {
 	class CapacityActionAddArmor : public BaseCapacityAction {
 	public:
-		CapacityActionAddArmor(uint8_t armor, CapacityTargetEnum target);
+		CapacityActionAddArmor(uint8_t armor, ECapacityTarget target);
 		CapacityModifiersStruct doAction(void) override;
 
 	private:
 		uint8_t m_armor{ 0 };
-		CapacityTargetEnum m_target{ };
+		ECapacityTarget m_target{ };
 	};
 }

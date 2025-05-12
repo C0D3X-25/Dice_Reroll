@@ -9,7 +9,7 @@ namespace attribute {
 
 	/// <summary>
 	/// Struct to hold the stats of an entity.
-	/// Minimum value is 1.
+	/// Minimum value is -10.
 	/// </summary>
 	struct Attribute {
 

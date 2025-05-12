@@ -18,19 +18,10 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\interface\IDiceFactory.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\interface\IObject.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\interface\Dice.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\capacity\BaseCapacity.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\status\StatusEnum.hpp">
+    <ClCompile Include="src\status\EStatus.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\capacity_action\BaseCapacityAction.hpp">
@@ -50,9 +41,6 @@
     </ClCompile>
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp">
       <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\entity\PlayerEntityWarrior.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\entity\BasePlayerEntity.cpp">
       <Filter>Source Files</Filter>
@@ -74,16 +62,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\interface\IDiceComposition.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\entity\BaseEntity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\capacity\CapacityNothing.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\entity\PlayerEntityWarrior.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\BasePlayerEntity.hpp">
@@ -116,13 +98,13 @@
     <ClInclude Include="src\capacity_action\CapacityActionRemoveArmor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity\CapacityEnum.hpp">
+    <ClInclude Include="src\capacity\ECapacity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\helper\SRandom.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\attribute\AttributeEnum.hpp">
+    <ClInclude Include="src\attribute\EAttribute.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\combat\CapacityTargetsManager.hpp">
@@ -138,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\GeneratePlayerEntity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\helper\SCalculate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

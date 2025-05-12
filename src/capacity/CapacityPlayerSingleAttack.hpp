@@ -23,7 +23,7 @@ namespace capacity {
 
 				// Take the best between dexterity and strength
 			{
-				std::vector<CapacityTargetEnum> targets{ TARGET_ALIVE, TARGET_SINGLE, TARGET_ENNEMY };
+				std::vector<ECapacityTarget> targets{ TARGET_ALIVE, TARGET_SINGLE, TARGET_ENNEMY };
 
 				constexpr int8_t min_damage{ 1 };
 				constexpr int8_t base_damage{ 5 };
@@ -36,7 +36,7 @@ namespace capacity {
 
 				// Take the best between dexterity and strength
 			{
-				std::vector<CapacityTargetEnum> targets{ TARGET_ALIVE, TARGET_RANDOM, TARGET_ENNEMY };
+				std::vector<ECapacityTarget> targets{ TARGET_ALIVE, TARGET_RANDOM, TARGET_ENNEMY };
 
 				constexpr int8_t min_damage{ 1 };
 				constexpr int8_t base_damage{ 5 };

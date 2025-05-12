@@ -4,6 +4,7 @@
 #include "../capacity/BaseCapacity.hpp"
 #include "../dice/DiceCapacity.hpp"
 #include "../capacity/IUseAndResolveCapacity.hpp"
+#include "../helper/SCalculate.hpp"
 
 #include <iostream>
 #include <string>
@@ -18,6 +19,9 @@ namespace entity {
 	using namespace capacity;
 
 	inline constexpr uint8_t BASE_MAX_LIFE{ 20 };
+	inline constexpr uint8_t BASE_MIN_LIFE{ 1 };
+	inline constexpr uint8_t BASE_MAX_ARMOR{ 2 };
+	inline constexpr uint8_t BASE_MIN_ARMOR{ 0 };
 
 	class BasePlayerEntity : public BaseEntity, 
 		public IUseAndResolveCapacity {
@@ -30,7 +34,7 @@ namespace entity {
 
 		/**
 		* @brief Assigns a capacity to a specific side of the dice capacity
-		* @param capacity The capacity to assign
+		* @param sp_capacity The capacity to assign
 		* @param side The side number to assign the capacity to (1-10)
 		*/
 		void setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side);
@@ -42,7 +46,13 @@ namespace entity {
 
 		void printEntity(void) const override;
 
-	protected:
+		void resetToDefaultValues(void) {
+			updateEntity();
+			m_current_life = m_max_life;
+			m_current_armor = m_max_armor;
+		}
+
+	//protected:
 
 		void updateEntity(void) override {
 			calculateMaxLife();
@@ -53,20 +63,24 @@ namespace entity {
 
 		void calculateMaxLife(void) {
 
-			uint16_t max_life{ BASE_MAX_LIFE };
-			max_life += m_up_attributes->getConstitution() * 1.5;
+			int16_t max_life{ BASE_MAX_LIFE };
+			// TODO: max_life += bonus_life;
+			max_life += int16_t(m_up_attributes->getConstitution() * 1.5);
 
 			setMaxLife(max_life);
 		}
 
-		// Calculate the maximum armor based on the entity's max life and the best between Strength and Wisdom.
+
+		// Calculate the maximum armor value based on the attributes
+		// best physic = max(strength, dexterity)
+		// best psychic = max(wisdom, intelligence, charisma)
+		// max_armor = base_max_armor + best_physic + best_psychic
 		void calculateMaxArmor(void) {
 
-			calculateMaxLife();
-
-			uint16_t max_armor{ m_max_life };
-			int16_t best{ std::max(m_up_attributes->getStrength(), m_up_attributes->getWisdom()) };
-			max_armor += (best * 1.5) > 0 ? best : 0;
+			// TODO: max_armor += bonus_armor;
+			int16_t best_physic{ helper::calculate::bestValue<int16_t>( m_up_attributes->getStrength(), m_up_attributes->getDexterity(), 0) };
+			int16_t best_psychic{ helper::calculate::bestValue<int16_t>(m_up_attributes->getWisdom(), m_up_attributes->getIntelligence(), m_up_attributes->getCharisma(), 0) };
+			int16_t max_armor{ BASE_MAX_ARMOR + best_physic + best_psychic };
 
 			setMaxArmor(max_armor);
 		}
