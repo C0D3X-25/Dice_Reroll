@@ -4,21 +4,21 @@
 using namespace dice;
 
 DiceCapacity::DiceCapacity(void) {
+	CapacityFactory capacity_factory;
+
     // Initialize sides 1 through m_SIDES_COUNT (inclusive)
     for (uint8_t i{ 1 }; i <= m_SIDES_COUNT; i++) {
-        m_sides.emplace(i, m_capacity_nothing);
+        m_sides.emplace(i, capacity_factory.nothing());
     }
 }
 
 
-bool DiceCapacity::setCapacity(const BaseCapacity& capacity, const uint8_t side) {
-
-    if (side <= m_SIDES_COUNT) {
-        m_sides.at(side) = capacity;
-        std::cerr << "Failed to set capacity {" << capacity.getCapacityName() << "} for side " << static_cast<int>(side) << '\n';
-        return true;
+void DiceCapacity::setCapacity(const BaseCapacity& capacity, const uint8_t side) {
+    if (side > m_SIDES_COUNT || side < 1) {
+        std::cerr << "Out of range-> capacity {" << capacity.getCapacityName() << "} for side " << static_cast<int>(side) << '\n';
+        throw std::runtime_error("Invalid side for capacity assignment.");
     }
-    return false;
+    m_sides.at(side) = capacity;
 }
 
 
@@ -34,11 +34,7 @@ const BaseCapacity* DiceCapacity::getCapacity(const uint8_t side) const {
 void DiceCapacity::printDiceSides(void) const {
     for (const auto& [side, capacity] : m_sides) {
         std::cout << "Side " << static_cast<int>(side) << ":\n";
-        //if (!capacity.isEmpty()) {
-            capacity.printCapacity();
-        //} else {
-        //    std::cout << "  [Empty capacity]\n";
-        //}
+        capacity.printCapacity();
         std::cout << "---------------\n";
     }
 }

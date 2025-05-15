@@ -36,9 +36,6 @@
     <ClCompile Include="src\dice\DiceCapacity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity\CapacityNothing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -63,9 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\entity\BaseEntity.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\capacity\CapacityNothing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\BasePlayerEntity.hpp">
@@ -123,6 +117,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\helper\SCalculate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity\CapacityFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

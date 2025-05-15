@@ -161,7 +161,6 @@
     <ClCompile Include="src\capacity_action\CapacityActionRemoveArmor.cpp" />
     <ClCompile Include="src\entity\BaseEntity.cpp" />
     <ClCompile Include="src\entity\BasePlayerEntity.cpp" />
-    <ClCompile Include="src\capacity\CapacityNothing.cpp" />
     <ClCompile Include="src\dice\DiceCapacity.cpp" />
     <ClCompile Include="src\status\EStatus.hpp" />
     <ClCompile Include="src\capacity_action\BaseCapacityAction.hpp" />
@@ -172,8 +171,8 @@
     <ClCompile Include="src\capacity_modifiers\CapacityModifiersStruct.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\capacity\CapacityFactory.hpp" />
     <ClInclude Include="src\attribute\EAttribute.hpp" />
-    <ClInclude Include="src\capacity\CapacityNothing.hpp" />
     <ClInclude Include="src\capacity\ECapacity.hpp" />
     <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionDamage.hpp" />

@@ -2,7 +2,7 @@
 #include "ABaseDice.hpp"
 #include "IRollAdvantageDisadvantage.hpp"
 #include "../capacity/BaseCapacity.hpp"
-#include "../capacity/CapacityNothing.hpp"
+#include "../capacity/CapacityFactory.hpp"
 
 #include <array>
 #include <map>
@@ -10,13 +10,13 @@
 
 namespace capacity {
     class BaseCapacity;
-    class CapacityNothing;
+    class CapacityFactory;
 }
 
 namespace dice {
 
     using capacity::BaseCapacity;
-    using capacity::CapacityNothing;
+    using capacity::CapacityFactory;
 
     /**
      * @brief A specialized dice that contains capacity effects on each side
@@ -44,7 +44,7 @@ namespace dice {
          * @param capacity The capacity to assign
          * @param side The side number to assign the capacity to (1-10)
          */
-        bool setCapacity(const BaseCapacity& capacity, const uint8_t side);
+        void setCapacity(const BaseCapacity& capacity, const uint8_t side);
         
         /**
          * @brief Retrieves the capacity assigned to a specific side
@@ -81,7 +81,5 @@ namespace dice {
     private:
         /** @brief Map storing the capacity for each side of the dice */
         std::map<uint8_t, BaseCapacity> m_sides{};
-        CapacityNothing m_capacity_nothing;
-
     };
 }
