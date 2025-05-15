@@ -5,7 +5,7 @@ namespace helper {
 
 
 		template<typename T, typename... Args>
-		inline T bestValue(T start, Args... others) {
+		inline T getBestValue(T start, Args... others) {
 			int best = start;
 			((best = (others > best ? others : best)), ...);
 
@@ -14,7 +14,7 @@ namespace helper {
 
 
 		template<typename T, typename... Args>
-		inline T worstValue(T start, Args... others) {
+		inline T getWorstValue(T start, Args... others) {
 			int worst = start;
 			((worst = (others < worst ? others : worst)), ...);
 

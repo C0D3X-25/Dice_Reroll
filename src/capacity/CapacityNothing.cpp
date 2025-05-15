@@ -3,5 +3,6 @@
 using namespace capacity;
 
 CapacityNothing::CapacityNothing(void) {
-	setEntityName("Nothing");
+	setCapacityName("Nothing");
+	setCapacityDescription("Just skip your turn");
 }

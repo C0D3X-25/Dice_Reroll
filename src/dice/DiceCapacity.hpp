@@ -44,7 +44,7 @@ namespace dice {
          * @param capacity The capacity to assign
          * @param side The side number to assign the capacity to (1-10)
          */
-        void setCapacity(const BaseCapacity& capacity, const uint8_t side);
+        bool setCapacity(const BaseCapacity& capacity, const uint8_t side);
         
         /**
          * @brief Retrieves the capacity assigned to a specific side
@@ -81,5 +81,7 @@ namespace dice {
     private:
         /** @brief Map storing the capacity for each side of the dice */
         std::map<uint8_t, BaseCapacity> m_sides{};
+        CapacityNothing m_capacity_nothing;
+
     };
 }

@@ -67,12 +67,14 @@ namespace capacity {
 	// When the capacity is used
 	enum ECapacityTrigger {
 		USED_WHEN_TURN_END,
+		USED_WHEN_TURN_START,
 		USED_WHEN_ASSIGNED
 	};
 
 	constexpr std::string_view toString(ECapacityTrigger trigger) {
 		switch (trigger) {
 			case USED_WHEN_TURN_END:	return "USED_WHEN_TURN_END";
+			case USED_WHEN_TURN_START:	return "USED_WHEN_TURN_START";
 			case USED_WHEN_ASSIGNED:    return "USED_WHEN_ASSIGNED";
 			default:                    return "N/A";
 		}

@@ -78,8 +78,8 @@ namespace entity {
 		void calculateMaxArmor(void) {
 
 			// TODO: max_armor += bonus_armor;
-			int16_t best_physic{ helper::calculate::bestValue<int16_t>( m_attributes.getStrength(), m_attributes.getDexterity(), 0) };
-			int16_t best_psychic{ helper::calculate::bestValue<int16_t>(m_attributes.getWisdom(), m_attributes.getIntelligence(), m_attributes.getCharisma(), 0) };
+			int16_t best_physic{ helper::calculate::getBestValue<int16_t>( m_attributes.getStrength(), m_attributes.getDexterity(), 0) };
+			int16_t best_psychic{ helper::calculate::getBestValue<int16_t>(m_attributes.getWisdom(), m_attributes.getIntelligence(), m_attributes.getCharisma(), 0) };
 			int16_t max_armor{ BASE_MAX_ARMOR + best_physic + best_psychic };
 
 			setMaxArmor(max_armor);

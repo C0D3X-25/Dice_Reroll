@@ -26,7 +26,7 @@ namespace entity {
 		virtual void setAttributes(const Attribute& new_attributes);
 		virtual void updateAttributes(const Attribute& update_attributes);
 
-		virtual void setEntityName(const std::string& name)		{ m_name = name; }
+		virtual void setCapacityName(const std::string& name)		{ m_name = name; }
 		virtual void setMaxLife(int16_t life)					{ m_max_life = life; }
 		virtual void setCurrentLife(int16_t life)				{ m_current_life = life; }
 		virtual void setMaxArmor(int16_t armor)					{ m_max_armor = armor; }

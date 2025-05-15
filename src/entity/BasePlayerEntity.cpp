@@ -18,8 +18,8 @@ const BaseCapacity entity::BasePlayerEntity::rollDiceCapacity(void) {
 
 void entity::BasePlayerEntity::printEntity(void) const {
     std::cout
-        << "Name: " << m_name
-        << " " << m_current_life << "/" << m_max_life << " Life "
+        << m_name
+        << " || " << m_current_life << "/" << m_max_life << " Life "
 		<< " | " << m_current_armor << "/" << m_max_armor << " Armor "
 		<< '\n';
 

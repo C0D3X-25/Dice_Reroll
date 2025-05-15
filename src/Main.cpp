@@ -29,15 +29,23 @@ int main() {
 	GeneratePlayerEntity entity_generator;
 	BasePlayerEntity entity_1 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_2 = entity_generator.generateNewPlayerEntity();
+	CapacityPlayerSingleAttack attack(entity_2);
+	entity_2.setCapacity(attack,2);
+	BasePlayerEntity entity_3 = entity_generator.generateNewPlayerEntity();
+	BasePlayerEntity entity_4 = entity_generator.generateNewPlayerEntity();
+	BasePlayerEntity entity_5 = entity_generator.generateNewPlayerEntity();
+	BasePlayerEntity entity_6 = entity_generator.generateNewPlayerEntity();
 
 	Team team_1("Team 1");
 	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_1), 0);
 	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_2), 0);
-	//team_1.addEntity(entity_2, 0);
+	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_3), 0);
+	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_4), 0);
 
 	Team team_2("Team 2");
-	team_2.transferEntity(0, team_1, 0);
-
+	team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_5), 0);
+	team_1.transferEntityTo(team_2, 1, 0);
+	team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_6), 0);
 
 	team_1.printGroup();
 	team_2.printGroup();

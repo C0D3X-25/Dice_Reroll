@@ -4,6 +4,7 @@
 #include "../capacity_action/CapacityActionDamage.hpp"
 #include "../attribute/Attribute.hpp"
 #include "../entity/BaseEntity.hpp" 
+#include "../helper/SCalculate.hpp"
 
 #include <vector>
 
@@ -17,33 +18,32 @@ namespace capacity {
 
 		CapacityPlayerSingleAttack(const BaseEntity& user) {
 
-				setEntityName("Attack");
-				setCapacityPurposes({ ATTACK_PHYSICAL });
-				setCapacityTriggers({ USED_WHEN_TURN_END });
+			setCapacityName("1 Attack and 1 Random Attack");
+			setCapacityDescription("Attack a single ennemy with STR or DEX, then attack a random ennemy with STR or DEX");
+			setCapacityPurposes({ ATTACK_PHYSICAL });
+			setCapacityTriggers({ USED_WHEN_TURN_END });
 
-				// Take the best between dexterity and strength
+			// Take the best between dexterity and strength
 			{
 				std::vector<ECapacityTarget> targets{ TARGET_ALIVE, TARGET_SINGLE, TARGET_ENNEMY };
 
 				constexpr int8_t min_damage{ 1 };
-				constexpr int8_t base_damage{ 5 };
-				int8_t best_between_dex_str = std::max(user.getStrength(), user.getDexterity());
-				int8_t total_damage = base_damage + best_between_dex_str;
+				constexpr int8_t base_damage{ 3 };
+				int8_t total_damage = base_damage + helper::calculate::getBestValue(user.getStrength(), user.getDexterity(), min_damage);
 
-				CapacityActionDamage attack(total_damage >= min_damage ? total_damage : min_damage, targets);
+				CapacityActionDamage attack(total_damage, targets);
 				queueCapacityModifier(attack.doAction());
 			}
 
-				// Take the best between dexterity and strength
+			// Take the best between dexterity and strength
 			{
 				std::vector<ECapacityTarget> targets{ TARGET_ALIVE, TARGET_RANDOM, TARGET_ENNEMY };
 
 				constexpr int8_t min_damage{ 1 };
 				constexpr int8_t base_damage{ 5 };
-				int8_t best_between_dex_str = std::max(user.getStrength(), user.getDexterity());
-				int8_t total_damage = base_damage + best_between_dex_str;
+				int8_t total_damage = base_damage + helper::calculate::getBestValue(user.getStrength(), user.getDexterity(), min_damage);
 
-				CapacityActionDamage attack(total_damage >= min_damage ? total_damage : min_damage, targets);
+				CapacityActionDamage attack(total_damage, targets);
 				queueCapacityModifier(attack.doAction());
 			}
 		}

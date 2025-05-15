@@ -21,40 +21,16 @@ namespace group {
             : m_group_max_size(group_max_size), m_group_name(group_name) {}
         virtual ~BaseGroup(void) = default;
 
-        // WITHOUT PTR
-        //virtual bool addEntity(BaseEntity& entity, const uint8_t index_entity) {
-        //    if (isGroupComplete()) {
-        //        return false;
-        //    }
-
-        //    if (index_entity < m_group_max_size) {
-        //        if (!m_group[index_entity].has_value()) {
-        //            m_group[index_entity] = std::move(entity);
-        //            m_group_current_size++;
-        //            return true;
-        //        }
-        //    }
-
-        //    // Find first empty slot
-        //    for (size_t i = 0; i < m_group_max_size; i++) {
-        //        if (!m_group[i].has_value()) {
-        //            m_group[i] = std::move(entity);
-        //            m_group_current_size++;
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-
 
         virtual bool addEntity(std::unique_ptr<BaseEntity> entity, const uint8_t index_entity) {
+
             if (isGroupComplete()) {
                 return false;
             }
 
             if (index_entity < m_group_max_size) {
-                if (!m_group[index_entity].has_value()) {
-                    m_group[index_entity] = std::move(entity);
+                if (!m_group.at(index_entity).has_value()) {
+                    m_group.at(index_entity) = std::move(entity);
                     m_group_current_size++;
                     return true;
                 }
@@ -62,8 +38,8 @@ namespace group {
 
             // Find first empty slot
             for (size_t i = 0; i < m_group_max_size; i++) {
-                if (!m_group[i].has_value()) {
-                    m_group[i] = std::move(entity);
+                if (!m_group.at(i).has_value()) {
+                    m_group.at(i) = std::move(entity);
                     m_group_current_size++;
                     return true;
                 }
@@ -73,8 +49,8 @@ namespace group {
 
 
         virtual bool removeEntity(uint8_t index_entity) {
-            if (index_entity < m_group_max_size && m_group[index_entity].has_value()) {
-                m_group[index_entity].reset();
+            if (index_entity < m_group_max_size && m_group.at(index_entity).has_value()) {
+                m_group.at(index_entity).reset();
                 m_group_current_size--;
                 return true;
             }
@@ -82,27 +58,54 @@ namespace group {
         }
 
 
-        virtual bool transferEntity(const uint8_t source_index_entity, BaseGroup& target_group, const uint8_t target_index_entity = 0) {
+        virtual bool transferEntityTo(BaseGroup& target_group, const uint8_t source_index_entity,  const uint8_t target_index_entity = 0) {
 
-            if (source_index_entity >= m_group_max_size || !m_group[source_index_entity].has_value()) {
+            if (!m_group.at(source_index_entity).has_value()) {
+                std::cerr << "Source entity doesn't exist\n";
                 return false;
             }
-
             if (target_group.isGroupComplete()) {
+                std::cerr << "Group is complete\n";
                 return false;
             }
 
-            auto entity = std::move(m_group[source_index_entity].value());
-            if (target_group.addEntity(std::move(entity), target_index_entity)) {
+            //auto entity = std::move(m_group[source_index_entity].value());
+
+            if (target_group.addEntity(std::move(m_group.at(source_index_entity).value()), target_index_entity)) {
                 removeEntity(source_index_entity);
                 return true;
             }
-
             return false;
         }
 
         // WITHOUT PTR
-        //virtual bool transferEntity(const uint8_t source_index_entity, BaseGroup& target_group, const uint8_t target_index_entity = 0) {
+        //virtual bool addEntity(BaseEntity& entity, const uint8_t index_entity) {
+        //    if (isGroupComplete()) {
+        //        return false;
+        //    }
+
+        //    if (index_entity < m_group_max_size) {
+        //        if (!m_group.at(index_entity).has_value()) {
+        //            m_group.at(index_entity) = std::move(entity);
+        //            m_group_current_size++;
+        //            return true;
+        //        }
+        //    }
+
+        //    // Find first empty slot
+        //    for (size_t i = 0; i < m_group_max_size; i++) {
+        //        if (!m_group.at(i).has_value()) {
+        //            m_group.at(i) = std::move(entity);
+        //            m_group_current_size++;
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+
+        // WITHOUT PTR
+        //virtual bool transferEntityTo(const uint8_t source_index_entity, BaseGroup& target_group, const uint8_t target_index_entity = 0) {
 
         //    if (source_index_entity >= m_group_max_size || !m_group[source_index_entity].has_value()) {
         //        return false;
@@ -124,26 +127,16 @@ namespace group {
         //}
 
         virtual BaseEntity& getEntity(uint8_t index_entity) {
-            if (index_entity >= m_group_max_size || !m_group[index_entity].has_value()) {
+            if (index_entity >= m_group_max_size || !m_group.at(index_entity).has_value()) {
                 throw std::out_of_range("Invalid entity index or empty slot");
             }
-            return *m_group[index_entity].value();
+            return *m_group.at(index_entity).value();
         }
 
 
-        virtual BaseEntity& operator[](uint8_t index_entity) {
-            return getEntity(index_entity);
-        }
-
-
-        bool isGroupComplete(void) const {
-            return m_group_current_size >= m_group_max_size;
-        }
-
-
-        bool isGroupEmpty(void) const {
-            return m_group_current_size == 0;
-        }
+        //virtual BaseEntity& operator[](uint8_t index_entity) {
+        //    return getEntity(index_entity);
+        //}
 
 
         virtual void printGroup(void) const {
@@ -164,6 +157,9 @@ namespace group {
                 }
             }
         }
+
+        bool isGroupComplete(void) const { return m_group_current_size >= m_group_max_size; }
+        bool isGroupEmpty(void) const { return m_group_current_size == 0; }
 
 		std::string_view getGroupName(void) const { return m_group_name; }
         uint8_t getGroupCurrentSize(void) const { return m_group_current_size; }

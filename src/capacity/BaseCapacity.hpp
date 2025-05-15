@@ -6,6 +6,7 @@
 
 #include <queue>
 #include <string>
+#include <string_view>
 #include <vector>
 #include <iostream>
 
@@ -43,8 +44,8 @@ namespace capacity {
 
 
 		void printCapacity(void) const {
-			std::cout << "Capacity name:     - " << getCapacityName()
-				<< " -\n";
+			std::cout << " - " << getCapacityName()
+				<< " - \n" << getCapacityDescription() << '\n';
 			std::cout << "Capacity purposes: [ ";
 			for (const auto& purpose : m_capacity_purpose) {
 				std::cout << toString(purpose) << " ";
@@ -62,15 +63,15 @@ namespace capacity {
 			std::cout << "]\n";
 		}
 
-		bool isEmpty(void) const {
-			return m_capacity_modifiers.empty();
-		}
+		bool isEmpty(void) const { return m_capacity_modifiers.empty(); }
 
-		void setEntityName(const std::string& name)								{ m_name = name; }
+		void setCapacityName(const std::string& name)							{ m_name = name; }
+		void setCapacityDescription(const std::string& description)				{ m_description = description; }
 		void setCapacityPurposes(const std::vector<ECapacityPurpose>& purpose)	{ m_capacity_purpose = purpose; }
 		void setCapacityTriggers(const std::vector<ECapacityTrigger>& trigger)	{ m_capacity_trigger = trigger; }
 		
-		std::string getCapacityName(void) const							{ return m_name; }
+		std::string_view getCapacityName(void) const					{ return m_name; }
+		std::string_view getCapacityDescription(void) const				{ return m_description; }
 		std::vector<ECapacityPurpose> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
 		std::vector<ECapacityTarget> getCapacityTargets(void) const		{ return m_capacity_target; }
 		std::vector<ECapacityTrigger> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
@@ -86,6 +87,7 @@ namespace capacity {
 
 	private:
 		std::string m_name{ "N/A" };
+		std::string m_description{ "N/A" };
 		std::queue<CapacityModifiersStruct> m_capacity_modifiers;
 		CapacityModifiersStruct m_current_modifier;
 		std::vector<ECapacityPurpose> m_capacity_purpose;
