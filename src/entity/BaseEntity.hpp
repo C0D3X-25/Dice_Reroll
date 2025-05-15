@@ -4,6 +4,9 @@
 #include "../attribute/Attribute.hpp"
 
 #include <memory>
+#include <string>
+#include <iostream>
+#include <string_view>
 
 namespace entity {
 
@@ -13,6 +16,7 @@ namespace entity {
 
 	class BaseEntity {
 	public:
+		//BaseEntity(void) = default;
 		BaseEntity(const std::string& name);
 		BaseEntity(const std::string& name, const int16_t max_life, const int16_t max_armor);
 		virtual ~BaseEntity(void) = default;
@@ -33,12 +37,12 @@ namespace entity {
 		virtual int16_t getCurrentLife(void) const				{ return m_current_life; }
 		virtual int16_t getMaxArmor(void) const					{ return m_max_armor; }
 		virtual int16_t getCurrentArmor(void) const				{ return m_current_armor; }
-		virtual int8_t getStrength(void) const					{ return m_up_attributes->getStrength(); }
-		virtual int8_t getDexterity(void) const					{ return m_up_attributes->getDexterity(); }
-		virtual int8_t getConstitution(void) const				{ return m_up_attributes->getConstitution(); }
-		virtual int8_t getIntelligence(void) const				{ return m_up_attributes->getIntelligence(); }
-		virtual int8_t getWisdom(void) const					{ return m_up_attributes->getWisdom(); }
-		virtual int8_t getCharisma(void) const					{ return m_up_attributes->getCharisma(); }
+		virtual int8_t getStrength(void) const					{ return m_attributes.getStrength(); }
+		virtual int8_t getDexterity(void) const					{ return m_attributes.getDexterity(); }
+		virtual int8_t getConstitution(void) const				{ return m_attributes.getConstitution(); }
+		virtual int8_t getIntelligence(void) const				{ return m_attributes.getIntelligence(); }
+		virtual int8_t getWisdom(void) const					{ return m_attributes.getWisdom(); }
+		virtual int8_t getCharisma(void) const					{ return m_attributes.getCharisma(); }
 
 	protected:
 
@@ -47,7 +51,7 @@ namespace entity {
 	protected:
 
 		std::string m_name{ "N/A" };
-		std::unique_ptr<Attribute> m_up_attributes;
+		Attribute m_attributes;
 		int16_t m_max_life{ 0 };
 		int16_t m_current_life{ 0 };
 		int16_t m_max_armor{ 0 };

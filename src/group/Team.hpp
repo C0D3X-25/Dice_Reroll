@@ -3,6 +3,7 @@
 #include "../entity/BaseEntity.hpp"
 #include "BaseGroup.hpp"
 
+#include <string>
 
 namespace group {
 
@@ -12,8 +13,8 @@ namespace group {
 
 	class Team : public BaseGroup {
 	public:
-		Team(void)
-		: BaseGroup(TEAM_MAX_SIZE) {
+		Team(std::string team_name)
+		: BaseGroup(TEAM_MAX_SIZE, team_name) {
 
 		}
 

@@ -4,97 +4,175 @@
 
 #include <array>
 #include <memory>
+#include <string>
 #include <iostream>
+#include <optional>
+#include <string_view>
 
 namespace group {
 
     using entity::BaseEntity;
 
-    inline constexpr uint8_t GROUP_MAX_SIZE{ 20 };
+    inline constexpr uint8_t GROUP_MAX_SIZE{ 20U };
 
     class BaseGroup {
     public:
-        BaseGroup(uint8_t group_size)
-            : m_group_size(group_size) {}
+        BaseGroup(uint8_t group_max_size, std::string group_name)
+            : m_group_max_size(group_max_size), m_group_name(group_name) {}
         virtual ~BaseGroup(void) = default;
 
-        virtual bool addEntity(std::unique_ptr<BaseEntity> up_entity, const uint8_t index_entity) {
-            if (!up_entity) {
-                std::cout << "Entity passed is incorrect\n";
-                return false;
-            }
+        // WITHOUT PTR
+        //virtual bool addEntity(BaseEntity& entity, const uint8_t index_entity) {
+        //    if (isGroupComplete()) {
+        //        return false;
+        //    }
+
+        //    if (index_entity < m_group_max_size) {
+        //        if (!m_group[index_entity].has_value()) {
+        //            m_group[index_entity] = std::move(entity);
+        //            m_group_current_size++;
+        //            return true;
+        //        }
+        //    }
+
+        //    // Find first empty slot
+        //    for (size_t i = 0; i < m_group_max_size; i++) {
+        //        if (!m_group[i].has_value()) {
+        //            m_group[i] = std::move(entity);
+        //            m_group_current_size++;
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+
+        virtual bool addEntity(std::unique_ptr<BaseEntity> entity, const uint8_t index_entity) {
             if (isGroupComplete()) {
-                std::cout << "Group is complete\n";
                 return false;
             }
 
-            // Place the new entity in the specified slot if it's empty
-            if (index_entity < m_group_size) {
-                if (!m_up_group[index_entity]) {
-                    m_up_group[index_entity] = std::move(up_entity);
-                    std::cout << "Entity added at index " << static_cast<int>(index_entity) << '\n';
+            if (index_entity < m_group_max_size) {
+                if (!m_group[index_entity].has_value()) {
+                    m_group[index_entity] = std::move(entity);
+                    m_group_current_size++;
                     return true;
                 }
             }
 
-            // Place the new entity in the first empty slot if index_entity is out of range or the slot is occupied
-            for (size_t i = 0; i < m_group_size; i++) {
-                if (!m_up_group[i]) {
-                    m_up_group[i] = std::move(up_entity);
-                    std::cout << "Entity added at index " << static_cast<int>(i) << '\n';
+            // Find first empty slot
+            for (size_t i = 0; i < m_group_max_size; i++) {
+                if (!m_group[i].has_value()) {
+                    m_group[i] = std::move(entity);
+                    m_group_current_size++;
                     return true;
                 }
             }
             return false;
         }
 
+
         virtual bool removeEntity(uint8_t index_entity) {
-            if (m_up_group[index_entity]) {  // Changed condition to check if entity exists
-                m_up_group[index_entity].reset();
+            if (index_entity < m_group_max_size && m_group[index_entity].has_value()) {
+                m_group[index_entity].reset();
+                m_group_current_size--;
                 return true;
             }
             return false;
         }
 
-        virtual BaseEntity& getEntity(uint8_t index_entity) const {
-            if (index_entity >= m_group_size || !m_up_group[index_entity]) {
-                static BaseEntity entity("Non existent Entity");
-                return entity;
+
+        virtual bool transferEntity(const uint8_t source_index_entity, BaseGroup& target_group, const uint8_t target_index_entity = 0) {
+
+            if (source_index_entity >= m_group_max_size || !m_group[source_index_entity].has_value()) {
+                return false;
             }
-            return *m_up_group[index_entity];
+
+            if (target_group.isGroupComplete()) {
+                return false;
+            }
+
+            auto entity = std::move(m_group[source_index_entity].value());
+            if (target_group.addEntity(std::move(entity), target_index_entity)) {
+                removeEntity(source_index_entity);
+                return true;
+            }
+
+            return false;
         }
+
+        // WITHOUT PTR
+        //virtual bool transferEntity(const uint8_t source_index_entity, BaseGroup& target_group, const uint8_t target_index_entity = 0) {
+
+        //    if (source_index_entity >= m_group_max_size || !m_group[source_index_entity].has_value()) {
+        //        return false;
+        //    }
+
+        //    if (target_group.isGroupComplete()) {
+        //        return false;
+        //    }
+
+        //    auto entity = std::move(m_group[source_index_entity].value());
+        //    if (target_group.addEntity(entity, target_index_entity)) {
+        //        removeEntity(source_index_entity);
+        //        return true;
+        //    }
+
+        //    // If transfer failed, restore the entity
+        //    m_group[source_index_entity] = std::move(entity);
+        //    return false;
+        //}
+
+        virtual BaseEntity& getEntity(uint8_t index_entity) {
+            if (index_entity >= m_group_max_size || !m_group[index_entity].has_value()) {
+                throw std::out_of_range("Invalid entity index or empty slot");
+            }
+            return *m_group[index_entity].value();
+        }
+
+
+        virtual BaseEntity& operator[](uint8_t index_entity) {
+            return getEntity(index_entity);
+        }
+
 
         bool isGroupComplete(void) const {
-            for (const auto& entity : m_up_group) {
-                if (!entity) {  // Changed condition to check for empty slots
-                    return false;
-                }
-            }
-            return true;
+            return m_group_current_size >= m_group_max_size;
         }
+
 
         bool isGroupEmpty(void) const {
-            for (const auto& entity : m_up_group) {
-                if (entity) {
-                    return false;
-                }
-            }
-            return true;
+            return m_group_current_size == 0;
         }
 
-        virtual void printTeam(void) const {
-            for (const auto& entity : m_up_group) {
-                if (entity) {
-                    entity->printEntity();
-                    std::cout << "========================================================\n\n";
+
+        virtual void printGroup(void) const {
+            std::cout << "========================================================\n";
+            std::cout << m_group_name << " (" << static_cast<int>(getGroupCurrentSize()) 
+                      << "/" << static_cast<int>(getGroupMaxSize()) << ")\n";
+            std::cout << "========================================================\n\n";
+            
+            if (isGroupEmpty()) {
+                std::cout << "Group is empty\n";
+                return;
+            }
+
+            for (const auto& entity_opt : m_group) {
+                if (entity_opt.has_value()) { // Only print if the optional contains an entity
+                    entity_opt.value()->printEntity();
+                    std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n";
                 }
             }
         }
 
-        uint8_t getGroupSize(void) const { return m_group_size; }
+		std::string_view getGroupName(void) const { return m_group_name; }
+        uint8_t getGroupCurrentSize(void) const { return m_group_current_size; }
+        uint8_t getGroupMaxSize(void) const { return m_group_max_size; }
 
     private:
-        std::array<std::unique_ptr<BaseEntity>, GROUP_MAX_SIZE> m_up_group{};
-        uint8_t m_group_size{ 0 };
+        std::array<std::optional<std::unique_ptr<BaseEntity>>, GROUP_MAX_SIZE> m_group;
+        std::string m_group_name{ "N/A" };
+        uint8_t m_group_current_size{ 0 };
+        uint8_t m_group_max_size{ GROUP_MAX_SIZE };
     };
 }

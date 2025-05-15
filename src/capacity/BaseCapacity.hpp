@@ -62,15 +62,27 @@ namespace capacity {
 			std::cout << "]\n";
 		}
 
+		bool isEmpty(void) const {
+			return m_capacity_modifiers.empty();
+		}
 
 		void setEntityName(const std::string& name)								{ m_name = name; }
 		void setCapacityPurposes(const std::vector<ECapacityPurpose>& purpose)	{ m_capacity_purpose = purpose; }
 		void setCapacityTriggers(const std::vector<ECapacityTrigger>& trigger)	{ m_capacity_trigger = trigger; }
 		
-		std::string getCapacityName(void) const								{ return m_name; }
+		std::string getCapacityName(void) const							{ return m_name; }
 		std::vector<ECapacityPurpose> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
 		std::vector<ECapacityTarget> getCapacityTargets(void) const		{ return m_capacity_target; }
 		std::vector<ECapacityTrigger> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
+
+	private:
+		void addCapacityTarget(const CapacityModifiersStruct& capacity_modifier) {
+			for (const auto& target : capacity_modifier.m_targets) {
+				if (std::find(m_capacity_target.begin(), m_capacity_target.end(), target) == m_capacity_target.end()) {
+					m_capacity_target.push_back(target);
+				}
+			}
+		}
 
 	private:
 		std::string m_name{ "N/A" };
@@ -79,15 +91,5 @@ namespace capacity {
 		std::vector<ECapacityPurpose> m_capacity_purpose;
 		std::vector<ECapacityTarget> m_capacity_target;
 		std::vector<ECapacityTrigger> m_capacity_trigger;
-
-	private:
-
-		void addCapacityTarget(const CapacityModifiersStruct& capacity_modifier) {
-			for (const auto& target : capacity_modifier.m_targets) {
-				if (std::find(m_capacity_target.begin(), m_capacity_target.end(), target) == m_capacity_target.end()) {
-					m_capacity_target.push_back(target);
-				}
-			}
-		}
 	};
 }

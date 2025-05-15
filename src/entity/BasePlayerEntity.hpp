@@ -37,9 +37,9 @@ namespace entity {
 		* @param sp_capacity The capacity to assign
 		* @param side The side number to assign the capacity to (1-10)
 		*/
-		void setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side);
+		void setCapacity(const BaseCapacity& sp_capacity, const uint8_t side);
 
-		const BaseCapacity& rollDiceCapacity(void) const;
+		const BaseCapacity rollDiceCapacity(void);
 		
 		void useCapacity(const BaseCapacity& capacity, BaseEntity& target) override;
 		void resolveCapacity(const CapacityModifiersStruct& capacity, const BaseEntity& source) override;
@@ -65,7 +65,7 @@ namespace entity {
 
 			int16_t max_life{ BASE_MAX_LIFE };
 			// TODO: max_life += bonus_life;
-			max_life += int16_t(m_up_attributes->getConstitution() * 1.5);
+			max_life += int16_t(m_attributes.getConstitution() * 1.5);
 
 			setMaxLife(max_life);
 		}
@@ -78,8 +78,8 @@ namespace entity {
 		void calculateMaxArmor(void) {
 
 			// TODO: max_armor += bonus_armor;
-			int16_t best_physic{ helper::calculate::bestValue<int16_t>( m_up_attributes->getStrength(), m_up_attributes->getDexterity(), 0) };
-			int16_t best_psychic{ helper::calculate::bestValue<int16_t>(m_up_attributes->getWisdom(), m_up_attributes->getIntelligence(), m_up_attributes->getCharisma(), 0) };
+			int16_t best_physic{ helper::calculate::bestValue<int16_t>( m_attributes.getStrength(), m_attributes.getDexterity(), 0) };
+			int16_t best_psychic{ helper::calculate::bestValue<int16_t>(m_attributes.getWisdom(), m_attributes.getIntelligence(), m_attributes.getCharisma(), 0) };
 			int16_t max_armor{ BASE_MAX_ARMOR + best_physic + best_psychic };
 
 			setMaxArmor(max_armor);
@@ -87,7 +87,7 @@ namespace entity {
 
 	private:
 
-		std::unique_ptr<DiceCapacity> m_up_dice_capacity = std::make_unique<DiceCapacity>();
+		DiceCapacity m_dice_capacity;
 		// TODO: Equipment m_inventory;
 		// TODO: Feat m_feat;
 

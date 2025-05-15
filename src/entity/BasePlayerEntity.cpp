@@ -6,13 +6,13 @@ entity::BasePlayerEntity::BasePlayerEntity(const std::string& name)
 	: BaseEntity(name) {}
 
 
-void entity::BasePlayerEntity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
-    m_up_dice_capacity->setCapacity(sp_capacity, side);
+void entity::BasePlayerEntity::setCapacity(const BaseCapacity& capacity, const uint8_t side) {
+    m_dice_capacity.setCapacity(capacity, side);
 }
 
 
-const BaseCapacity& entity::BasePlayerEntity::rollDiceCapacity(void) const {
-    return m_up_dice_capacity->roll();
+const BaseCapacity entity::BasePlayerEntity::rollDiceCapacity(void) {
+    return m_dice_capacity.roll();
 }
 
 
@@ -24,10 +24,10 @@ void entity::BasePlayerEntity::printEntity(void) const {
 		<< '\n';
 
     std::cout << "\n---------- Attributes ----------\n";
-	m_up_attributes->printAllAttributes();
+	m_attributes.printAllAttributes();
 
     std::cout << "\n---------- Dice Capacity ----------\n";
-    m_up_dice_capacity->printDiceSides();
+    m_dice_capacity.printDiceSides();
 }
 
 

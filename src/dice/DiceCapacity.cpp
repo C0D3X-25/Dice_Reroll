@@ -3,59 +3,54 @@
 
 using namespace dice;
 
-dice::DiceCapacity::DiceCapacity(void) {
-	// Initialize the sides of the dice with a nothing capacity
-	std::shared_ptr<BaseCapacity> nothing_capacity = std::make_shared<CapacityNothing>();
 
+DiceCapacity::DiceCapacity(void) {
+    BaseCapacity nothing_capacity;
+    // Initialize sides 1 through m_SIDES_COUNT (inclusive)
     for (uint8_t i = 1; i <= m_SIDES_COUNT; ++i) {
-        m_sides[i] = nothing_capacity;
+        m_sides.emplace(i, nothing_capacity);
     }
 }
 
 
-void DiceCapacity::setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side) {
-    auto it = m_sides.find(side);
-    if (it != m_sides.end()) {
-        it->second = sp_capacity;
+void DiceCapacity::setCapacity(const BaseCapacity& capacity, const uint8_t side) {
+    if (side <= m_SIDES_COUNT) {
+        m_sides[side] = capacity;
     }
 }
 
-
-const std::shared_ptr<BaseCapacity> DiceCapacity::getCapacity(const uint8_t side) const {
+const BaseCapacity* DiceCapacity::getCapacity(const uint8_t side) const {
     auto it = m_sides.find(side);
     if (it != m_sides.end()) {
-        return it->second;
+        return &(it->second);  // Return address of the found capacity
     }
     return nullptr;
 }
 
 
-//#pragma warning(push)
-//#pragma warning(disable: 4244) // Disable warning about possible data loss
-//const BaseCapacity& DiceCapacity::roll(void) {
-//    return m_sides.find(generateRandomValue(m_SIDES_COUNT))->second;
-//}
-//#pragma warning(pop)  // Restore warning settings
-
-
-void DiceCapacity::printDiceSides(void) {
+void DiceCapacity::printDiceSides(void) const {
     for (const auto& [side, capacity] : m_sides) {
-        std::cout << "Side: " << static_cast<int>(side) << '\n';
-        if (capacity) {
-            capacity->printCapacity();
+        std::cout << "Side " << static_cast<int>(side) << ":\n";
+        if (!capacity.isEmpty()) {
+            std::cout << "  Capacity: " << capacity.getCapacityName() << "\n";
+            capacity.printCapacity();
+        } else {
+            std::cout << "  [Empty capacity]\n";
         }
+        std::cout << "---------------\n";
     }
 }
 
 #pragma warning(push)
 #pragma warning(disable: 4244) // Disable warning about possible data loss
-const BaseCapacity& DiceCapacity::roll(void) {
+const BaseCapacity DiceCapacity::roll(void) {
+
     auto it = m_sides.find(getRandomValue(m_SIDES_COUNT));
-    if (it != m_sides.end() && it->second) {
-        return *it->second;
+
+    if (it != m_sides.end()) {
+        return it->second;
     }
-    static CapacityNothing default_capacity;
-    return default_capacity;
+    return BaseCapacity();
 }
 #pragma warning(pop)  // Restore warning settings
 

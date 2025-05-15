@@ -27,20 +27,24 @@ int main() {
 	
 	
 	GeneratePlayerEntity entity_generator;
-	std::unique_ptr<BasePlayerEntity> entity_1 = entity_generator.generateNewPlayerEntity();
-	std::unique_ptr<BasePlayerEntity> entity_2 = entity_generator.generateNewPlayerEntity();
+	BasePlayerEntity entity_1 = entity_generator.generateNewPlayerEntity();
+	BasePlayerEntity entity_2 = entity_generator.generateNewPlayerEntity();
 
-	Team team_1;
-    team_1.addEntity(std::unique_ptr<BaseEntity>(std::move(entity_1)), 0);
-	team_1.addEntity(std::move(entity_2), 0);
+	Team team_1("Team 1");
+	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_1), 0);
+	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_2), 0);
+	//team_1.addEntity(entity_2, 0);
 
-	std::cout << team_1.getGroupSize() << '\n';
+	Team team_2("Team 2");
+	team_2.transferEntity(0, team_1, 0);
 
-	team_1.printTeam();
 
-	//entity_1->printEntity();
+	team_1.printGroup();
+	team_2.printGroup();
+
+	//entity_1.printEntity();
 	//std::cout << "========================================================\n\n";
-	//entity_2->printEntity();
+	//entity_2.printEntity();
 	//std::cout << "========================================================\n\n";
 
 

@@ -28,8 +28,7 @@ namespace dice {
      * Inherits from ABaseDice for basic dice functionality and IRollAdvantageDisadvantage
      * for advantage/disadvantage roll mechanics.
      */
-    class DiceCapacity: 
-        public ABaseDice<BaseCapacity>/*,
+    class DiceCapacity: public ABaseDice<BaseCapacity>/*,
         IRollAdvantageDisadvantage<std::shared_ptr<BaseCapacity>>*/ {
 
     public:
@@ -45,14 +44,14 @@ namespace dice {
          * @param capacity The capacity to assign
          * @param side The side number to assign the capacity to (1-10)
          */
-        void setCapacity(const std::shared_ptr<BaseCapacity> sp_capacity, const uint8_t side);
+        void setCapacity(const BaseCapacity& capacity, const uint8_t side);
         
         /**
          * @brief Retrieves the capacity assigned to a specific side
          * @param side The side number to get the capacity from (1-10)
          * @return The capacity assigned to the specified side
          */
-        const std::shared_ptr<BaseCapacity> getCapacity(const uint8_t side) const;
+        const BaseCapacity* getCapacity(const uint8_t side) const;
 
         /**
          * @brief Performs an advantage roll (rolls twice and takes the better result)
@@ -70,17 +69,17 @@ namespace dice {
          * @brief Performs a single roll of the dice
          * @return The capacity from the rolled side
          */
-        const BaseCapacity& roll(void) override;
+        const BaseCapacity roll(void) override;
         
         /**
          * @brief Prints the current state of the dice
          */
-        void printDiceSides(void) override;
+        void printDiceSides(void) const override;
 
         static constexpr uint8_t m_SIDES_COUNT = 10;
 
     private:
         /** @brief Map storing the capacity for each side of the dice */
-        std::map<uint8_t, std::shared_ptr<BaseCapacity>> m_sides{};
+        std::map<uint8_t, BaseCapacity> m_sides{};
     };
 }

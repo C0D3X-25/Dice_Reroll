@@ -16,14 +16,14 @@ namespace entity {
 		GeneratePlayerEntity(void) = default;
 		~GeneratePlayerEntity(void) = default;
 
-		std::unique_ptr<BasePlayerEntity> generateNewPlayerEntity(void) {
+		BasePlayerEntity generateNewPlayerEntity(void) {
 
-			auto new_entity = std::make_unique<BasePlayerEntity>("Generated Entity");
+			auto new_entity = BasePlayerEntity("Generated Entity");
 
-			generateAttributes(*new_entity);
+			generateAttributes(new_entity);
 
 
-			new_entity->resetToDefaultValues();
+			new_entity.resetToDefaultValues();
 
 			return new_entity;
 		}
