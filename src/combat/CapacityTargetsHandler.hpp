@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../capacity_modifiers/CapacityComponent.hpp"
+#include "../capacity/CapacityComponent.hpp"
 #include "../capacity/ECapacity.hpp"
 #include "../capacity/BaseCapacity.hpp"
 #include "../capacity_action/BaseCapacityAction.hpp"

@@ -168,10 +168,10 @@
     <ClCompile Include="src\capacity\CapacityPlayerSingleAttack.hpp" />
     <ClCompile Include="src\capacity_resolution\ICapacityResolution.hpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\capacity_modifiers\CapacityComponent.hpp" />
+    <ClCompile Include="src\capacity\CapacityComponent.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\capacity\CapacityLibrary.hpp" />
+    <ClInclude Include="src\capacity\CapacityFactory.hpp" />
     <ClInclude Include="src\attribute\EAttribute.hpp" />
     <ClInclude Include="src\capacity\ECapacity.hpp" />
     <ClInclude Include="src\capacity\IUseAndResolveCapacity.hpp" />
@@ -180,6 +180,9 @@
     <ClInclude Include="src\capacity_action\CapacityActionHeal.hpp" />
     <ClInclude Include="src\capacity_action\CapacityActionRemoveArmor.hpp" />
     <ClInclude Include="src\capacity_resolution\BaseArmorResolution.hpp" />
+    <ClInclude Include="src\capacity_resolution\BaseDeathResolution.hpp" />
+    <ClInclude Include="src\capacity_resolution\BaseLifeResolution.hpp" />
+    <ClInclude Include="src\capacity_resolution\CapacityResolution.hpp" />
     <ClInclude Include="src\combat\BattleField.hpp" />
     <ClInclude Include="src\combat\CapacityTargetsHandler.hpp" />
     <ClInclude Include="src\dice\ABaseDice.hpp" />

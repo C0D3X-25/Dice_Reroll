@@ -30,7 +30,7 @@
     <ClCompile Include="src\capacity_resolution\ICapacityResolution.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_modifiers\CapacityComponent.hpp">
+    <ClCompile Include="src\capacity\CapacityComponent.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\dice\DiceCapacity.cpp">
@@ -119,10 +119,19 @@
     <ClInclude Include="src\helper\SCalculate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity\CapacityLibrary.hpp">
+    <ClInclude Include="src\capacity\CapacityFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\capacity_resolution\BaseArmorResolution.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_resolution\CapacityResolution.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_resolution\BaseLifeResolution.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_resolution\BaseDeathResolution.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

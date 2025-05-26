@@ -1,13 +1,12 @@
 #include "CapacityActionRemoveArmor.hpp"
 
-using namespace capacity;
+using namespace capacity_action;
 
-//capacity::CapacityActionRemoveArmor::CapacityActionRemoveArmor(uint8_t armor)
-//	: m_max_armor(armor) {
-//}
+capacity_action::CapacityActionRemoveArmor::CapacityActionRemoveArmor(const uint8_t armor, const std::vector<ECapacityTarget>& targets)
+	: m_armor(armor), BaseCapacityAction(targets) {}
 
-capacity::CapacityComponent CapacityActionRemoveArmor::doAction(void) {
-	CapacityComponent modifiers;
-	modifiers.m_remove_armor = m_armor;
-	return modifiers;
+
+capacity_action::CapacityComponent CapacityActionRemoveArmor::doAction(void) {
+	m_component.m_remove_armor = m_armor;
+	return m_component;
 }

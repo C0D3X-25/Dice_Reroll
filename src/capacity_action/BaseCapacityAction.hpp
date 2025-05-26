@@ -1,12 +1,15 @@
 #pragma once
 
-#include "../capacity_modifiers/CapacityComponent.hpp"
+#include "../capacity/CapacityComponent.hpp"
 #include "../capacity/ECapacity.hpp"
 
 #include <vector>
 #include <string>
 
-namespace capacity {
+namespace capacity_action {
+
+	using capacity::CapacityComponent;
+	using capacity::ECapacityTarget;
 
 	class BaseCapacityAction {
 	public:
@@ -15,14 +18,18 @@ namespace capacity {
 		virtual ~BaseCapacityAction(void) = default;
 
 		virtual CapacityComponent doAction(void) {
-			m_modifier.m_targets = m_targets;
-			return m_modifier;
+			m_component.m_targets = m_targets;
+			return m_component;
 		}
 
 		virtual std::vector<ECapacityTarget> getTargets(void) const { return m_targets; }
 
+	protected:
+
+		CapacityComponent m_component;
+
 	private:
-		CapacityComponent m_modifier;
+
 		std::vector<ECapacityTarget> m_targets;
 	};
 }

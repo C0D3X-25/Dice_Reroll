@@ -1,16 +1,13 @@
 #include "CapacityActionAddArmor.hpp"
 
-using namespace capacity;
 
-//CapacityActionAddArmor::CapacityActionAddArmor(uint8_t armor, ECapacityTarget target)
-//	: m_max_armor(armor), m_target(target) {
-//}
+capacity_action::CapacityActionAddArmor::CapacityActionAddArmor(const uint8_t armor, const std::vector<ECapacityTarget>& targets)
+	: m_armor(armor), BaseCapacityAction(targets) {}
 
 
-CapacityComponent capacity::CapacityActionAddArmor::doAction(void) {
-	CapacityComponent modifiers;
-	modifiers.m_add_armor = m_armor;
-	return modifiers;
+capacity_action::CapacityComponent capacity_action::CapacityActionAddArmor::doAction(void) {
+	m_component.m_add_armor = m_armor;
+	return m_component;
 }
 
 

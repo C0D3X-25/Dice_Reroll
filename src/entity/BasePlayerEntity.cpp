@@ -31,15 +31,15 @@ void entity::BasePlayerEntity::printEntity(void) const {
 }
 
 
-void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEntity& target) {
-	std::cout
-		<< m_name
-		<< " use capacity " << capacity.getCapacityName()
-		<< " on " << target.getEntityName()
-		<< '\n';
-
-	//target.resolveCapacity(capacity.getStats(), *this);
-}
+//void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEntity& target) {
+//	std::cout
+//		<< m_name
+//		<< " use capacity " << capacity.getCapacityName()
+//		<< " on " << target.getEntityName()
+//		<< '\n';
+//
+//	//target.resolveCapacity(capacity.getStats(), *this);
+//}
 
 
 //void entity::BasePlayerEntity::resolveCapacity(const CapacityComponent& capacity, const BaseEntity& source) {

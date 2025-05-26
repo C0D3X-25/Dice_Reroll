@@ -2,7 +2,7 @@
 #include "ABaseDice.hpp"
 #include "IRollAdvantageDisadvantage.hpp"
 #include "../capacity/BaseCapacity.hpp"
-#include "../capacity/CapacityLibrary.hpp"
+#include "../capacity/CapacityFactory.hpp"
 
 #include <array>
 #include <map>
@@ -10,13 +10,13 @@
 
 namespace capacity {
     class BaseCapacity;
-    class CapacityLibrary;
+    class CapacityFactory;
 }
 
 namespace dice {
 
     using capacity::BaseCapacity;
-    using capacity::CapacityLibrary;
+    using capacity::CapacityFactory;
 
     /**
      * @brief A specialized dice that contains capacity effects on each side

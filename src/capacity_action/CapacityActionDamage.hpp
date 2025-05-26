@@ -1,21 +1,20 @@
 #pragma once
 
 #include "BaseCapacityAction.hpp"
-#include "..\capacity_modifiers\CapacityComponent.hpp"
+#include "..\capacity\CapacityComponent.hpp"
 
 #include <cstdint>
 #include <vector>
 
-namespace capacity {
+namespace capacity_action {
 
 	class CapacityActionDamage : public BaseCapacityAction {
 	public:
-		CapacityActionDamage(const uint8_t damage, const std::vector<ECapacityTarget>& target);
+		CapacityActionDamage(const uint8_t damage, const std::vector<ECapacityTarget>& targets);
 
 		CapacityComponent doAction(void) override;
 
 	private:
-		CapacityComponent m_modifier;
 		uint8_t m_damage{ 0 };
 	};
 }

@@ -1,6 +1,7 @@
 #pragma once 
 
 #include "../capacity/BaseCapacity.hpp"
+#include "../capacity/CapacityComponent.hpp"
 #include "../attribute/Attribute.hpp"
 
 #include <memory>
@@ -16,7 +17,6 @@ namespace entity {
 
 	class BaseEntity {
 	public:
-		//BaseEntity(void) = default;
 		BaseEntity(const std::string& name);
 		BaseEntity(const std::string& name, const int16_t max_life, const int16_t max_armor);
 		virtual ~BaseEntity(void) = default;
@@ -50,12 +50,12 @@ namespace entity {
 
 	protected:
 
-		std::string m_name{ "N/A" };
+		std::string m_name		{ "N/A" };
 		Attribute m_attributes;
-		int16_t m_max_life{ 0 };
-		int16_t m_current_life{ 0 };
-		int16_t m_max_armor{ 0 };
-		int16_t m_current_armor{ 0 };
+		int16_t m_max_life		{ 0 };
+		int16_t m_current_life	{ 0 };
+		int16_t m_max_armor		{ 0 };
+		int16_t m_current_armor	{ 0 };
 		// TODO: Status m_status;
 		// TODO: Passive m_passive;
 

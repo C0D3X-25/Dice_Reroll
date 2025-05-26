@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../capacity_modifiers/CapacityComponent.hpp"
-#include "../capacity_action/BaseCapacityAction.hpp"
+#include "CapacityComponent.hpp"
 #include "ECapacity.hpp"
+#include "../capacity_action/BaseCapacityAction.hpp"
 #include "../attribute/EAttribute.hpp"
 
 #include <queue>
@@ -79,7 +79,7 @@ namespace capacity {
 		std::vector<ECapacityPurpose> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
 		std::vector<ECapacityTarget> getCapacityTargets(void) const		{ return m_capacity_target; }
 		std::vector<ECapacityTrigger> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
-		std::vector<EAttribute> getCapacityAttribute(void) const		{ return m_capacity_attribute; }
+		std::vector<EAttribute> getCapacityAttributes(void) const		{ return m_capacity_attribute; }
 
 	private:
 		void addCapacityTarget(const CapacityComponent& capacity_modifier) {

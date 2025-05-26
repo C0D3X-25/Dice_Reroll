@@ -1,7 +1,11 @@
 #pragma once
 #include "../capacity/BaseCapacity.hpp"
+#include "../entity/BaseEntity.hpp"
 
-namespace capacity {
+using entity::BaseEntity;
+using capacity::CapacityComponent;
+
+namespace capacity_resolution {
     // TODO: Choose between:
 	// 1. Chain of responsibility pattern
     //  ? How to contruct the chain in dynamic 
@@ -23,9 +27,6 @@ namespace capacity {
 	class ICapacityResolution {
 	public:
 		virtual ~ICapacityResolution(void) = default;
-
-
-    private:
-		virtual void resolve(const CapacityComponent& capacity_mod) = 0;
+		virtual void resolveCapacity(const CapacityComponent& capacity_comp, BaseEntity& target) = 0;
 	};
 }

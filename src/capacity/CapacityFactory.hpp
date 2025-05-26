@@ -12,17 +12,18 @@ namespace capacity {
 
 	using namespace entity;
 	using namespace attribute;
+	using namespace capacity_action;
 
 	/// <summary>
 	/// This class is a library for all the capacities.
 	/// 1 method = 1 Capacity
 	/// A method must return a BaseCapacity object.
 	/// </summary>
-	class CapacityLibrary {
+	class CapacityFactory {
 	public:
 
-		CapacityLibrary(void) {}
-		~CapacityLibrary(void) = default;
+		CapacityFactory(void) {}
+		~CapacityFactory(void) = default;
 
 
 		BaseCapacity nothing(void) {

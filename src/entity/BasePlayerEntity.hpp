@@ -3,13 +3,17 @@
 #include "BaseEntity.hpp"
 #include "../capacity/BaseCapacity.hpp"
 #include "../dice/DiceCapacity.hpp"
-#include "../capacity/IUseAndResolveCapacity.hpp"
+#include "../capacity_resolution/ICapacityResolution.hpp"
+#include "../capacity_resolution/CapacityResolution.hpp"
 #include "../helper/SCalculate.hpp"
 
 #include <iostream>
 #include <string>
 #include <memory>
 #include <cstdint>
+#include "../capacity_resolution/BaseArmorResolution.hpp"
+#include "../capacity_resolution/BaseDeathResolution.hpp"
+#include "../capacity_resolution/BaseLifeResolution.hpp"
 
 
 
@@ -17,6 +21,7 @@ namespace entity {
 
 	using namespace dice;
 	using namespace capacity;
+	using namespace capacity_resolution;
 
 	inline constexpr uint8_t BASE_MAX_LIFE{ 20 };
 	inline constexpr uint8_t BASE_MIN_LIFE{ 1 };
@@ -24,7 +29,7 @@ namespace entity {
 	inline constexpr uint8_t BASE_MIN_ARMOR{ 0 };
 
 	class BasePlayerEntity : public BaseEntity, 
-		public IUseAndResolveCapacity {
+		public ICapacityResolution {
 	
 	public:
 		BasePlayerEntity(const std::string& name);
@@ -41,63 +46,8 @@ namespace entity {
 
 		const BaseCapacity rollDiceCapacity(void);
 		
-		void useCapacity(const BaseCapacity& capacity, BaseEntity& target) override;
-		void resolveCapacity(const CapacityComponent& capacity, const BaseEntity& source) override {
+		//void useCapacity(const BaseCapacity& capacity, BaseEntity& target) override;
 
-			//TODO: use the pattern chain of responsibility to resolve the capacity
-			
-			//// Initialize modifiers
-			//int16_t dmg_life = capacity.m_max_life < 0 ? -capacity.m_max_life : 0;
-			//int16_t heal_life = capacity.m_max_life > 0 ? capacity.m_max_life : 0;
-			//int16_t remove_armor = capacity.m_max_armor < 0 ? -capacity.m_max_armor : 0;
-			//int16_t add_armor = capacity.m_max_armor > 0 ? capacity.m_max_armor : 0;
-
-			//if (dmg_life > 0) {
-			//    std::cout << m_name << " took (" << dmg_life << ") damage from "
-			//        << source.getEntityName() << '\n';
-			//}
-
-			//// First apply armor modifications
-			//if (remove_armor > 0) {
-			//    m_max_armor = std::max(0, m_max_armor - remove_armor);
-			//}
-			//if (add_armor > 0) {
-			//    m_max_armor += add_armor;
-			//}
-
-			//// Then handle damage
-			//if (dmg_life > 0) {
-			//    // Damage is first absorbed by armor
-			//    if (m_max_armor > 0) {
-			//        if (m_max_armor >= dmg_life) {
-			//            m_max_armor -= dmg_life;
-			//            dmg_life = 0;
-			//        }
-			//        else {
-			//            dmg_life -= m_max_armor;
-			//            m_max_armor = 0;
-			//        }
-			//    }
-
-			//    // Remaining damage goes to life
-			//    if (dmg_life > 0) {
-			//        m_max_life -= dmg_life;
-			//    }
-			//}
-
-			//// Apply healing
-			//if (heal_life > 0) {
-			//    m_max_life += heal_life;
-			//}
-
-			//// Check for death
-			//if (m_max_life <= 0) {
-			//    std::cout << m_name << " has been killed by " << source.getEntityName() << '\n';
-			//}
-
-			//printEntity();
-			//std::cout << '\n';
-		}
 
 		void printEntity(void) const override;
 
@@ -112,6 +62,12 @@ namespace entity {
 		void updateEntity(void) override {
 			calculateMaxLife();
 			calculateMaxArmor();
+			setResolution();
+		}
+
+		void resolveCapacity(const CapacityComponent& capacity_comp, BaseEntity& target) override {
+			std::cout << "BasePlayerEntity: Resolving capacity for target: " << target.getEntityName() << "\n";
+			m_capacity_resolution.resolveCapacity(capacity_comp, target);
 		}
 
 	private:
@@ -140,8 +96,24 @@ namespace entity {
 			setMaxArmor(max_armor);
 		}
 
+
+		// TODO: Move this method in another class (need to work with the passives)
+		void setResolution(void) {
+			std::shared_ptr<CapacityResolution> sp_armor_resolution = std::make_shared<CapacityResolution>();
+			sp_armor_resolution->addResolution(std::make_shared<BaseArmorResolution>());
+			std::shared_ptr<CapacityResolution> sp_life_resolution = std::make_shared<CapacityResolution>();
+			sp_life_resolution->addResolution(std::make_shared<BaseLifeResolution>());
+			std::shared_ptr<CapacityResolution> sp_death_resolution = std::make_shared<CapacityResolution>();
+			sp_death_resolution->addResolution(std::make_shared<BaseDeathResolution>());
+
+			m_capacity_resolution.addResolution(sp_armor_resolution);
+			m_capacity_resolution.addResolution(sp_life_resolution);
+			m_capacity_resolution.addResolution(sp_death_resolution);
+		}
+
 	private:
 
+		CapacityResolution m_capacity_resolution;
 		DiceCapacity m_dice_capacity;
 		// TODO: Equipment m_inventory;
 		// TODO: Feat m_feat;

@@ -1,19 +1,22 @@
 #pragma once
 
 #include ".\BaseCapacityAction.hpp"
-#include "..\capacity_modifiers\CapacityComponent.hpp"
+#include "..\capacity\CapacityComponent.hpp"
 
 #include <cstdint>
 
-namespace capacity {
+namespace capacity_action {
+
+	using capacity::CapacityComponent;
 
 	class CapacityActionHeal : public BaseCapacityAction {
 	public:
-		CapacityActionHeal(uint8_t heal);
+		CapacityActionHeal(const uint8_t heal, const std::vector<ECapacityTarget>& targets);
 
 		CapacityComponent doAction(void) override;
 
 	private:
+		CapacityComponent m_component;
 		uint8_t m_heal{ 0 };
 	};
 }
