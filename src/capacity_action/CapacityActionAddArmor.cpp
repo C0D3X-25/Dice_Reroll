@@ -7,8 +7,8 @@ using namespace capacity;
 //}
 
 
-CapacityModifiersStruct capacity::CapacityActionAddArmor::doAction(void) {
-	CapacityModifiersStruct modifiers;
+CapacityComponent capacity::CapacityActionAddArmor::doAction(void) {
+	CapacityComponent modifiers;
 	modifiers.m_add_armor = m_armor;
 	return modifiers;
 }

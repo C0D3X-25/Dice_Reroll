@@ -11,7 +11,7 @@
 namespace entity {
 
 	using capacity::BaseCapacity;
-	using capacity::CapacityModifiersStruct;
+	using capacity::CapacityComponent;
 	using attribute::Attribute;
 
 	class BaseEntity {

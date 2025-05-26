@@ -6,8 +6,8 @@ using namespace capacity;
 //	: m_max_armor(armor) {
 //}
 
-capacity::CapacityModifiersStruct CapacityActionRemoveArmor::doAction(void) {
-	CapacityModifiersStruct modifiers;
+capacity::CapacityComponent CapacityActionRemoveArmor::doAction(void) {
+	CapacityComponent modifiers;
 	modifiers.m_remove_armor = m_armor;
 	return modifiers;
 }

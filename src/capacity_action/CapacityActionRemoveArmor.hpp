@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseCapacityAction.hpp"
-#include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
+#include "..\capacity_modifiers\CapacityComponent.hpp"
 
 #include <cstdint>
 
@@ -11,7 +11,7 @@ namespace capacity {
 	public:
 		CapacityActionRemoveArmor(uint8_t armor);
 
-		CapacityModifiersStruct doAction(void) override;
+		CapacityComponent doAction(void) override;
 
 	private:
 		uint8_t m_armor{ 0 };

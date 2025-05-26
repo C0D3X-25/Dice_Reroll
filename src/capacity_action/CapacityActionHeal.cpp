@@ -6,8 +6,8 @@ using namespace capacity;
 //	: m_heal(heal) {
 //}
 
-CapacityModifiersStruct capacity::CapacityActionHeal::doAction(void) {
-	CapacityModifiersStruct modifiers;
+CapacityComponent capacity::CapacityActionHeal::doAction(void) {
+	CapacityComponent modifiers;
 	modifiers.m_heal = m_heal;
 	return modifiers;
 }

@@ -5,7 +5,7 @@
 #include <vector>
 
 namespace capacity {
-	struct CapacityModifiersStruct {
+	struct CapacityComponent {
 
 		std::vector<ECapacityTarget> m_targets;
 

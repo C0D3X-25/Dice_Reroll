@@ -11,10 +11,10 @@
 
 namespace entity {
 
-	class GeneratePlayerEntity {
+	class PlayerEntityGenerator {
 	public:
-		GeneratePlayerEntity(void) = default;
-		~GeneratePlayerEntity(void) = default;
+		PlayerEntityGenerator(void) = default;
+		~PlayerEntityGenerator(void) = default;
 
 		BasePlayerEntity generateNewPlayerEntity(void) {
 

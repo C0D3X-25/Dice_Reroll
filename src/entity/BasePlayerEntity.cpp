@@ -42,7 +42,7 @@ void entity::BasePlayerEntity::useCapacity(const BaseCapacity& capacity, BaseEnt
 }
 
 
-void entity::BasePlayerEntity::resolveCapacity(const CapacityModifiersStruct& capacity, const BaseEntity& source) {
+//void entity::BasePlayerEntity::resolveCapacity(const CapacityComponent& capacity, const BaseEntity& source) {
     //// Initialize modifiers
     //int16_t dmg_life = capacity.m_max_life < 0 ? -capacity.m_max_life : 0;
     //int16_t heal_life = capacity.m_max_life > 0 ? capacity.m_max_life : 0;
@@ -94,4 +94,4 @@ void entity::BasePlayerEntity::resolveCapacity(const CapacityModifiersStruct& ca
 
     //printEntity();
     //std::cout << '\n';
-}
+//}

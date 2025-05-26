@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <iostream>
+#include "../helper/SCalculate.hpp"
 
 namespace attribute {
 
@@ -23,12 +24,12 @@ namespace attribute {
 				<< "CHA: " << static_cast<int>(m_charisma) << '\n';
 		}
 
-		void setStrength(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_strength = value : ATTRIBUTE_MIN_VALUE; }
-		void setDexterity(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_dexterity = value : ATTRIBUTE_MIN_VALUE; }
-		void setConstitution(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_constitution = value : ATTRIBUTE_MIN_VALUE; }
-		void setIntelligence(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_intelligence = value : ATTRIBUTE_MIN_VALUE; }
-		void setWisdom(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_wisdom = value : ATTRIBUTE_MIN_VALUE; }
-		void setCharisma(int8_t value) { value > ATTRIBUTE_MIN_VALUE ? m_charisma = value : ATTRIBUTE_MIN_VALUE; }
+		void setStrength(int8_t value) { m_strength = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
+		void setDexterity(int8_t value) { m_dexterity = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
+		void setConstitution(int8_t value) { m_constitution = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
+		void setIntelligence(int8_t value) { m_intelligence = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
+		void setWisdom(int8_t value) { m_wisdom = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
+		void setCharisma(int8_t value) { m_charisma = helper::calculate::getBestValue(value, ATTRIBUTE_MIN_VALUE); }
 
 		int8_t getStrength(void) const { return m_strength; }
 		int8_t getDexterity(void) const { return m_dexterity; }

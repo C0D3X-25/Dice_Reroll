@@ -4,7 +4,7 @@
 using namespace dice;
 
 DiceCapacity::DiceCapacity(void) {
-	CapacityFactory capacity_factory;
+	CapacityLibrary capacity_factory;
 
     // Initialize sides 1 through m_SIDES_COUNT (inclusive)
     for (uint8_t i{ 1 }; i <= m_SIDES_COUNT; i++) {

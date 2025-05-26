@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseCapacityAction.hpp"
-#include "..\capacity_modifiers\CapacityModifiersStruct.hpp"
+#include "..\capacity_modifiers\CapacityComponent.hpp"
 
 #include <cstdint>
 #include <vector>
@@ -12,10 +12,10 @@ namespace capacity {
 	public:
 		CapacityActionDamage(const uint8_t damage, const std::vector<ECapacityTarget>& target);
 
-		CapacityModifiersStruct doAction(void) override;
+		CapacityComponent doAction(void) override;
 
 	private:
-		CapacityModifiersStruct m_modifier;
+		CapacityComponent m_modifier;
 		uint8_t m_damage{ 0 };
 	};
 }

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../capacity_modifiers/CapacityModifiersStruct.hpp"
+#include "../capacity_modifiers/CapacityComponent.hpp"
 #include "../capacity_action/BaseCapacityAction.hpp"
-#include "../capacity/ECapacity.hpp"
+#include "ECapacity.hpp"
+#include "../attribute/EAttribute.hpp"
 
 #include <queue>
 #include <string>
@@ -12,29 +13,31 @@
 
 namespace capacity {
 
+	using namespace attribute;
+
 	class BaseCapacity {
 	public:
 		virtual ~BaseCapacity(void) = default;
 
 
-		std::queue<CapacityModifiersStruct> getAllCapacityModifiers(void) {
+		std::queue<CapacityComponent> getAllCapacityModifiers(void) {
 			return m_capacity_modifiers;
 		}
 
 
-		void queueCapacityModifier(const CapacityModifiersStruct& capacity_modifier) {
+		void queueCapacityModifier(const CapacityComponent& capacity_modifier) {
 			addCapacityTarget(capacity_modifier);
 			m_capacity_modifiers.push(capacity_modifier);
 		}
 
 
-		const CapacityModifiersStruct getNextCapacityModifier(void) {
+		const CapacityComponent getNextCapacityModifier(void) {
 			if (!m_capacity_modifiers.empty()) {
 				m_current_modifier = m_capacity_modifiers.front();
 				m_capacity_modifiers.pop();
 				return m_current_modifier;
 			}
-			return CapacityModifiersStruct{};
+			return CapacityComponent{};
 		}
 
 
@@ -69,15 +72,17 @@ namespace capacity {
 		void setCapacityDescription(const std::string& description)				{ m_description = description; }
 		void setCapacityPurposes(const std::vector<ECapacityPurpose>& purpose)	{ m_capacity_purpose = purpose; }
 		void setCapacityTriggers(const std::vector<ECapacityTrigger>& trigger)	{ m_capacity_trigger = trigger; }
+		void setCapacityAttribute(const std::vector<EAttribute>& attribute)		{ m_capacity_attribute = attribute; }
 		
 		std::string_view getCapacityName(void) const					{ return m_name; }
 		std::string_view getCapacityDescription(void) const				{ return m_description; }
 		std::vector<ECapacityPurpose> getCapacityPurposes(void) const	{ return m_capacity_purpose; }
 		std::vector<ECapacityTarget> getCapacityTargets(void) const		{ return m_capacity_target; }
 		std::vector<ECapacityTrigger> getCapacityTriggers(void) const	{ return m_capacity_trigger; }
+		std::vector<EAttribute> getCapacityAttribute(void) const		{ return m_capacity_attribute; }
 
 	private:
-		void addCapacityTarget(const CapacityModifiersStruct& capacity_modifier) {
+		void addCapacityTarget(const CapacityComponent& capacity_modifier) {
 			for (const auto& target : capacity_modifier.m_targets) {
 				if (std::find(m_capacity_target.begin(), m_capacity_target.end(), target) == m_capacity_target.end()) {
 					m_capacity_target.push_back(target);
@@ -88,10 +93,11 @@ namespace capacity {
 	private:
 		std::string m_name{ "N/A" };
 		std::string m_description{ "N/A" };
-		std::queue<CapacityModifiersStruct> m_capacity_modifiers;
-		CapacityModifiersStruct m_current_modifier;
+		std::queue<CapacityComponent> m_capacity_modifiers;
+		CapacityComponent m_current_modifier; // Useless maybe
 		std::vector<ECapacityPurpose> m_capacity_purpose;
 		std::vector<ECapacityTarget> m_capacity_target;
 		std::vector<ECapacityTrigger> m_capacity_trigger;
+		std::vector<EAttribute> m_capacity_attribute;
 	};
 }

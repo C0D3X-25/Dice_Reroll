@@ -6,7 +6,7 @@ CapacityActionDamage::CapacityActionDamage(const uint8_t damage, const std::vect
 	: m_damage(damage), BaseCapacityAction(targets) {}
 
 
-CapacityModifiersStruct capacity::CapacityActionDamage::doAction(void) {
+CapacityComponent capacity::CapacityActionDamage::doAction(void) {
 	m_modifier = BaseCapacityAction::doAction();
 	m_modifier.m_damage = m_damage;
 	return m_modifier;

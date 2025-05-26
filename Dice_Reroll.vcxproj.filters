@@ -27,10 +27,10 @@
     <ClCompile Include="src\capacity_action\BaseCapacityAction.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_affectation\ICapacityAffectation.hpp">
+    <ClCompile Include="src\capacity_resolution\ICapacityResolution.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\capacity_modifiers\CapacityModifiersStruct.hpp">
+    <ClCompile Include="src\capacity_modifiers\CapacityComponent.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\dice\DiceCapacity.cpp">
@@ -101,7 +101,7 @@
     <ClInclude Include="src\attribute\EAttribute.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\combat\CapacityTargetsManager.hpp">
+    <ClInclude Include="src\combat\CapacityTargetsHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\combat\BattleField.hpp">
@@ -113,13 +113,16 @@
     <ClInclude Include="src\group\Team.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entity\GeneratePlayerEntity.hpp">
+    <ClInclude Include="src\entity\PlayerEntityGenerator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\helper\SCalculate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\capacity\CapacityFactory.hpp">
+    <ClInclude Include="src\capacity\CapacityLibrary.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capacity_resolution\BaseArmorResolution.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

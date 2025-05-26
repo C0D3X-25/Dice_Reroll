@@ -8,10 +8,10 @@
 #pragma once
 
 #include "capacity/CapacityPlayerSingleAttack.hpp"
-#include "capacity/CapacityFactory.hpp"
+#include "capacity/CapacityLibrary.hpp"
 #include "dice/DiceCapacity.hpp"
 
-#include "entity/GeneratePlayerEntity.hpp"
+#include "entity/PlayerEntityGenerator.hpp"
 #include "group/Team.hpp"
 
 #include <iostream>
@@ -26,16 +26,16 @@ int main() {
 	using namespace capacity;
 	using namespace group;
 	
-	CapacityFactory capacity_factory;
+	CapacityLibrary capacity_book;
 	
-	GeneratePlayerEntity entity_generator;
+	PlayerEntityGenerator entity_generator;
 	BasePlayerEntity entity_1 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_2 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_3 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_4 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_5 = entity_generator.generateNewPlayerEntity();
 	BasePlayerEntity entity_6 = entity_generator.generateNewPlayerEntity();
-	entity_6.setCapacity(capacity_factory.attackRandom(entity_6), 3);
+	entity_6.setCapacity(capacity_book.attackRandom(entity_6), 3);
 
 	Team team_1("Team 1");
 	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_1), 0);
