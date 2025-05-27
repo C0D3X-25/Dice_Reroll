@@ -30,30 +30,34 @@ int main() {
 	
 	PlayerEntityGenerator entity_generator;
 	BasePlayerEntity entity_1 = entity_generator.generateNewPlayerEntity();
-	BasePlayerEntity entity_2 = entity_generator.generateNewPlayerEntity();
-	BasePlayerEntity entity_3 = entity_generator.generateNewPlayerEntity();
-	BasePlayerEntity entity_4 = entity_generator.generateNewPlayerEntity();
-	BasePlayerEntity entity_5 = entity_generator.generateNewPlayerEntity();
-	BasePlayerEntity entity_6 = entity_generator.generateNewPlayerEntity();
-	entity_6.setCapacity(capacity_factory.attackRandom(entity_6), 3);
+	//BasePlayerEntity entity_2 = entity_generator.generateNewPlayerEntity();
+	//BasePlayerEntity entity_3 = entity_generator.generateNewPlayerEntity();
+	//BasePlayerEntity entity_4 = entity_generator.generateNewPlayerEntity();
+	//BasePlayerEntity entity_5 = entity_generator.generateNewPlayerEntity();
+	//BasePlayerEntity entity_6 = entity_generator.generateNewPlayerEntity();
+	//entity_6.setCapacity(capacity_factory.attackRandom(entity_6), 3);
 
-	Team team_1("Team 1");
-	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_1), 0);
-	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_2), 0);
-	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_3), 0);
-	team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_4), 0);
+	//Team team_1("Team 1");
+	//team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_1), 0);
+	//team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_2), 0);
+	//team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_3), 0);
+	//team_1.addEntity(std::make_unique<BasePlayerEntity>(entity_4), 0);
 
-	Team team_2("Team 2");
-	team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_5), 0);
-	team_1.transferEntityTo(team_2, 1, 0);
-	team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_6), 0);
+	//Team team_2("Team 2");
+	//team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_5), 0);
+	//team_1.transferEntityTo(team_2, 1, 0);
+	//team_2.addEntity(std::make_unique<BasePlayerEntity>(entity_6), 0);
 
-	team_1.printGroup();
-	team_2.printGroup();
+	//team_1.printGroup();
+	//team_2.printGroup();
 
 	std::cout << "========================================================\n\n";
 	BaseCapacity capacity = capacity_factory.attackSingle(entity_1);
-	entity_1.resolveCapacity(capacity.getNextCapacityModifier(), entity_1);
+	std::cout << "Before: " << entity_1.getCurrentLife() << '\n';
+	CapacityComponent capacity_modifier = capacity.getNextCapacityModifier();
+	entity_1.resolveCapacity(capacity_modifier, entity_1);
+	std::cout << "After:  " << entity_1.getCurrentLife() << '\n';
+
 
 	//entity_1.printEntity();
 	//std::cout << "========================================================\n\n";

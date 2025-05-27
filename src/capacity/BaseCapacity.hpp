@@ -31,7 +31,7 @@ namespace capacity {
 		}
 
 
-		const CapacityComponent getNextCapacityModifier(void) {
+		CapacityComponent getNextCapacityModifier(void) {
 			if (!m_capacity_modifiers.empty()) {
 				m_current_modifier = m_capacity_modifiers.front();
 				m_capacity_modifiers.pop();

@@ -65,8 +65,7 @@ namespace entity {
 			setResolution();
 		}
 
-		void resolveCapacity(const CapacityComponent& capacity_comp, BaseEntity& target) override {
-			std::cout << "BasePlayerEntity: Resolving capacity for target: " << target.getEntityName() << "\n";
+		void resolveCapacity(CapacityComponent& capacity_comp, BaseEntity& target) override {
 			m_capacity_resolution.resolveCapacity(capacity_comp, target);
 		}
 
@@ -99,16 +98,24 @@ namespace entity {
 
 		// TODO: Move this method in another class (need to work with the passives)
 		void setResolution(void) {
-			std::shared_ptr<CapacityResolution> sp_armor_resolution = std::make_shared<CapacityResolution>();
-			sp_armor_resolution->addResolution(std::make_shared<BaseArmorResolution>());
-			std::shared_ptr<CapacityResolution> sp_life_resolution = std::make_shared<CapacityResolution>();
-			sp_life_resolution->addResolution(std::make_shared<BaseLifeResolution>());
-			std::shared_ptr<CapacityResolution> sp_death_resolution = std::make_shared<CapacityResolution>();
-			sp_death_resolution->addResolution(std::make_shared<BaseDeathResolution>());
 
-			m_capacity_resolution.addResolution(sp_armor_resolution);
-			m_capacity_resolution.addResolution(sp_life_resolution);
-			m_capacity_resolution.addResolution(sp_death_resolution);
+			// Clear if there is something, like that it's the last update who is taken into account
+			// Can be probably removed later.
+			if (!m_capacity_resolution.isEmpty()) {
+				m_capacity_resolution.clearResolutions();
+			}
+
+			std::shared_ptr<CapacityResolution> sp_armor_resolutions = std::make_shared<CapacityResolution>();
+			std::shared_ptr<CapacityResolution> sp_life_resolutions = std::make_shared<CapacityResolution>();
+			std::shared_ptr<CapacityResolution> sp_death_resolutions = std::make_shared<CapacityResolution>();
+
+			sp_armor_resolutions->addResolution(std::make_shared<BaseArmorResolution>());
+			sp_life_resolutions->addResolution(std::make_shared<BaseLifeResolution>());
+			sp_death_resolutions->addResolution(std::make_shared<BaseDeathResolution>());
+
+			m_capacity_resolution.addResolution(sp_armor_resolutions);
+			m_capacity_resolution.addResolution(sp_life_resolutions);
+			m_capacity_resolution.addResolution(sp_death_resolutions);
 		}
 
 	private:

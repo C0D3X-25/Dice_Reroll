@@ -27,6 +27,6 @@ namespace capacity_resolution {
 	class ICapacityResolution {
 	public:
 		virtual ~ICapacityResolution(void) = default;
-		virtual void resolveCapacity(const CapacityComponent& capacity_comp, BaseEntity& target) = 0;
+		virtual void resolveCapacity(CapacityComponent& capacity_comp, BaseEntity& target) = 0;
 	};
 }
