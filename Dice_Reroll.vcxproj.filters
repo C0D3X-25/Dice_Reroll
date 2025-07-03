@@ -140,4 +140,7 @@
     <None Include="schemas\Dice_Reroll.simp.bak" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakelists.txt" />
+  </ItemGroup>
 </Project>

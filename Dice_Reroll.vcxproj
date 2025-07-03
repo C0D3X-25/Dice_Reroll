@@ -202,6 +202,9 @@
     <None Include="schemas\Dice_Reroll.simp" />
     <None Include="schemas\Dice_Reroll.simp.bak" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakelists.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

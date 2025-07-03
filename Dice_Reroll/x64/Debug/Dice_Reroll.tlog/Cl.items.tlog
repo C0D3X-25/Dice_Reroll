@@ -1,0 +1,14 @@
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity\BaseCapacity.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\BaseCapacity.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_action\CapacityActionAddArmor.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityActionAddArmor.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_action\CapacityActionHeal.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityActionHeal.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_action\CapacityActionRemoveArmor.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityActionRemoveArmor.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\entity\BaseEntity.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\BaseEntity.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\entity\BasePlayerEntity.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\BasePlayerEntity.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\dice\DiceCapacity.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\DiceCapacity.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\status\EStatus.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\EStatus.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_action\BaseCapacityAction.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\BaseCapacityAction.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_action\CapacityActionDamage.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityActionDamage.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity\CapacityPlayerSingleAttack.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityPlayerSingleAttack.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity_resolution\ICapacityResolution.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\ICapacityResolution.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\Main.cpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\Main.obj
+C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\src\capacity\CapacityComponent.hpp;C:\Users\ThJo\source\repos\C0D3X-25\Dice_Reroll\Dice_Reroll\x64\Debug\CapacityComponent.obj
